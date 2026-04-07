@@ -1959,7 +1959,7 @@
         "name": "Como funciona o pagamento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aceitamos PIX, cartao de credito/debito e dinheiro. O pagamento e realizado no dia do atendimento, apos a montagem dos equipamentos."
+          "text": "Sinal de R$30 via PIX para confirmar o agendamento, descontado do valor total. O restante e pago no dia via PIX, cartao de credito/debito ou dinheiro."
         }
       },
       {
@@ -1967,7 +1967,7 @@
         "name": "Posso cancelar o agendamento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim! Cancelamentos feitos ate 24 horas antes do horario agendado sao realizados sem nenhum custo. Cancelamentos com menos de 24h podem ter taxa de deslocamento."
+          "text": "Sim! Cancelamentos feitos ate 24 horas antes: reembolso integral do sinal. Com menos de 24h: o sinal de R$30 e retido como taxa. Nao comparecimento: cobrado valor integral."
         }
       }
     ]
@@ -2192,7 +2192,7 @@
           <div class="step-number">01</div>
           <div class="step-icon">&#128197;</div>
           <h3>Agende o Aluguel de VR</h3>
-          <p>Escolha a data, horário e pacote de realidade virtual que preferir. Resposta rápida pelo WhatsApp.</p>
+          <p>Escolha a data, horário e pacote. Confirme com um sinal de R$30 via PIX e pronto!</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">02</div>
@@ -2514,7 +2514,7 @@
         <div class="incluso-item"><span class="icon">&#127918;</span> +8 jogos para todos os públicos e idades</div>
         <div class="incluso-item"><span class="icon">&#9201;</span> Hora adicional: apenas R$40 em qualquer pacote</div>
       </div>
-      <p class="incluso-nota reveal">Preços de lançamento por tempo limitado. Sem taxa de deslocamento, sem custo escondido. O único custo não incluso é em caso de dano ao equipamento por mau uso (<a href="#termos">ver termos</a>).</p>
+      <p class="incluso-nota reveal">Preços de lançamento por tempo limitado. Sem taxa de deslocamento, sem custo escondido. <strong>Sinal de R$30 via PIX para confirmar o agendamento</strong> (descontado do valor total). O restante é pago no dia. (<a href="#termos">ver termos</a>)</p>
     </div>
   </section>
 
@@ -2610,13 +2610,14 @@
           </div>
         </div>
 
+        <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin: 8px 0 0;">Sinal de R$30 via PIX para confirmar (descontado do valor total)</p>
         <button class="booking-submit" id="bookingSubmit" disabled>Confirmar Agendamento via WhatsApp</button>
 
         <!-- Success -->
         <div class="booking-success" id="bookingSuccess">
           <div class="success-icon">&#127881;</div>
           <h3>Agendamento Enviado!</h3>
-          <p>Redirecionamos você para o WhatsApp! Confirme os detalhes da reserva por lá.</p>
+          <p>Redirecionamos você para o WhatsApp! Enviaremos a chave PIX para o sinal de R$30 e confirmaremos sua reserva.</p>
         </div>
       </div>
     </div>
@@ -2713,7 +2714,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Aceitamos PIX, cartão de crédito/débito e dinheiro. O pagamento é realizado no dia do atendimento, após a montagem dos equipamentos.</div>
+            <div class="faq-answer-inner">Sinal de R$30 via PIX para confirmar o agendamento (descontado do valor total). O restante é pago no dia, via PIX, cartão de crédito/débito ou dinheiro.</div>
           </div>
         </div>
         <div class="faq-item">
@@ -2722,7 +2723,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Sim! Cancelamentos feitos até 24 horas antes do horário agendado são realizados sem nenhum custo. Cancelamentos com menos de 24h podem ter taxa de deslocamento.</div>
+            <div class="faq-answer-inner">Sim! Cancelamentos feitos até 24 horas antes: reembolso integral do sinal. Com menos de 24h: o sinal de R$30 é retido como taxa. Não compareceu: cobrado valor integral.</div>
           </div>
         </div>
       </div>
@@ -2887,12 +2888,13 @@
           <div class="termo-body"><div class="termo-content">
             <ol>
               <li>Agendamento via WhatsApp, Instagram ou telefone.</li>
-              <li><strong>Cancelamento sem custo:</strong> Até <strong>24 horas antes</strong> do horário marcado.</li>
-              <li><strong>Cancelamento tardio (&lt;24h):</strong> Taxa de deslocamento de <strong>R$ 50,00</strong>.</li>
-              <li><strong>No-show:</strong> Cobrado <strong>valor integral</strong> do serviço contratado.</li>
+              <li><strong>Sinal obrigatório:</strong> R$ 30,00 via PIX para confirmar o agendamento. O sinal é <strong>descontado do valor total</strong> do pacote no dia do atendimento.</li>
+              <li><strong>Cancelamento até 24h antes:</strong> Reembolso integral do sinal (R$ 30,00 devolvido).</li>
+              <li><strong>Cancelamento tardio (&lt;24h):</strong> O sinal de R$ 30,00 é <strong>retido como taxa</strong> de cancelamento.</li>
+              <li><strong>No-show (não comparecimento):</strong> Cobrado <strong>valor integral</strong> do serviço contratado.</li>
               <li><strong>Reagendamento:</strong> 1 gratuito por contratação (mínimo 24h de antecedência). Adicionais tratados como cancelamento tardio.</li>
               <li><strong>Tolerância de atraso:</strong> 15 minutos. Após, considerado no-show.</li>
-              <li><strong>Cancelamento pela VR Experience:</strong> Reagendamento ou reembolso integral.</li>
+              <li><strong>Cancelamento pela VR Experience:</strong> Reagendamento ou reembolso integral do sinal.</li>
             </ol>
           </div></div>
         </div>
@@ -2901,15 +2903,17 @@
           <button class="termo-header" aria-expanded="false"><span>7. Pagamento e Reembolso</span><span class="arrow">▼</span></button>
           <div class="termo-body"><div class="termo-content">
             <ol>
-              <li><strong>Formas aceitas:</strong> PIX, cartão de débito/crédito, dinheiro.</li>
-              <li><strong>Pagamento antes do início</strong> da sessão, salvo acordo prévio.</li>
-              <li><strong>Reembolso:</strong>
+              <li><strong>Sinal:</strong> R$ 30,00 via PIX para confirmar o agendamento, descontado do valor total no dia.</li>
+              <li><strong>Formas aceitas (restante):</strong> PIX, cartão de débito/crédito, dinheiro.</li>
+              <li><strong>Pagamento do restante</strong> antes do início da sessão.</li>
+              <li><strong>Reembolso do sinal:</strong>
                 <ul>
-                  <li>Cancelamento no prazo: reembolso integral;</li>
-                  <li>Cancelamento pela VR Experience: reembolso integral;</li>
-                  <li>Interrupção por saúde (&lt;50% do tempo): reembolso de 50%;</li>
+                  <li>Cancelamento até 24h antes: reembolso integral do sinal;</li>
+                  <li>Cancelamento pela VR Experience: reembolso integral do sinal;</li>
+                  <li>Cancelamento tardio (&lt;24h): sinal retido como taxa;</li>
+                  <li>Interrupção por saúde (&lt;50% do tempo): reembolso de 50% do valor pago;</li>
                   <li>Descumprimento de regras: sem reembolso;</li>
-                  <li>No-show: sem reembolso.</li>
+                  <li>No-show: sem reembolso (cobrado valor integral).</li>
                 </ul>
               </li>
               <li>Reembolsos processados em até <strong>7 dias úteis</strong>.</li>
