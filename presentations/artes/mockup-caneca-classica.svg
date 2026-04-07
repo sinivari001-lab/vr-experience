@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450">
+  <defs>
+    <linearGradient id="mcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8d4"/>
+      <stop offset="100%" stop-color="#7c4dff"/>
+    </linearGradient>
+    <linearGradient id="mugBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0f0f0"/>
+      <stop offset="15%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8f8f8"/>
+      <stop offset="85%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8e8e8"/>
+    </linearGradient>
+    <linearGradient id="mugInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d0d0d0"/>
+      <stop offset="100%" stop-color="#e8e8e8"/>
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e0e0e0"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d8d8d8"/>
+    </linearGradient>
+    <filter id="mcGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="mugShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="mugClip">
+      <path d="M100,80 L100,340 Q100,370 130,370 L310,370 Q340,370 340,340 L340,80 Z"/>
+    </clipPath>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;display=swap');
+      .mc-title { font-family: 'Orbitron', sans-serif; font-weight: 900; }
+      .mc-sub { font-family: 'Orbitron', sans-serif; font-weight: 700; }
+      .mc-tag { font-family: 'Orbitron', sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <g filter="url(#mugShadow)">
+    <!-- Mug body -->
+    <path d="M100,80 L100,340 Q100,370 130,370 L310,370 Q340,370 340,340 L340,80 Z"
+          fill="url(#mugBody)" stroke="#cccccc" stroke-width="1"/>
+
+    <!-- Mug rim (top ellipse) -->
+    <ellipse cx="220" cy="80" rx="120" ry="18" fill="url(#mugInner)" stroke="#cccccc" stroke-width="1"/>
+    <ellipse cx="220" cy="80" rx="110" ry="14" fill="#c8c8c8"/>
+
+    <!-- Handle -->
+    <path d="M340,140 Q400,140 400,225 Q400,310 340,310"
+          fill="none" stroke="url(#handleGrad)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M340,140 Q400,140 400,225 Q400,310 340,310"
+          fill="none" stroke="#cccccc" stroke-width="1"/>
+    <!-- Handle inner edge -->
+    <path d="M340,158 Q382,158 382,225 Q382,292 340,292"
+          fill="none" stroke="#d0d0d0" stroke-width="1"/>
+  </g>
+
+  <!-- ==================== DESIGN ON MUG ==================== -->
+  <g clip-path="url(#mugClip)">
+    <!-- Gradient accent stripe top -->
+    <rect x="100" y="95" width="240" height="3" fill="url(#mcGrad)" opacity="0.6"/>
+
+    <!-- VR Headset icon (left area) -->
+    <g transform="translate(160, 195)">
+      <g filter="url(#mcGlow)">
+        <path d="M-35,0 C-35,-18 -28,-24 0,-24 C28,-24 35,-18 35,0 C35,11 28,19 0,19 C-28,19 -35,11 -35,0 Z"
+              fill="none" stroke="url(#mcGrad)" stroke-width="1.5"/>
+      </g>
+      <path d="M-35,0 C-35,-18 -28,-24 0,-24 C28,-24 35,-18 35,0 C35,11 28,19 0,19 C-28,19 -35,11 -35,0 Z"
+            fill="#e8e8e8" stroke="url(#mcGrad)" stroke-width="1.2"/>
+      <!-- Left lens -->
+      <ellipse cx="-12" cy="-1" rx="11" ry="9" fill="none" stroke="#00b8d4" stroke-width="1.2"/>
+      <!-- Right lens -->
+      <ellipse cx="12" cy="-1" rx="11" ry="9" fill="none" stroke="#7c4dff" stroke-width="1.2"/>
+      <!-- Straps -->
+      <path d="M-35,-3 Q-44,-3 -45,2 Q-44,7 -35,7" fill="none" stroke="#00b8d4" stroke-width="1" opacity="0.5"/>
+      <path d="M35,-3 Q44,-3 45,2 Q44,7 35,7" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+    </g>
+
+    <!-- Brand text -->
+    <g filter="url(#mcGlow)">
+      <text x="270" y="185" text-anchor="middle" class="mc-title" font-size="28" fill="url(#mcGrad)" letter-spacing="3">VR</text>
+    </g>
+    <text x="270" y="185" text-anchor="middle" class="mc-title" font-size="28" fill="url(#mcGrad)" letter-spacing="3">VR</text>
+    <text x="270" y="210" text-anchor="middle" class="mc-sub" font-size="13" fill="#333333" letter-spacing="5">EXPERIENCE</text>
+
+    <!-- Accent line -->
+    <line x1="215" y1="222" x2="325" y2="222" stroke="url(#mcGrad)" stroke-width="1" opacity="0.5"/>
+
+    <!-- Tagline -->
+    <text x="270" y="240" text-anchor="middle" class="mc-tag" font-size="7" fill="#00b8d4" letter-spacing="2" opacity="0.7">REALIDADE VIRTUAL EM SALVADOR</text>
+
+    <!-- Bottom accent dots -->
+    <circle cx="255" cy="260" r="2" fill="#00b8d4" opacity="0.3"/>
+    <circle cx="270" cy="260" r="2" fill="#7c4dff" opacity="0.3"/>
+    <circle cx="285" cy="260" r="2" fill="#00e676" opacity="0.3"/>
+
+    <!-- Gradient accent stripe bottom -->
+    <rect x="100" y="352" width="240" height="3" fill="url(#mcGrad)" opacity="0.6"/>
+  </g>
+
+  <!-- Subtle ceramic reflection -->
+  <g clip-path="url(#mugClip)" opacity="0.08">
+    <rect x="100" y="80" width="80" height="290" fill="#ffffff"/>
+  </g>
+</svg>

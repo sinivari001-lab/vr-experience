@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>VR Experience — Catalogo de Brindes & Merchandise</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    width: 1920px;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 120px 80px;
+    page-break-after: always;
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d1117 50%, #0a0a1a 100%);
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(0, 184, 212, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(124, 77, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .logo-top {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(0, 184, 212, 0.5);
+    letter-spacing: 3px;
+    z-index: 10;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 52px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00b8d4, #7c4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 40px;
+    font-weight: 700;
+    color: #00b8d4;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: #7c4dff;
+    margin-bottom: 15px;
+  }
+
+  .tagline {
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+    max-width: 900px;
+    line-height: 1.7;
+  }
+
+  /* Cover */
+  .cover { text-align: center; align-items: center; }
+  .cover h1 { font-size: 64px; margin-bottom: 15px; }
+  .cover .tagline { font-size: 26px; margin-bottom: 10px; }
+  .cover .sub { font-size: 18px; color: rgba(255,255,255,0.4); margin-top: 30px; letter-spacing: 3px; font-family: 'Orbitron', monospace; }
+  .cover .divider {
+    width: 120px; height: 3px;
+    background: linear-gradient(90deg, #00b8d4, #7c4dff);
+    margin: 25px auto;
+    border-radius: 2px;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: rgba(0,184,212,0.12);
+    border: 1px solid rgba(0,184,212,0.3);
+    color: #00b8d4;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* Product grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .product-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,184,212,0.15);
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .product-card .icon {
+    font-size: 56px;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .product-card .art-preview {
+    width: 180px;
+    height: 220px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .product-card .art-preview-mug {
+    width: 280px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 15px;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .design-card .art-preview-design {
+    width: 160px;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .sticker-preview {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .product-card .name {
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    color: #00b8d4;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .product-card .desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .product-card .price {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: #00e676;
+  }
+
+  .product-card .price-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 4px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 20px;
+  }
+
+  .col-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(124,77,255,0.15);
+    border-radius: 16px;
+    padding: 35px;
+  }
+
+  .col-box h3 {
+    margin-bottom: 20px;
+  }
+
+  /* List items */
+  .item-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .item-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .item-list li:last-child { border-bottom: none; }
+
+  .item-list .label { color: rgba(255,255,255,0.7); }
+  .item-list .value {
+    font-weight: 600;
+    color: #00b8d4;
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+  }
+
+  /* Shirt sizes table */
+  .size-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .size-box {
+    background: rgba(0,184,212,0.06);
+    border: 1px solid rgba(0,184,212,0.2);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .size-box .size {
+    font-family: 'Orbitron', monospace;
+    font-size: 28px;
+    font-weight: 900;
+    color: #00b8d4;
+    margin-bottom: 8px;
+  }
+
+  .size-box .measure {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  /* Kit cards */
+  .kit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .kit-card {
+    background: rgba(255,255,255,0.02);
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kit-card.kit-basic {
+    border: 1px solid rgba(0,184,212,0.2);
+  }
+  .kit-card.kit-pro {
+    border: 2px solid rgba(0,184,212,0.4);
+    background: rgba(0,184,212,0.04);
+  }
+  .kit-card.kit-vip {
+    border: 2px solid rgba(124,77,255,0.5);
+    background: rgba(124,77,255,0.04);
+  }
+
+  .kit-card .kit-label {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  .kit-card.kit-basic .kit-label { color: #00b8d4; }
+  .kit-card.kit-pro .kit-label { color: #00e676; }
+  .kit-card.kit-vip .kit-label { color: #7c4dff; }
+
+  .kit-card .kit-price {
+    font-family: 'Orbitron', monospace;
+    font-size: 36px;
+    font-weight: 900;
+    margin: 15px 0;
+  }
+
+  .kit-card.kit-basic .kit-price { color: #00b8d4; }
+  .kit-card.kit-pro .kit-price { color: #00e676; }
+  .kit-card.kit-vip .kit-price { color: #7c4dff; }
+
+  .kit-card .kit-items {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .kit-card .kit-items li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .kit-card .kit-items li::before {
+    content: '✓ ';
+    color: #00e676;
+    font-weight: 700;
+  }
+
+  .kit-card .kit-items li:last-child { border-bottom: none; }
+
+  .kit-card .kit-savings {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #00e676;
+    font-weight: 600;
+  }
+
+  /* Supplier section */
+  .supplier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .supplier-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 30px;
+  }
+
+  .supplier-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .supplier-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  .highlight-box {
+    background: rgba(0,184,212,0.08);
+    border: 1px solid rgba(0,184,212,0.25);
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+
+  .highlight-box strong { color: #00b8d4; }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .stat-box {
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,184,212,0.12);
+    border-radius: 12px;
+    padding: 25px 15px;
+  }
+
+  .stat-box .num {
+    font-family: 'Orbitron', monospace;
+    font-size: 36px;
+    font-weight: 900;
+    color: #00b8d4;
+  }
+
+  .stat-box .lbl {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* Design showcase */
+  .design-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  .design-card {
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .design-card .design-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+  .design-card .design-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .design-card .design-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .d-neon {
+    background: rgba(0,184,212,0.08);
+    border: 1px solid rgba(0,184,212,0.25);
+  }
+  .d-neon .design-name { color: #00b8d4; }
+
+  .d-cyber {
+    background: rgba(124,77,255,0.08);
+    border: 1px solid rgba(124,77,255,0.25);
+  }
+  .d-cyber .design-name { color: #7c4dff; }
+
+  .d-retro {
+    background: rgba(255,64,129,0.08);
+    border: 1px solid rgba(255,64,129,0.25);
+  }
+  .d-retro .design-name { color: #ff4081; }
+
+  .d-minimal {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .d-minimal .design-name { color: #e0e0e0; }
+
+  /* CTA slide */
+  .cta-slide { text-align: center; align-items: center; }
+  .cta-slide h1 { font-size: 52px; }
+
+  .cta-channels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .cta-channel {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,184,212,0.2);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+  }
+
+  .cta-channel .ch-icon { font-size: 42px; margin-bottom: 12px; display: block; }
+  .cta-channel .ch-label {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    color: #00b8d4;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .cta-channel .ch-value {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+
+  .bottom-note {
+    position: absolute;
+    bottom: 60px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* Brinde row */
+  .brinde-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  .brinde-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .brinde-card .b-icon { font-size: 48px; margin-bottom: 12px; display: block; }
+  .brinde-card .b-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 15px;
+    color: #00b8d4;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .brinde-card .b-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .brinde-card .b-price {
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #00e676;
+  }
+  .brinde-card .b-unit {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* Personalization */
+  .custom-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 25px;
+  }
+
+  .custom-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,184,212,0.12);
+    border-radius: 16px;
+    padding: 30px;
+  }
+
+  .custom-card h3 { font-size: 18px; margin-bottom: 12px; }
+
+  .custom-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .custom-card ul li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .custom-card ul li::before {
+    content: '> ';
+    color: #00b8d4;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide cover">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h1>MERCHANDISE<br>& BRINDES</h1>
+  <div class="divider"></div>
+  <p class="tagline">Camisetas, Canecas e Brindes Exclusivos VR Experience</p>
+  <p class="badge">CATALOGO 2025 — SALVADOR & LAURO DE FREITAS</p>
+  <p class="sub">PARA CLIENTES, PARCEIROS E FORNECEDORES</p>
+  <div class="slide-number">01/10</div>
+</div>
+
+<!-- SLIDE 2: POR QUE MERCHANDISE -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Por Que Merchandise VR?</h2>
+  <p class="subtitle">Produtos exclusivos que transformam clientes em embaixadores da marca e criam uma nova fonte de receita.</p>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="num">73%</div>
+      <div class="lbl">dos consumidores lembram<br>de marcas em produtos</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">2.5x</div>
+      <div class="lbl">mais engajamento com<br>brindes personalizados</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">85%</div>
+      <div class="lbl">guardam brindes<br>por mais de 1 ano</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">+40%</div>
+      <div class="lbl">receita adicional<br>por evento</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Estrategia:</strong> Cada produto e uma midia ambulante. Quando alguem veste a camiseta VR Experience ou usa a caneca no trabalho, esta divulgando a marca para dezenas de pessoas por dia — marketing organico com custo zero apos a venda.
+  </div>
+
+  <div class="slide-number">02/10</div>
+</div>
+
+<!-- SLIDE 3: CAMISETAS -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Nossos Produtos</h2>
+  <p class="subtitle">Camiseta, caneca e chaveiro com design exclusivo VR Experience. Produtos reais, prontos para venda e personalizacao.</p>
+
+  <div class="product-grid">
+    <div class="product-card" style="display:flex;flex-direction:column;align-items:center;">
+      <img src="artes/mockup-camiseta.svg" style="width:260px;height:300px;object-fit:contain;margin-bottom:12px;" alt="Camiseta VR Experience">
+      <div class="name">CAMISETA VR EXPERIENCE</div>
+      <div class="desc">Algodao 100% penteado preta<br>Design Neon Future com headset VR<br>Estampa DTF full color de alta durabilidade<br>Tamanhos P ao XG</div>
+      <div class="price">R$ 59,90</div>
+      <div class="price-note">unidade | a partir de 10un: R$ 49,90</div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;align-items:center;">
+      <img src="artes/mockup-caneca-classica.svg" style="width:260px;height:220px;object-fit:contain;margin-bottom:12px;" alt="Caneca VR Experience">
+      <div class="name">CANECA VR EXPERIENCE</div>
+      <div class="desc">Ceramica branca 325ml<br>Logo + headset VR sublimado<br>Pode ir no microondas<br>Embalagem individual</div>
+      <div class="price">R$ 34,90</div>
+      <div class="price-note">unidade | a partir de 20un: R$ 24,90</div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;align-items:center;">
+      <img src="artes/mockup-chaveiro.svg" style="width:180px;height:280px;object-fit:contain;margin-bottom:12px;" alt="Chaveiro VR Experience">
+      <div class="name">CHAVEIRO VR EXPERIENCE</div>
+      <div class="desc">Acrilico cristal com design neon<br>Argola metalica reforçada<br>Logo VR em relevo<br>Compacto e resistente</div>
+      <div class="price">R$ 14,90</div>
+      <div class="price-note">unidade | a partir de 50un: R$ 9,90</div>
+    </div>
+  </div>
+
+
+  <div class="slide-number">03/10</div>
+</div>
+
+<!-- SLIDE 4: CANECAS -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Canecas Personalizadas</h2>
+  <p class="subtitle">Ceramica de alta qualidade com designs exclusivos VR Experience. Perfeitas para uso diario e presentes.</p>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="artes/mug-classic.svg" class="art-preview-mug" alt="Caneca Classica VR">
+      <div class="name">CANECA CLASSICA</div>
+      <div class="desc">Ceramica branca 325ml<br>Logo VR Experience<br>Sublimacao de alta definicao<br>Pode ir no microondas</div>
+      <div class="price">R$ 34,90</div>
+      <div class="price-note">unidade | a partir de 20un: R$ 24,90</div>
+    </div>
+    <div class="product-card">
+      <img src="artes/mug-gamer.svg" class="art-preview-mug" alt="Caneca Magica VR">
+      <div class="name">CANECA MAGICA</div>
+      <div class="desc">Muda de cor com liquido quente<br>Revela design neon VR<br>Efeito surpresa — viral nas redes<br>Ceramica preta 325ml</div>
+      <div class="price">R$ 44,90</div>
+      <div class="price-note">unidade | a partir de 20un: R$ 34,90</div>
+    </div>
+    <div class="product-card">
+      <img src="artes/mug-gamer.svg" class="art-preview-mug" alt="Caneca Gamer VR">
+      <div class="name">CANECA GAMER</div>
+      <div class="desc">Formato especial com tampa<br>Design 360° com arte gamer<br>Embalagem premium para presente<br>Ceramica preta fosca 400ml</div>
+      <div class="price">R$ 54,90</div>
+      <div class="price-note">unidade | a partir de 20un: R$ 44,90</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Destaque:</strong> A caneca magica e o produto com maior potencial viral — clientes filmam a mudanca de cor e postam no Instagram/TikTok, gerando divulgacao espontanea. Ideal como brinde em eventos corporativos e festas.
+  </div>
+
+  <div class="slide-number">04/10</div>
+</div>
+
+<!-- SLIDE 5: BRINDES -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Brindes & Acessorios</h2>
+  <p class="subtitle">Itens promocionais de alto impacto para eventos, festas e acoes de marketing.</p>
+
+  <div class="brinde-grid">
+    <div class="brinde-card">
+      <span class="b-icon">🔑</span>
+      <div class="b-name">CHAVEIRO VR</div>
+      <div class="b-desc">Acrilico cristal com<br>logo neon em relevo<br>LED opcional</div>
+      <div class="b-price">R$ 9,90</div>
+      <div class="b-unit">a partir de 50un: R$ 6,90</div>
+    </div>
+    <div class="brinde-card">
+      <img src="artes/sticker-sheet.svg" style="width:120px;height:100px;object-fit:contain;margin-bottom:8px;" alt="Adesivos VR">
+      <div class="b-name">ADESIVOS</div>
+      <div class="b-desc">Pack com 5 adesivos<br>Vinil premium resistente<br>Designs variados</div>
+      <div class="b-price">R$ 12,90</div>
+      <div class="b-unit">a partir de 50 packs: R$ 7,90</div>
+    </div>
+    <div class="brinde-card">
+      <span class="b-icon">🧢</span>
+      <div class="b-name">BONE VR</div>
+      <div class="b-desc">Aba reta snapback<br>Bordado 3D frontal<br>Tecido premium</div>
+      <div class="b-price">R$ 39,90</div>
+      <div class="b-unit">a partir de 20un: R$ 29,90</div>
+    </div>
+    <div class="brinde-card">
+      <span class="b-icon">🎒</span>
+      <div class="b-name">SACOLA VR</div>
+      <div class="b-desc">Ecobag algodao cru<br>Estampa silk screen<br>Reutilizavel e sustentavel</div>
+      <div class="b-price">R$ 14,90</div>
+      <div class="b-unit">a partir de 50un: R$ 9,90</div>
+    </div>
+  </div>
+
+  <div class="brinde-grid" style="margin-top: 25px;">
+    <div class="brinde-card">
+      <span class="b-icon">📱</span>
+      <div class="b-name">POPUP SOCKET</div>
+      <div class="b-desc">Suporte celular<br>Logo VR em resina<br>Adesivo 3M</div>
+      <div class="b-price">R$ 14,90</div>
+      <div class="b-unit">a partir de 50un: R$ 9,90</div>
+    </div>
+    <div class="brinde-card">
+      <span class="b-icon">🖊️</span>
+      <div class="b-name">CANETA TOUCH</div>
+      <div class="b-desc">Caneta + ponteira touch<br>Gravacao a laser<br>Metal premium</div>
+      <div class="b-price">R$ 8,90</div>
+      <div class="b-unit">a partir de 100un: R$ 5,90</div>
+    </div>
+    <div class="brinde-card">
+      <span class="b-icon">💧</span>
+      <div class="b-name">SQUEEZE 500ML</div>
+      <div class="b-desc">Plastico BPA-free<br>Tampa flip personalizada<br>Cores neon</div>
+      <div class="b-price">R$ 19,90</div>
+      <div class="b-unit">a partir de 30un: R$ 14,90</div>
+    </div>
+    <div class="brinde-card">
+      <span class="b-icon">🃏</span>
+      <div class="b-name">PORTA-COPOS</div>
+      <div class="b-desc">Set com 4 unidades<br>Cortica + impressao UV<br>Designs VR variados</div>
+      <div class="b-price">R$ 24,90</div>
+      <div class="b-unit">a partir de 20 sets: R$ 17,90</div>
+    </div>
+  </div>
+
+  <div class="slide-number">05/10</div>
+</div>
+
+<!-- SLIDE 6: DESIGNS -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Linhas de Design</h2>
+  <p class="subtitle">4 linhas visuais exclusivas que se adaptam a diferentes publicos e ocasioes.</p>
+
+  <div class="design-grid">
+    <div class="design-card d-neon">
+      <img src="artes/tshirt-neon-future.svg" class="art-preview-design" alt="Design Neon Future">
+      <div class="design-name">NEON FUTURE</div>
+      <div class="design-desc">Cores vibrantes cyan e roxo<br>Efeitos de brilho e glow<br>Visual futurista high-tech<br><br><strong style="color:#00b8d4">Ideal para:</strong> Jovens, eventos, festas</div>
+    </div>
+    <div class="design-card d-cyber">
+      <img src="artes/tshirt-cyberpunk.svg" class="art-preview-design" alt="Design Cyberpunk">
+      <div class="design-name">CYBERPUNK</div>
+      <div class="design-desc">Estetica industrial<br>Circuitos e grafismos tech<br>Tons escuros com detalhes neon<br><br><strong style="color:#7c4dff">Ideal para:</strong> Gamers, nerds, tech</div>
+    </div>
+    <div class="design-card d-retro">
+      <img src="artes/tshirt-retro-arcade.svg" class="art-preview-design" alt="Design Retro Arcade">
+      <div class="design-name">RETRO ARCADE</div>
+      <div class="design-desc">Pixel art e 8-bit style<br>Cores nostalgicas<br>Referencias a classicos<br><br><strong style="color:#ff4081">Ideal para:</strong> Nostalgicos, colecionadores</div>
+    </div>
+    <div class="design-card d-minimal">
+      <img src="artes/tshirt-minimal-vr.svg" class="art-preview-design" alt="Design Minimal VR">
+      <div class="design-name">MINIMAL VR</div>
+      <div class="design-desc">Design limpo e elegante<br>Logo minimalista<br>Cores neutras e sofisticadas<br><br><strong style="color:#e0e0e0">Ideal para:</strong> Corporativo, presentes</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Personalizacao:</strong> Todas as linhas podem ser adaptadas para eventos corporativos com logo da empresa parceira. Minimo de 20 pecas para personalizacao exclusiva. Prazo de producao: 7-15 dias uteis.
+  </div>
+
+  <div class="slide-number">06/10</div>
+</div>
+
+<!-- SLIDE 7: KITS -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Kits & Combos</h2>
+  <p class="subtitle">Pacotes prontos com desconto progressivo. Perfeitos para presentes, eventos e revenda.</p>
+
+  <div class="kit-grid">
+    <div class="kit-card kit-basic">
+      <div class="kit-label">KIT BASICO</div>
+      <div class="kit-price">R$ 59,90</div>
+      <ul class="kit-items">
+        <li>1 Camiseta Classica</li>
+        <li>1 Pack de Adesivos (5un)</li>
+        <li>1 Chaveiro VR</li>
+        <li>Embalagem personalizada</li>
+      </ul>
+      <div class="kit-savings">Economia de R$ 12,80 (17%)</div>
+    </div>
+    <div class="kit-card kit-pro">
+      <div class="kit-label">KIT PRO</div>
+      <div class="kit-price">R$ 119,90</div>
+      <ul class="kit-items">
+        <li>1 Camiseta Gamer</li>
+        <li>1 Caneca Magica</li>
+        <li>1 Bone VR</li>
+        <li>1 Pack de Adesivos</li>
+        <li>Caixa presente premium</li>
+      </ul>
+      <div class="kit-savings">Economia de R$ 37,70 (24%)</div>
+    </div>
+    <div class="kit-card kit-vip">
+      <div class="kit-label">KIT VIP</div>
+      <div class="kit-price">R$ 199,90</div>
+      <ul class="kit-items">
+        <li>1 Camiseta Premium</li>
+        <li>1 Caneca Gamer</li>
+        <li>1 Bone VR</li>
+        <li>1 Squeeze 500ml</li>
+        <li>1 Set Porta-Copos</li>
+        <li>1 Sacola Ecobag</li>
+        <li>Caixa VIP com fita</li>
+      </ul>
+      <div class="kit-savings">Economia de R$ 49,50 (20%)</div>
+    </div>
+  </div>
+
+  <div class="slide-number">07/10</div>
+</div>
+
+<!-- SLIDE 8: PARA FORNECEDORES -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Para Fornecedores & Parceiros</h2>
+  <p class="subtitle">Oportunidades de parceria e fornecimento para o ecossistema VR Experience.</p>
+
+  <div class="supplier-grid">
+    <div class="supplier-card">
+      <h3>Fornecimento de Produtos</h3>
+      <p>Buscamos fornecedores de camisetas, canecas, brindes e embalagens na regiao de Salvador/Bahia. Priorizamos qualidade, prazo e preco competitivo.</p>
+      <ul class="item-list" style="margin-top:15px">
+        <li><span class="label">Camisetas (algodao/dry-fit)</span><span class="value">ABERTO</span></li>
+        <li><span class="label">Canecas (ceramica/magica)</span><span class="value">ABERTO</span></li>
+        <li><span class="label">Brindes acrilico/metal</span><span class="value">ABERTO</span></li>
+        <li><span class="label">Embalagens personalizadas</span><span class="value">ABERTO</span></li>
+      </ul>
+    </div>
+    <div class="supplier-card">
+      <h3>Programa de Revenda</h3>
+      <p>Lojas de games, lan houses, espacos de eventos e influencers podem revender produtos VR Experience com margem atrativa.</p>
+      <ul class="item-list" style="margin-top:15px">
+        <li><span class="label">Desconto revenda</span><span class="value">30-40%</span></li>
+        <li><span class="label">Pedido minimo</span><span class="value">20 PECAS</span></li>
+        <li><span class="label">Consignacao</span><span class="value">DISPONIVEL</span></li>
+        <li><span class="label">Material marketing</span><span class="value">INCLUSO</span></li>
+      </ul>
+    </div>
+    <div class="supplier-card">
+      <h3>Eventos Corporativos</h3>
+      <p>Kits personalizados para empresas, festas corporativas, team building e confraternizacoes com a marca da empresa + VR Experience.</p>
+      <ul class="item-list" style="margin-top:15px">
+        <li><span class="label">Co-branding</span><span class="value">DISPONIVEL</span></li>
+        <li><span class="label">Pecas minimas</span><span class="value">50 UN</span></li>
+        <li><span class="label">Prazo producao</span><span class="value">15 DIAS</span></li>
+        <li><span class="label">Arte personalizada</span><span class="value">INCLUSA</span></li>
+      </ul>
+    </div>
+    <div class="supplier-card">
+      <h3>Brindes para Festas</h3>
+      <p>Pacotes especiais de brindes para festas infantis e de aniversario onde a VR Experience e contratada. Lembrancas que marcam.</p>
+      <ul class="item-list" style="margin-top:15px">
+        <li><span class="label">Kit festa (por convidado)</span><span class="value">R$ 15-25</span></li>
+        <li><span class="label">Inclui</span><span class="value">ADESIVOS + CHAVEIRO</span></li>
+        <li><span class="label">Upgrade com camiseta</span><span class="value">+R$ 35</span></li>
+        <li><span class="label">Embalagem tema</span><span class="value">INCLUSA</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-number">08/10</div>
+</div>
+
+<!-- SLIDE 9: PERSONALIZACAO -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h2>Personalizacao & Producao</h2>
+  <p class="subtitle">Fluxo de personalizacao e prazos para pedidos especiais e corporativos.</p>
+
+  <div class="custom-options">
+    <div class="custom-card">
+      <h3>Opcoes de Personalizacao</h3>
+      <ul>
+        <li>Nome do convidado/participante na camiseta</li>
+        <li>Logo da empresa parceira (co-branding)</li>
+        <li>Data e tema do evento</li>
+        <li>Cores personalizadas da empresa</li>
+        <li>QR Code para redes sociais</li>
+        <li>Embalagem com mensagem personalizada</li>
+      </ul>
+    </div>
+    <div class="custom-card">
+      <h3>Tecnicas de Producao</h3>
+      <ul>
+        <li>Silk Screen — grandes volumes, custo baixo</li>
+        <li>DTF (Direct to Film) — full color, detalhes</li>
+        <li>Sublimacao — canecas, poliester, all-over</li>
+        <li>Bordado — bones, camisetas premium</li>
+        <li>Gravacao a Laser — metal, acrilico</li>
+        <li>Impressao UV — porta-copos, rigidos</li>
+      </ul>
+    </div>
+    <div class="custom-card">
+      <h3>Prazos de Entrega</h3>
+      <ul>
+        <li>Produtos em estoque: 1-3 dias uteis</li>
+        <li>Personalizacao simples: 5-7 dias uteis</li>
+        <li>Co-branding corporativo: 10-15 dias uteis</li>
+        <li>Grandes volumes (100+): 15-20 dias uteis</li>
+        <li>Urgente (+30%): reduz prazo pela metade</li>
+        <li>Prova digital gratuita antes da producao</li>
+      </ul>
+    </div>
+    <div class="custom-card">
+      <h3>Condicoes Comerciais</h3>
+      <ul>
+        <li>Pagamento: PIX, cartao, boleto</li>
+        <li>PIX: 5% desconto adicional</li>
+        <li>Cartao: ate 3x sem juros</li>
+        <li>Corporativo: faturamento 30 dias</li>
+        <li>Frete gratis Salvador + Lauro de Freitas</li>
+        <li>Nota fiscal em todos os pedidos</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-number">09/10</div>
+</div>
+
+<!-- SLIDE 10: CTA -->
+<div class="slide cta-slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <h1>VAMOS CRIAR JUNTOS?</h1>
+  <p class="tagline">Entre em contato para orcamentos, parcerias e pedidos personalizados</p>
+
+  <div class="cta-channels">
+    <div class="cta-channel">
+      <span class="ch-icon">📱</span>
+      <div class="ch-label">WHATSAPP</div>
+      <div class="ch-value">(71) 99XXX-XXXX</div>
+    </div>
+    <div class="cta-channel">
+      <span class="ch-icon">📸</span>
+      <div class="ch-label">INSTAGRAM</div>
+      <div class="ch-value">@vrexperience.ssa</div>
+    </div>
+    <div class="cta-channel">
+      <span class="ch-icon">📧</span>
+      <div class="ch-label">E-MAIL</div>
+      <div class="ch-value">contato@vrexperience.com.br</div>
+    </div>
+  </div>
+
+  <div class="bottom-note">VR EXPERIENCE — SALVADOR & LAURO DE FREITAS, BAHIA</div>
+  <div class="slide-number">10/10</div>
+</div>
+
+</body>
+</html>

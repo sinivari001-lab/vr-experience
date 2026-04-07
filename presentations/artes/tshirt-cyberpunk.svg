@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <linearGradient id="cpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8d4"/>
+      <stop offset="50%" stop-color="#7c4dff"/>
+      <stop offset="100%" stop-color="#00e676"/>
+    </linearGradient>
+    <filter id="cpGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cpSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="circuitPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <!-- Horizontal lines -->
+      <line x1="0" y1="10" x2="15" y2="10" stroke="#00b8d4" stroke-width="0.5" opacity="0.15"/>
+      <line x1="25" y1="10" x2="40" y2="10" stroke="#7c4dff" stroke-width="0.5" opacity="0.15"/>
+      <line x1="0" y1="30" x2="20" y2="30" stroke="#00b8d4" stroke-width="0.5" opacity="0.1"/>
+      <line x1="30" y1="30" x2="40" y2="30" stroke="#7c4dff" stroke-width="0.5" opacity="0.1"/>
+      <!-- Vertical lines -->
+      <line x1="10" y1="0" x2="10" y2="8" stroke="#00b8d4" stroke-width="0.5" opacity="0.12"/>
+      <line x1="30" y1="12" x2="30" y2="28" stroke="#7c4dff" stroke-width="0.5" opacity="0.12"/>
+      <line x1="20" y1="32" x2="20" y2="40" stroke="#00e676" stroke-width="0.5" opacity="0.1"/>
+      <!-- Nodes -->
+      <circle cx="15" cy="10" r="1.5" fill="#00b8d4" opacity="0.2"/>
+      <circle cx="25" cy="10" r="1.5" fill="#7c4dff" opacity="0.2"/>
+      <circle cx="20" cy="30" r="1.5" fill="#00e676" opacity="0.15"/>
+      <circle cx="30" cy="30" r="1" fill="#7c4dff" opacity="0.15"/>
+      <!-- Corner connectors -->
+      <path d="M10,8 L10,10 L15,10" fill="none" stroke="#00b8d4" stroke-width="0.5" opacity="0.15"/>
+      <path d="M30,28 L30,30 L20,30" fill="none" stroke="#7c4dff" stroke-width="0.5" opacity="0.12"/>
+    </pattern>
+    <clipPath id="headsetClip">
+      <path d="M95,175 C95,125 115,105 200,105 C285,105 305,125 305,175 C305,215 285,240 200,240 C115,240 95,215 95,175 Z"/>
+    </clipPath>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+      .cp-title { font-family: 'Orbitron', monospace; font-weight: 900; }
+      .cp-mono { font-family: 'Share Tech Mono', monospace; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="500" fill="#0a0a1a" rx="8"/>
+
+  <!-- Full circuit board background -->
+  <rect width="400" height="500" fill="url(#circuitPattern)"/>
+
+  <!-- Major circuit traces -->
+  <g opacity="0.25" filter="url(#cpSoft)">
+    <!-- Left vertical bus -->
+    <line x1="50" y1="0" x2="50" y2="500" stroke="#00b8d4" stroke-width="1"/>
+    <line x1="52" y1="0" x2="52" y2="500" stroke="#00b8d4" stroke-width="0.3"/>
+    <!-- Right vertical bus -->
+    <line x1="350" y1="0" x2="350" y2="500" stroke="#7c4dff" stroke-width="1"/>
+    <line x1="348" y1="0" x2="348" y2="500" stroke="#7c4dff" stroke-width="0.3"/>
+    <!-- Horizontal buses -->
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#00b8d4" stroke-width="0.6"/>
+    <line x1="0" y1="330" x2="400" y2="330" stroke="#7c4dff" stroke-width="0.6"/>
+    <line x1="0" y1="430" x2="400" y2="430" stroke="#00e676" stroke-width="0.4"/>
+  </g>
+
+  <!-- Circuit nodes on traces -->
+  <g opacity="0.35">
+    <rect x="47" y="78" width="6" height="4" fill="#00b8d4" rx="1"/>
+    <rect x="347" y="78" width="6" height="4" fill="#7c4dff" rx="1"/>
+    <rect x="47" y="328" width="6" height="4" fill="#00b8d4" rx="1"/>
+    <rect x="347" y="328" width="6" height="4" fill="#7c4dff" rx="1"/>
+    <rect x="47" y="428" width="6" height="4" fill="#00e676" rx="1"/>
+    <rect x="347" y="428" width="6" height="4" fill="#00e676" rx="1"/>
+  </g>
+
+  <!-- Branch traces connecting to headset -->
+  <g opacity="0.2">
+    <path d="M50,140 L95,165" stroke="#00b8d4" stroke-width="0.8"/>
+    <path d="M350,140 L305,165" stroke="#7c4dff" stroke-width="0.8"/>
+    <path d="M50,200 L95,190" stroke="#00b8d4" stroke-width="0.6"/>
+    <path d="M350,200 L305,190" stroke="#7c4dff" stroke-width="0.6"/>
+    <path d="M50,240 L115,235" stroke="#00e676" stroke-width="0.5"/>
+    <path d="M350,240 L285,235" stroke="#00e676" stroke-width="0.5"/>
+  </g>
+
+  <!-- VR Headset Silhouette - Industrial style -->
+  <g>
+    <!-- Headset body - dark with hard edges -->
+    <path d="M95,175 C95,125 115,105 200,105 C285,105 305,125 305,175 C305,215 285,240 200,240 C115,240 95,215 95,175 Z"
+          fill="#0d0d1f" stroke="#1a1a3a" stroke-width="1.5"/>
+
+    <!-- Inner circuit pattern clipped to headset -->
+    <g clip-path="url(#headsetClip)" opacity="0.3">
+      <rect x="95" y="105" width="210" height="135" fill="url(#circuitPattern)"/>
+      <!-- Extra dense circuits inside -->
+      <line x1="120" y1="130" x2="180" y2="130" stroke="#00b8d4" stroke-width="0.6" opacity="0.4"/>
+      <line x1="220" y1="130" x2="280" y2="130" stroke="#7c4dff" stroke-width="0.6" opacity="0.4"/>
+      <line x1="120" y1="150" x2="160" y2="150" stroke="#00b8d4" stroke-width="0.4" opacity="0.3"/>
+      <line x1="240" y1="150" x2="280" y2="150" stroke="#7c4dff" stroke-width="0.4" opacity="0.3"/>
+      <line x1="150" y1="200" x2="150" y2="230" stroke="#00e676" stroke-width="0.4" opacity="0.3"/>
+      <line x1="250" y1="200" x2="250" y2="230" stroke="#00e676" stroke-width="0.4" opacity="0.3"/>
+    </g>
+
+    <!-- Left lens - angular/industrial -->
+    <g filter="url(#cpGlow)">
+      <rect x="120" y="145" width="60" height="50" rx="6" fill="none" stroke="#00b8d4" stroke-width="2"/>
+    </g>
+    <rect x="126" y="150" width="48" height="40" rx="4" fill="#00b8d4" opacity="0.04"/>
+    <!-- Lens scan line -->
+    <line x1="125" y1="170" x2="175" y2="170" stroke="#00b8d4" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Right lens - angular/industrial -->
+    <g filter="url(#cpGlow)">
+      <rect x="220" y="145" width="60" height="50" rx="6" fill="none" stroke="#7c4dff" stroke-width="2"/>
+    </g>
+    <rect x="226" y="150" width="48" height="40" rx="4" fill="#7c4dff" opacity="0.04"/>
+    <!-- Lens scan line -->
+    <line x1="225" y1="170" x2="275" y2="170" stroke="#7c4dff" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Bridge connector -->
+    <line x1="180" y1="170" x2="220" y2="170" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+    <circle cx="200" cy="170" r="2" fill="#00e676" opacity="0.5"/>
+
+    <!-- Top indicators -->
+    <circle cx="170" cy="115" r="2" fill="#00e676" opacity="0.6" filter="url(#cpSoft)"/>
+    <circle cx="200" cy="112" r="2" fill="#00b8d4" opacity="0.5" filter="url(#cpSoft)"/>
+    <circle cx="230" cy="115" r="2" fill="#7c4dff" opacity="0.6" filter="url(#cpSoft)"/>
+
+    <!-- Side ports -->
+    <rect x="90" y="160" width="8" height="3" fill="#00b8d4" opacity="0.4" rx="1"/>
+    <rect x="90" y="168" width="8" height="3" fill="#00b8d4" opacity="0.3" rx="1"/>
+    <rect x="90" y="176" width="8" height="3" fill="#00b8d4" opacity="0.2" rx="1"/>
+    <rect x="302" y="160" width="8" height="3" fill="#7c4dff" opacity="0.4" rx="1"/>
+    <rect x="302" y="168" width="8" height="3" fill="#7c4dff" opacity="0.3" rx="1"/>
+    <rect x="302" y="176" width="8" height="3" fill="#7c4dff" opacity="0.2" rx="1"/>
+
+    <!-- Strap connectors -->
+    <path d="M92,165 L70,155 L65,175 L70,195 L92,185" fill="none" stroke="#00b8d4" stroke-width="1.2" opacity="0.4"/>
+    <path d="M308,165 L330,155 L335,175 L330,195 L308,185" fill="none" stroke="#7c4dff" stroke-width="1.2" opacity="0.4"/>
+  </g>
+
+  <!-- Data stream lines below headset -->
+  <g opacity="0.3">
+    <line x1="200" y1="240" x2="200" y2="290" stroke="#00e676" stroke-width="0.8" stroke-dasharray="3,4"/>
+    <line x1="160" y1="240" x2="140" y2="290" stroke="#00b8d4" stroke-width="0.6" stroke-dasharray="2,5"/>
+    <line x1="240" y1="240" x2="260" y2="290" stroke="#7c4dff" stroke-width="0.6" stroke-dasharray="2,5"/>
+  </g>
+
+  <!-- HEX code decoration -->
+  <g class="cp-mono" opacity="0.15" font-size="7" fill="#00b8d4">
+    <text x="20" y="30">0x00B8D4</text>
+    <text x="20" y="42">0x7C4DFF</text>
+    <text x="310" y="30" fill="#7c4dff">FF:A0:23</text>
+    <text x="310" y="42" fill="#7c4dff">SYS:INIT</text>
+    <text x="20" y="490">NODE://VR.EXP</text>
+    <text x="290" y="490" fill="#7c4dff">SECTOR:SSA</text>
+  </g>
+
+  <!-- Glitch/scan lines -->
+  <g opacity="0.06">
+    <rect x="0" y="155" width="400" height="1" fill="#00b8d4"/>
+    <rect x="0" y="195" width="400" height="1" fill="#7c4dff"/>
+    <rect x="0" y="300" width="400" height="0.5" fill="#00e676"/>
+  </g>
+
+  <!-- Title -->
+  <g filter="url(#cpGlow)">
+    <text x="200" y="360" text-anchor="middle" class="cp-title" font-size="34" fill="#ffffff" letter-spacing="3">VR</text>
+  </g>
+  <text x="200" y="360" text-anchor="middle" class="cp-title" font-size="34" fill="#ffffff" letter-spacing="3">VR</text>
+
+  <text x="200" y="390" text-anchor="middle" class="cp-title" font-size="18" fill="url(#cpGrad)" letter-spacing="7">EXPERIENCE</text>
+
+  <!-- Underline with nodes -->
+  <line x1="105" y1="405" x2="295" y2="405" stroke="#00b8d4" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="105" cy="405" r="2" fill="#00b8d4" opacity="0.6"/>
+  <circle cx="200" cy="405" r="2" fill="#00e676" opacity="0.6"/>
+  <circle cx="295" cy="405" r="2" fill="#7c4dff" opacity="0.6"/>
+
+  <!-- Subtitle -->
+  <text x="200" y="425" text-anchor="middle" class="cp-mono" font-size="8" fill="#00e676" letter-spacing="3" opacity="0.5">CYBERPUNK EDITION</text>
+
+  <!-- Corner brackets -->
+  <g stroke="#00b8d4" stroke-width="1.5" opacity="0.3">
+    <path d="M15,15 L15,35" fill="none"/>
+    <path d="M15,15 L35,15" fill="none"/>
+    <path d="M385,15 L385,35" fill="none" stroke="#7c4dff"/>
+    <path d="M385,15 L365,15" fill="none" stroke="#7c4dff"/>
+    <path d="M15,485 L15,465" fill="none"/>
+    <path d="M15,485 L35,485" fill="none"/>
+    <path d="M385,485 L385,465" fill="none" stroke="#7c4dff"/>
+    <path d="M385,485 L365,485" fill="none" stroke="#7c4dff"/>
+  </g>
+</svg>

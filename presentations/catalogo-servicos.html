@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>VR Experience - Catálogo de Serviços</title>
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #050510; color: #fff; }
+  .slide {
+    width: 1920px; height: 1080px;
+    padding: 100px 120px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    page-break-after: always;
+    background: #050510;
+  }
+  .slide::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,229,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(255,0,255,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .slide-number { position: absolute; bottom: 40px; right: 60px; font-size: 14px; color: rgba(255,255,255,0.3); font-weight: 600; letter-spacing: 2px; }
+  .logo-top { position: absolute; top: 36px; right: 60px; font-size: 13px; font-weight: 800; letter-spacing: 3px; background: linear-gradient(135deg, #00e5ff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.5; }
+  h1 { font-size: 72px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; position: relative; z-index: 1; }
+  h1 .accent { color: #00e5ff; }
+  h1 .accent-mag { color: #ff00ff; }
+  h2 { font-size: 48px; font-weight: 700; margin-bottom: 40px; position: relative; z-index: 1; }
+  h2 .accent { color: #00e5ff; }
+  h3 { font-size: 32px; font-weight: 600; margin-bottom: 16px; color: #00e5ff; }
+  p { font-size: 28px; line-height: 1.6; color: rgba(255,255,255,0.8); position: relative; z-index: 1; }
+  .tagline { font-size: 24px; color: #00e5ff; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 1; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; position: relative; z-index: 1; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; position: relative; z-index: 1; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,255,0.2); border-radius: 16px; padding: 40px; }
+  .card.highlight { border-color: #ff00ff; background: rgba(255,0,255,0.06); }
+  .stat { font-size: 64px; font-weight: 800; color: #00e5ff; line-height: 1; }
+  .stat-label { font-size: 20px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  ul { list-style: none; position: relative; z-index: 1; }
+  ul li { font-size: 24px; line-height: 1.8; color: rgba(255,255,255,0.85); padding-left: 32px; position: relative; }
+  ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: #00e5ff; }
+  ul.mag li::before { background: #ff00ff; }
+  .cover-center { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .cover-logo { font-size: 96px; font-weight: 800; letter-spacing: 8px; background: linear-gradient(135deg, #00e5ff, #8b5cf6, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+  .divider { width: 80px; height: 4px; background: linear-gradient(90deg, #00e5ff, #ff00ff); border-radius: 2px; margin: 24px 0; }
+  .price-big { font-size: 72px; font-weight: 800; color: #00e5ff; }
+  .price-big small { font-size: 28px; color: rgba(255,255,255,0.5); }
+  .price-old { font-size: 28px; color: rgba(255,255,255,0.3); text-decoration: line-through; margin-bottom: 4px; }
+  .badge { display: inline-block; background: #ff00ff; color: #fff; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 12px; }
+  .badge-cyan { background: #00e5ff; color: #050510; }
+  .check-list li::before { content: '✓'; background: none; color: #00e5ff; font-weight: 800; font-size: 20px; top: 6px; left: 0; width: auto; height: auto; border-radius: 0; }
+  .game-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 1; }
+  .game-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; }
+  .game-card .age { font-size: 14px; color: #ff00ff; font-weight: 600; margin-top: 4px; }
+  .game-card h4 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .game-card p { font-size: 16px; color: rgba(255,255,255,0.5); }
+  .cta-box { background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(255,0,255,0.15)); border: 2px solid #00e5ff; border-radius: 20px; padding: 48px; text-align: center; position: relative; z-index: 1; }
+  table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
+  th { text-align: left; font-size: 18px; color: #00e5ff; text-transform: uppercase; letter-spacing: 2px; padding: 16px 20px; border-bottom: 2px solid rgba(0,229,255,0.3); }
+  td { font-size: 22px; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+  td.val { color: #00e5ff; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Cover -->
+<div class="slide cover-center">
+  <div class="cover-logo">VR EXPERIENCE</div>
+  <h1>Catálogo de <span class="accent">Serviços</span></h1>
+  <p style="font-size:32px; color:rgba(255,255,255,0.6);">Aluguel de Realidade Virtual a Domicílio</p>
+  <p style="font-size:24px; color:rgba(255,255,255,0.4); margin-top:8px;">Salvador e Lauro de Freitas, Bahia</p>
+  <div class="divider" style="margin:32px auto"></div>
+  <p style="font-size:20px; color:rgba(255,255,255,0.3);">2026 · Preços de Lançamento</p>
+  <div class="slide-number">01 / 08</div>
+</div>
+
+<!-- Slide 2: O que é -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">O serviço</div>
+  <h2>O que é o <span class="accent">VR Experience</span>?</h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:32px">
+    <div>
+      <p style="font-size:26px; margin-bottom:24px;">Levamos a <strong style="color:#00e5ff;">realidade virtual</strong> até a sua casa, festa ou evento com equipamento profissional, jogos incríveis e monitor dedicado.</p>
+      <p style="font-size:26px; margin-bottom:32px;">Você não precisa de <strong style="color:#ff00ff;">nada</strong>. Apenas 2m x 2m de espaço livre.</p>
+      <h3>O que está incluso:</h3>
+      <ul class="check-list" style="margin-top:16px;">
+        <li>Equipamento Meta Quest 2 profissional</li>
+        <li>1 headset incluso (+R$40 pelo 2° óculos)</li>
+        <li>+15 jogos para todas as idades</li>
+        <li>Monitor profissional presente o tempo todo</li>
+        <li>Montagem e desmontagem no local</li>
+        <li>Deslocamento para Salvador e Lauro de Freitas</li>
+        <li>Higienização entre cada usuário</li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:64px; margin-bottom:8px;">🎮</div>
+        <div class="stat" style="font-size:48px;">+15</div>
+        <div class="stat-label">jogos disponíveis</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:64px; margin-bottom:8px;">👥</div>
+        <div class="stat" style="font-size:48px;">7-70</div>
+        <div class="stat-label">anos — diversão para todos</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:64px; margin-bottom:8px;">⭐</div>
+        <div class="stat" style="font-size:48px;">5.0</div>
+        <div class="stat-label">avaliação dos clientes</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">02 / 08</div>
+</div>
+
+<!-- Slide 3: Pacotes -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Pacotes & Preços</div>
+  <h2>Escolha seu <span class="accent">pacote</span></h2>
+  <div class="divider"></div>
+  <div class="grid-3" style="margin-top:32px">
+    <div class="card" style="text-align:center;">
+      <span class="badge-cyan badge">LANÇAMENTO</span>
+      <div style="font-size:48px; margin:8px 0;">🎮</div>
+      <h3>Sessão Express</h3>
+      <div class="price-old">De R$120</div>
+      <div class="price-big">R$70<small>/1h</small></div>
+      <p style="font-size:18px; color:rgba(255,255,255,0.4); margin:12px 0 20px;">Ideal para conhecer a experiência</p>
+      <ul class="check-list" style="text-align:left;">
+        <li>1 hora de imersão total</li>
+        <li>Até 5 pessoas</li>
+        <li>1 Oculus Quest (+R$40 pelo 2°)</li>
+        <li>Jogos do seu perfil</li>
+        <li>Monitor presente</li>
+        <li>Tudo incluso</li>
+      </ul>
+    </div>
+    <div class="card highlight" style="text-align:center;">
+      <span class="badge">MAIS POPULAR</span>
+      <div style="font-size:48px; margin:8px 0;">⭐</div>
+      <h3>Combo Diversão</h3>
+      <div class="price-old">De R$180</div>
+      <div class="price-big" style="color:#ff00ff;">R$120<small>/2h</small></div>
+      <div style="background:rgba(255,0,255,0.15); border-radius:8px; padding:6px 12px; display:inline-block; margin:8px 0 16px; font-size:16px; color:#ff00ff; font-weight:700;">ECONOMIA DE R$60</div>
+      <ul class="check-list" style="text-align:left;">
+        <li>2 horas de diversão</li>
+        <li>Até 10 pessoas</li>
+        <li>1 Oculus Quest (+R$40 pelo 2°)</li>
+        <li>Rotação de jogos</li>
+        <li>Monitor presente</li>
+        <li>Tudo incluso</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;">
+      <span class="badge-cyan badge">LANÇAMENTO</span>
+      <div style="font-size:48px; margin:8px 0;">🎂</div>
+      <h3>Pacote Aniversário</h3>
+      <div class="price-old">De R$250</div>
+      <div class="price-big">R$160<small>/3h</small></div>
+      <div style="background:rgba(0,229,255,0.15); border-radius:8px; padding:6px 12px; display:inline-block; margin:8px 0 16px; font-size:16px; color:#00e5ff; font-weight:700;">ECONOMIA DE R$90</div>
+      <ul class="check-list" style="text-align:left;">
+        <li>3 horas de festa VR</li>
+        <li>Até 15 pessoas</li>
+        <li>1 Oculus Quest (+R$40 pelo 2°)</li>
+        <li>Monitor dedicado</li>
+        <li>Coordena com sua festa</li>
+        <li>Tudo incluso</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:28px; font-size:22px; color:rgba(255,255,255,0.4);">Hora adicional: R$40 · 2° óculos: +R$40 · Sinal de R$30 via PIX (descontado do total)</p>
+  <div class="slide-number">03 / 08</div>
+</div>
+
+<!-- Slide 4: Jogos -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Jogos disponíveis</div>
+  <h2><span class="accent">+15 jogos</span> para todos os públicos</h2>
+  <div class="divider"></div>
+  <div class="game-grid" style="margin-top:32px">
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🎵</div>
+      <h4>Beat Saber</h4>
+      <p>Ritmo musical</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">⏱️</div>
+      <h4>Superhot VR</h4>
+      <p>Ação imersiva</p>
+      <div class="age">12+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🔧</div>
+      <h4>Job Simulator</h4>
+      <p>Simulação cômica</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🍉</div>
+      <h4>Fruit Ninja VR</h4>
+      <p>Casual divertido</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🏹</div>
+      <h4>Elven Assassin</h4>
+      <p>Arco e flecha</p>
+      <div class="age">7+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🎯</div>
+      <h4>Pistol Whip</h4>
+      <p>Ação rítmica</p>
+      <div class="age">12+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🦍</div>
+      <h4>Gorilla Tag</h4>
+      <p>Multiplayer</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">⛳</div>
+      <h4>Mini Golf VR</h4>
+      <p>Esporte casual</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🎾</div>
+      <h4>Eleven Tennis</h4>
+      <p>Esporte realista</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🏠</div>
+      <h4>Rec Room</h4>
+      <p>Social multiplayer</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🥊</div>
+      <h4>Creed Boxing</h4>
+      <p>Luta realista</p>
+      <div class="age">12+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🎸</div>
+      <h4>Ragnarock</h4>
+      <p>Ritmo viking</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">😰</div>
+      <h4>Richie's Plank</h4>
+      <p>Experiência intensa</p>
+      <div class="age">10+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🐭</div>
+      <h4>Moss</h4>
+      <p>Aventura puzzle</p>
+      <div class="age">Todas as idades</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🕵️</div>
+      <h4>I Expect You to Die</h4>
+      <p>Puzzle espião</p>
+      <div class="age">12+</div>
+    </div>
+    <div class="game-card">
+      <div style="font-size:36px; margin-bottom:8px;">🌐</div>
+      <h4>+ outros</h4>
+      <p>Catálogo em expansão</p>
+      <div class="age">Todas as idades</div>
+    </div>
+  </div>
+  <div class="slide-number">04 / 08</div>
+</div>
+
+<!-- Slide 5: Como Funciona -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Passo a passo</div>
+  <h2>Como <span class="accent">funciona</span></h2>
+  <div class="divider"></div>
+  <div class="grid-4" style="margin-top:40px">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:56px; font-weight:800; color:#00e5ff; margin-bottom:16px;">01</div>
+      <div style="font-size:48px; margin-bottom:12px;">📱</div>
+      <h3 style="font-size:24px;">Agende</h3>
+      <p style="font-size:18px;">Escolha data, horário e pacote pelo WhatsApp ou site</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:56px; font-weight:800; color:#00e5ff; margin-bottom:16px;">02</div>
+      <div style="font-size:48px; margin-bottom:12px;">💳</div>
+      <h3 style="font-size:24px;">Confirme</h3>
+      <p style="font-size:18px;">Sinal de R$30 via PIX para garantir sua data</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:56px; font-weight:800; color:#00e5ff; margin-bottom:16px;">03</div>
+      <div style="font-size:48px; margin-bottom:12px;">🚗</div>
+      <h3 style="font-size:24px;">Receba</h3>
+      <p style="font-size:18px;">Chegamos, montamos e configuramos tudo em 15 min</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:56px; font-weight:800; color:#00e5ff; margin-bottom:16px;">04</div>
+      <div style="font-size:48px; margin-bottom:12px;">🎉</div>
+      <h3 style="font-size:24px;">Divirta-se!</h3>
+      <p style="font-size:18px;">Monitor acompanha tudo, você só curte</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:40px; text-align:center; padding:28px;">
+    <p style="font-size:24px; margin:0;">
+      <strong style="color:#00e5ff;">Pagamento:</strong> PIX, cartão ou dinheiro ·
+      <strong style="color:#ff00ff;">Cancelamento:</strong> grátis até 24h antes ·
+      <strong style="color:#8b5cf6;">Região:</strong> Salvador e Lauro de Freitas
+    </p>
+  </div>
+  <div class="slide-number">05 / 08</div>
+</div>
+
+<!-- Slide 6: Regras e Segurança -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Segurança</div>
+  <h2>Regras e <span class="accent">segurança</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:32px">
+    <div>
+      <div class="card" style="margin-bottom:24px;">
+        <h3>Idade e tempo por sessão</h3>
+        <table style="margin-top:12px;">
+          <tr><td>Menores de 7 anos</td><td class="val" style="color:#ff6b6b;">Não permitido</td></tr>
+          <tr><td>7 a 9 anos</td><td class="val">15 min (com responsável)</td></tr>
+          <tr><td>10 a 17 anos</td><td class="val">20 min (com responsável)</td></tr>
+          <tr><td>Adultos (18+)</td><td class="val">30 min</td></tr>
+        </table>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4); margin-top:12px;">Intervalos de 10-15 min entre sessões</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#ff00ff;">Contraindicações</h3>
+        <ul class="mag" style="margin-top:12px;">
+          <li style="font-size:20px;">Epilepsia</li>
+          <li style="font-size:20px;">Problemas cardíacos</li>
+          <li style="font-size:20px;">Gravidez</li>
+          <li style="font-size:20px;">Labirintite</li>
+          <li style="font-size:20px;">Claustrofobia / ansiedade severa</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:24px;">
+        <h3>Espaço necessário</h3>
+        <div style="text-align:center; margin:20px 0;">
+          <div class="stat" style="font-size:80px;">2m × 2m</div>
+          <div class="stat-label" style="font-size:18px;">área livre mínima por headset</div>
+        </div>
+        <p style="font-size:18px; color:rgba(255,255,255,0.5);">Sala, varanda, garagem ou área aberta. Nossa equipe ajuda a organizar!</p>
+      </div>
+      <div class="card">
+        <h3>Garantias</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:20px;">Monitor profissional o tempo todo</li>
+          <li style="font-size:20px;">Higienização entre cada usuário</li>
+          <li style="font-size:20px;">Pode interromper a qualquer momento</li>
+          <li style="font-size:20px;">Termos em conformidade legal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">06 / 08</div>
+</div>
+
+<!-- Slide 7: Depoimentos -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Depoimentos</div>
+  <h2>O que nossos <span class="accent">clientes</span> dizem</h2>
+  <div class="divider"></div>
+  <div class="grid-3" style="margin-top:40px">
+    <div class="card">
+      <div style="font-size:28px; color:#fbbf24; margin-bottom:16px;">★★★★★</div>
+      <p style="font-size:22px; font-style:italic; margin-bottom:24px;">"Contratamos para o aniversário do meu filho de 10 anos e foi incrível! As crianças não queriam parar. O rapaz que veio foi super atencioso."</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:16px;">
+        <p style="font-size:20px; color:#00e5ff; font-weight:600; margin:0;">Renata M.</p>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4); margin:4px 0 0;">Festa infantil — Pituba</p>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:28px; color:#fbbf24; margin-bottom:16px;">★★★★★</div>
+      <p style="font-size:22px; font-style:italic; margin-bottom:24px;">"Nunca tinha usado VR e fiquei impressionado. Jogar Beat Saber na minha sala foi experiência única. Já agendei de novo para os amigos!"</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:16px;">
+        <p style="font-size:20px; color:#00e5ff; font-weight:600; margin:0;">Lucas S.</p>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4); margin:4px 0 0;">Sessão avulsa — Lauro de Freitas</p>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:28px; color:#fbbf24; margin-bottom:16px;">★★★★★</div>
+      <p style="font-size:22px; font-style:italic; margin-bottom:24px;">"Fizemos na confraternização da empresa e foi o ponto alto da noite. Todo mundo participou, até quem tinha medo!"</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:16px;">
+        <p style="font-size:20px; color:#00e5ff; font-weight:600; margin:0;">Carla F.</p>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4); margin:4px 0 0;">Corporativo — Caminho das Árvores</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">07 / 08</div>
+</div>
+
+<!-- Slide 8: Contato -->
+<div class="slide cover-center">
+  <div class="cta-box" style="max-width:1000px;">
+    <div class="cover-logo" style="font-size:60px; margin-bottom:16px;">VR EXPERIENCE</div>
+    <h2 style="font-size:44px;">Pronto para viver a <span class="accent">Realidade Virtual</span>?</h2>
+    <p style="font-size:26px; color:rgba(255,255,255,0.6); margin:16px 0 32px;">A partir de R$70 · Tudo incluso · Salvador e Lauro de Freitas</p>
+    <div class="divider" style="margin:0 auto 32px"></div>
+    <div style="display:flex; gap:60px; justify-content:center; flex-wrap:wrap;">
+      <div>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4);">WhatsApp</p>
+        <p style="font-size:32px; font-weight:700; color:#00e5ff;">(71) 99630-5734</p>
+      </div>
+      <div>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4);">Instagram</p>
+        <p style="font-size:32px; font-weight:700; color:#ff00ff;">@vrexperience.ssa</p>
+      </div>
+      <div>
+        <p style="font-size:16px; color:rgba(255,255,255,0.4);">Site</p>
+        <p style="font-size:32px; font-weight:700; color:#8b5cf6;">vrexperience.com.br</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">08 / 08</div>
+</div>
+
+</body>
+</html>

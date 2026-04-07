@@ -468,6 +468,11 @@
       margin-bottom: 16px;
     }
 
+    .step-icon svg {
+      width: 48px;
+      height: 48px;
+    }
+
     .step-card h3 {
       font-family: var(--font-display);
       font-size: 1rem;
@@ -1460,6 +1465,214 @@
       letter-spacing: 2px;
     }
 
+    /* ===== ADMIN PANEL ===== */
+    .admin-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 10000;
+      overflow-y: auto;
+      padding: 30px;
+    }
+    .admin-overlay.visible { display: block; }
+    .admin-panel {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid rgba(0,184,212,0.2);
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .admin-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--neon-cyan);
+      letter-spacing: 2px;
+    }
+    .admin-close {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .admin-close:hover { border-color: #ff4444; color: #ff4444; }
+    .admin-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .admin-stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+    .admin-stat .num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .admin-stat .lbl {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+    .stat-pending .num { color: #ffa726; }
+    .stat-confirmed .num { color: #00e676; }
+    .stat-cancelled .num { color: #ff4444; }
+    .stat-total .num { color: var(--neon-cyan); }
+    .admin-filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .admin-filter-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .admin-filter-btn.active {
+      background: rgba(0,184,212,0.15);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
+    }
+    .admin-booking {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 15px;
+      align-items: center;
+    }
+    .admin-booking.status-pendente { border-left: 3px solid #ffa726; }
+    .admin-booking.status-confirmado { border-left: 3px solid #00e676; }
+    .admin-booking.status-cancelado { border-left: 3px solid #ff4444; opacity: 0.5; }
+    .admin-booking-info h4 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .admin-booking-info p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .admin-booking-info .booking-date {
+      color: var(--neon-cyan);
+      font-weight: 600;
+    }
+    .admin-booking-actions {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+    }
+    .admin-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .admin-btn-confirm { background: #00e676; color: #000; }
+    .admin-btn-confirm:hover { background: #69f0ae; }
+    .admin-btn-cancel { background: rgba(255,68,68,0.2); color: #ff4444; border: 1px solid rgba(255,68,68,0.3); }
+    .admin-btn-cancel:hover { background: rgba(255,68,68,0.4); }
+    .admin-btn-delete { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.4); }
+    .admin-btn-delete:hover { color: #ff4444; }
+    .admin-btn-whatsapp { background: #25d366; color: #fff; }
+    .admin-btn-whatsapp:hover { background: #20bd5a; }
+    .admin-empty {
+      text-align: center;
+      padding: 40px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.9rem;
+    }
+    .admin-login {
+      max-width: 350px;
+      margin: 100px auto;
+      background: var(--bg-card);
+      border: 1px solid rgba(0,184,212,0.2);
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .admin-login h2 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--neon-cyan);
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    .admin-login input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .admin-login button {
+      width: 100%;
+      padding: 12px;
+      background: var(--neon-cyan);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .admin-login .error { color: #ff4444; font-size: 0.8rem; margin-top: 10px; display: none; }
+    @media (max-width: 768px) {
+      .admin-overlay { padding: 12px; }
+      .admin-panel { padding: 18px 14px; border-radius: 12px; }
+      .admin-header { margin-bottom: 18px; padding-bottom: 12px; }
+      .admin-header h2 { font-size: 1rem; }
+      .admin-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 18px; }
+      .admin-stat { padding: 12px 8px; }
+      .admin-stat .num { font-size: 1.4rem; }
+      .admin-stat .lbl { font-size: 0.65rem; }
+      .admin-filters { gap: 6px; margin-bottom: 15px; }
+      .admin-filter-btn { padding: 8px 12px; font-size: 0.72rem; }
+      .admin-booking { grid-template-columns: 1fr; padding: 15px; gap: 12px; }
+      .admin-booking-info h4 { font-size: 0.9rem; }
+      .admin-booking-info p { font-size: 0.8rem; }
+      .admin-booking-actions { flex-direction: row; flex-wrap: wrap; }
+      .admin-btn { padding: 10px 14px; font-size: 0.75rem; flex: 1; min-width: 80px; text-align: center; }
+      .admin-login { margin: 60px auto; padding: 30px 20px; }
+      .admin-close { width: 40px; height: 40px; font-size: 1.4rem; }
+    }
+
     /* ===== FLOATING WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
@@ -2276,25 +2489,25 @@
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-number">01</div>
-          <div class="step-icon">&#128197;</div>
+          <div class="step-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="4" width="32" height="6" rx="3" fill="#00b8d4" opacity="0.15"/><rect x="6" y="10" width="36" height="32" rx="4" stroke="#00b8d4" stroke-width="1.8"/><line x1="6" y1="18" x2="42" y2="18" stroke="#00b8d4" stroke-width="1.5"/><rect x="14" y="6" width="2" height="8" rx="1" fill="#00b8d4"/><rect x="32" y="6" width="2" height="8" rx="1" fill="#00b8d4"/><rect x="12" y="22" width="6" height="5" rx="1" fill="#7c4dff" opacity="0.2"/><rect x="21" y="22" width="6" height="5" rx="1" fill="#7c4dff" opacity="0.2"/><rect x="30" y="22" width="6" height="5" rx="1" fill="#7c4dff" opacity="0.2"/><rect x="12" y="30" width="6" height="5" rx="1" fill="#7c4dff" opacity="0.2"/><rect x="21" y="30" width="6" height="5" rx="1.5" fill="#00e676" opacity="0.4" stroke="#00e676" stroke-width="1"/><path d="M23 32.5l1.5 1.5 3-3" stroke="#00e676" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Agende o Aluguel de VR</h3>
           <p>Escolha a data, horário e pacote. Confirme com um sinal de R$30 via PIX e pronto!</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">02</div>
-          <div class="step-icon">&#128663;</div>
+          <div class="step-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4C16 4 10 10 10 18c0 10 14 26 14 26s14-16 14-26c0-8-6-14-14-14z" stroke="#00b8d4" stroke-width="1.8" fill="#00b8d4" fill-opacity="0.06"/><circle cx="24" cy="18" r="6" stroke="#7c4dff" stroke-width="1.5"/><circle cx="24" cy="18" r="2" fill="#00e676"/><path d="M6 34c4-2 8 1 12 0s8-3 12-1 8 2 12 0" stroke="#00b8d4" stroke-width="1" opacity="0.25" stroke-linecap="round"/><path d="M6 38c4-2 8 1 12 0s8-3 12-1 8 2 12 0" stroke="#00b8d4" stroke-width="0.8" opacity="0.15" stroke-linecap="round"/></svg></div>
           <h3>VR a Domicílio</h3>
           <p>Nossa equipe leva os equipamentos Oculus Quest até sua casa em Salvador ou Lauro de Freitas.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">03</div>
-          <div class="step-icon">&#127918;</div>
+          <div class="step-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M8 24c0-9 6-14 16-14s16 5 16 14-6 12-16 12S8 33 8 24z" stroke="#00b8d4" stroke-width="1.8"/><ellipse cx="18" cy="23" rx="6" ry="5.5" stroke="#00b8d4" stroke-width="1.5"/><ellipse cx="30" cy="23" rx="6" ry="5.5" stroke="#7c4dff" stroke-width="1.5"/><ellipse cx="18" cy="23" rx="3.5" ry="3" fill="#00b8d4" opacity="0.08"/><ellipse cx="30" cy="23" rx="3.5" ry="3" fill="#7c4dff" opacity="0.08"/><path d="M8 21Q3 21 2 24Q3 27 8 27" stroke="#00b8d4" stroke-width="1.2" opacity="0.4" fill="none"/><path d="M40 21Q45 21 46 24Q45 27 40 27" stroke="#7c4dff" stroke-width="1.2" opacity="0.4" fill="none"/><path d="M18 10Q24 6 30 10" stroke="#00b8d4" stroke-width="1" opacity="0.3" fill="none"/><circle cx="10" cy="40" r="1.5" fill="#00b8d4" opacity="0.3"/><path d="M10 40l5-3" stroke="#00b8d4" stroke-width="0.8" opacity="0.3"/><circle cx="38" cy="40" r="1.5" fill="#7c4dff" opacity="0.3"/><path d="M38 40l-5-3" stroke="#7c4dff" stroke-width="0.8" opacity="0.3"/><path d="M15 37h18" stroke="#00e676" stroke-width="1" opacity="0.3" stroke-dasharray="2 2"/><circle cx="24" cy="42" r="1" fill="#00e676" opacity="0.4"/></svg></div>
           <h3>Montagem do Equipamento VR</h3>
           <p>Configuramos os óculos de realidade virtual Oculus Quest no espaço disponível da sua casa.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">04</div>
-          <div class="step-icon">&#127881;</div>
+          <div class="step-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M14 16c0-6 4-9 10-9s10 3 10 9-4 8-10 8-10-2-10-8z" stroke="#00b8d4" stroke-width="1.5" opacity="0.5"/><ellipse cx="20" cy="15" rx="4" ry="3.5" stroke="#00b8d4" stroke-width="1" opacity="0.4"/><ellipse cx="28" cy="15" rx="4" ry="3.5" stroke="#7c4dff" stroke-width="1" opacity="0.4"/><circle cx="10" cy="30" r="7" stroke="#00b8d4" stroke-width="1.2" opacity="0.2"/><circle cx="10" cy="30" r="3" fill="#00b8d4" opacity="0.08"/><circle cx="24" cy="32" r="8" stroke="#00e676" stroke-width="1.5"/><circle cx="24" cy="32" r="4" fill="#00e676" opacity="0.1"/><path d="M22 30v5l4-2.5z" fill="#00e676" opacity="0.6"/><circle cx="38" cy="30" r="7" stroke="#7c4dff" stroke-width="1.2" opacity="0.2"/><circle cx="38" cy="30" r="3" fill="#7c4dff" opacity="0.08"/><path d="M5 42c3-2 6 0 9-1s6-2 9 0 6 1 9-1 6 0 9 1" stroke="#00b8d4" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/></svg></div>
           <h3>Diversão em Realidade Virtual!</h3>
           <p>Acompanhamos toda a sessão de jogos VR, auxiliamos com as experiências e garantimos entretenimento virtual para todos.</p>
         </div>
@@ -2310,7 +2523,7 @@
       <div class="galeria-grid">
         <div class="galeria-item fx-neon-glow reveal">
           <img src="img/people-vr-reaction.jpg" alt="Duas pessoas colocando headset Meta Quest 2 branco juntas em sessão de realidade virtual" loading="eager" fetchpriority="high" decoding="async" width="640" height="427">
-          <div class="galeria-caption"><strong>DIVERSÃO EM DUPLA</strong>Até 2 headsets simultâneos — a diversão multiplica!</div>
+          <div class="galeria-caption"><strong>DIVERSÃO EM DUPLA</strong>Adicione o 2° óculos por +R$40 e joguem juntos!</div>
         </div>
         <div class="galeria-item fx-duotone reveal">
           <img src="img/people-vr-party.jpg" alt="Duas pessoas jogando com headset Quest 2 branco sob iluminação neon em evento VR" loading="lazy" decoding="async" width="640" height="427">
@@ -2543,10 +2756,10 @@
           <div class="pacote-price-detail">Ideal para conhecer a experiência VR pela primeira vez</div>
           <ul class="pacote-features">
             <li>1 hora de imersão total</li>
-            <li>Até 2 Oculus Quest</li>
+            <li>1 Oculus Quest incluso</li>
+            <li>+R$40 pelo 2° óculos</li>
             <li>Jogos escolhidos para seu perfil</li>
             <li>Monitor profissional presente</li>
-            <li>Montagem e desmontagem inclusa</li>
             <li>Deslocamento incluso</li>
           </ul>
           <a href="#agendamento" class="pacote-btn">Agendar 1h</a>
@@ -2562,10 +2775,10 @@
           <div class="pacote-price-detail">O tempo ideal para curtir com amigos e família!</div>
           <ul class="pacote-features">
             <li>2 horas de diversão garantida</li>
-            <li>Até 2 Oculus Quest</li>
+            <li>1 Oculus Quest incluso</li>
+            <li>+R$40 pelo 2° óculos</li>
             <li>Rotação de jogos variados</li>
             <li>Monitor profissional presente</li>
-            <li>Montagem e desmontagem inclusa</li>
             <li>Deslocamento incluso</li>
           </ul>
           <a href="#agendamento" class="pacote-btn">Agendar 2h</a>
@@ -2581,9 +2794,9 @@
           <div class="pacote-price-detail">A atração principal da festa! VR para todos os convidados.</div>
           <ul class="pacote-features">
             <li>3 horas de festa VR completa</li>
-            <li>Até 2 headsets Oculus Quest</li>
+            <li>1 Oculus Quest incluso</li>
+            <li>+R$40 pelo 2° óculos</li>
             <li>Monitor dedicado na festa</li>
-            <li>Coordenação com sua programação</li>
             <li>Rotação de jogos para todos</li>
             <li>Deslocamento incluso</li>
           </ul>
@@ -2599,6 +2812,7 @@
         <div class="incluso-item"><span class="icon">&#128166;</span> Higienização completa entre cada usuário</div>
         <div class="incluso-item"><span class="icon">&#127918;</span> +8 jogos para todos os públicos e idades</div>
         <div class="incluso-item"><span class="icon">&#9201;</span> Hora adicional: apenas R$40 em qualquer pacote</div>
+        <div class="incluso-item"><span class="icon">&#127909;</span> 2° óculos VR: +R$40 (jogam ao mesmo tempo!)</div>
       </div>
       <p class="incluso-nota reveal">Preços de lançamento por tempo limitado. Sem taxa de deslocamento, sem custo escondido. <strong>Sinal de R$30 via PIX para confirmar o agendamento</strong> (descontado do valor total). O restante é pago no dia. (<a href="#termos">ver termos</a>)</p>
     </div>
@@ -2669,6 +2883,14 @@
             </div>
           </div>
           <div class="error-msg" id="errorPackage">Escolha um pacote</div>
+
+          <!-- Extra headset option -->
+          <div id="extraHeadsetOption" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(0,184,212,0.06);border:1px solid rgba(0,184,212,0.2);border-radius:10px;cursor:pointer;transition:all 0.3s;user-select:none;">
+            <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:0.9rem;">
+              <input type="checkbox" id="extraHeadset" style="width:20px;height:20px;accent-color:#00b8d4;cursor:pointer;">
+              <span><strong style="color:#00b8d4;">+1 Óculos VR</strong> — Adicionar 2° Oculus Quest por <strong style="color:#00e676;">+R$40</strong><br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Joguem juntos ao mesmo tempo! Ideal para duplas e festas.</span></span>
+            </label>
+          </div>
         </div>
 
         <!-- Contact details -->
@@ -2851,7 +3073,7 @@
   <section class="seo-content">
     <h2>Aluguel de Realidade Virtual a Domicílio em Salvador e Lauro de Freitas - VR Experience</h2>
     <p>
-      A VR Experience é a principal empresa de aluguel de óculos de realidade virtual a domicílio em Salvador e Lauro de Freitas, Bahia. Oferecemos serviços de entretenimento virtual para festas de aniversário, eventos corporativos, confraternizações e sessões avulsas em família. Nosso serviço de VR a domicílio utiliza equipamentos profissionais Oculus Quest, permitindo que até 2 pessoas joguem simultaneamente com total imersão. Atendemos toda a região metropolitana de Salvador, incluindo bairros como Pituba, Barra, Ondina, Itapuã, Stella Maris, Caminho das Árvores, Paralela e Lauro de Freitas. Nossos pacotes de lançamento incluem a Sessão Express de realidade virtual por apenas R$70 (1 hora), o Combo Diversão por R$120 (2 horas) e o Pacote Aniversário VR por R$160, com 3 horas completas de diversão, monitor dedicado e rotação de jogos para todos os convidados. Hora adicional por apenas R$40. Todos os pacotes incluem deslocamento, montagem, configuração, higienização e monitor profissional — sem custos escondidos. Entre os jogos mais populares estão Beat Saber, Superhot VR, Job Simulator, Fruit Ninja VR, Acron Attack of the Squirrels e Richies Plank Experience. A experiência de realidade virtual em casa é ideal para festas infantis, aniversários de crianças e adolescentes, reuniões em família e eventos de team building. Agende agora pelo WhatsApp e leve a diversão de outro universo para dentro da sua casa. VR Experience - a realidade virtual vai até você em Salvador, Bahia.
+      A VR Experience é a principal empresa de aluguel de óculos de realidade virtual a domicílio em Salvador e Lauro de Freitas, Bahia. Oferecemos serviços de entretenimento virtual para festas de aniversário, eventos corporativos, confraternizações e sessões avulsas em família. Nosso serviço de VR a domicílio utiliza equipamentos profissionais Oculus Quest, com 1 Oculus Quest incluso em cada pacote e opção de adicionar o 2° óculos por +R$40 para jogar simultaneamente. Atendemos toda a região metropolitana de Salvador, incluindo bairros como Pituba, Barra, Ondina, Itapuã, Stella Maris, Caminho das Árvores, Paralela e Lauro de Freitas. Nossos pacotes de lançamento incluem a Sessão Express de realidade virtual por apenas R$70 (1 hora), o Combo Diversão por R$120 (2 horas) e o Pacote Aniversário VR por R$160, com 3 horas completas de diversão, monitor dedicado e rotação de jogos para todos os convidados. Hora adicional por apenas R$40. Todos os pacotes incluem deslocamento, montagem, configuração, higienização e monitor profissional — sem custos escondidos. Entre os jogos mais populares estão Beat Saber, Superhot VR, Job Simulator, Fruit Ninja VR, Acron Attack of the Squirrels e Richies Plank Experience. A experiência de realidade virtual em casa é ideal para festas infantis, aniversários de crianças e adolescentes, reuniões em família e eventos de team building. Agende agora pelo WhatsApp e leve a diversão de outro universo para dentro da sua casa. VR Experience - a realidade virtual vai até você em Salvador, Bahia.
     </p>
   </section>
 
@@ -2879,9 +3101,9 @@
               </li>
               <li>As modalidades de serviço disponíveis são (preços de lançamento):
                 <ul>
-                  <li><strong>Sessão Express:</strong> R$ 70,00 por 1 hora, com até 2 óculos de realidade virtual;</li>
-                  <li><strong>Combo Diversão:</strong> R$ 120,00 por 2 horas, com até 2 óculos de realidade virtual;</li>
-                  <li><strong>Pacote Aniversário:</strong> R$ 160,00 por 3 horas, com até 2 óculos de realidade virtual;</li>
+                  <li><strong>Sessão Express:</strong> R$ 70,00 por 1 hora, com 1 óculos de realidade virtual (2° óculos: +R$40);</li>
+                  <li><strong>Combo Diversão:</strong> R$ 120,00 por 2 horas, com 1 óculos de realidade virtual (2° óculos: +R$40);</li>
+                  <li><strong>Pacote Aniversário:</strong> R$ 160,00 por 3 horas, com 1 óculos de realidade virtual (2° óculos: +R$40);</li>
                   <li><strong>Hora adicional:</strong> R$ 40,00 em qualquer pacote.</li>
                 </ul>
               </li>
@@ -3071,6 +3293,7 @@
         <span>&copy; 2026 VR Experience. Todos os direitos reservados.</span>
         <a href="termos.html" style="color:#00b8d4; transition: color 0.3s;" onmouseover="this.style.color='#00e5ff'" onmouseout="this.style.color='#00b8d4'">Termos de Uso e Responsabilidade</a>
         <span style="color:#8b93b0;">Desenvolvido por <a href="https://instagram.com/caiosales_ecom" target="_blank" rel="noopener noreferrer" style="color:#00b8d4; transition: color 0.3s;" onmouseover="this.style.color='#00e5ff'" onmouseout="this.style.color='#00b8d4'">Caio Sales</a></span>
+        <a href="#" id="adminTrigger" style="color:rgba(255,255,255,0.08);font-size:1.2rem;text-decoration:none;user-select:none;display:inline-block;padding:12px 18px;margin:-12px -18px;-webkit-tap-highlight-color:transparent;">&#9881;</a>
       </div>
     </div>
   </footer>
@@ -3398,6 +3621,9 @@
           bookingSubmit.classList.add('visible');
           updateStepIndicators(4);
 
+          // Show extra headset option
+          document.getElementById('extraHeadsetOption').style.display = 'block';
+
           // Show hours only for avulso
           hoursGroup.style.display = 'none';
           checkForm();
@@ -3444,9 +3670,63 @@
       nameInput.addEventListener('input', function() { errorName.classList.remove('visible'); checkForm(); });
       phoneInput.addEventListener('input', function() { errorPhone.classList.remove('visible'); checkForm(); });
 
+      // Anti-spam system
+      const SPAM_KEY = 'vr_antispam';
+      const MAX_BOOKINGS_PER_DAY = 3;
+      const COOLDOWN_MS = 60000; // 1 min between bookings
+
+      function getSpamData() {
+        const raw = localStorage.getItem(SPAM_KEY);
+        if (!raw) return { bookings: [], lastSubmit: 0 };
+        const d = JSON.parse(raw);
+        const today = new Date().toDateString();
+        d.bookings = (d.bookings || []).filter(ts => new Date(ts).toDateString() === today);
+        return d;
+      }
+      function saveSpamData(d) { localStorage.setItem(SPAM_KEY, JSON.stringify(d)); }
+
+      function checkSpam() {
+        const d = getSpamData();
+        const now = Date.now();
+        if (now - d.lastSubmit < COOLDOWN_MS) {
+          const secs = Math.ceil((COOLDOWN_MS - (now - d.lastSubmit)) / 1000);
+          return `Aguarde ${secs}s antes de agendar novamente.`;
+        }
+        if (d.bookings.length >= MAX_BOOKINGS_PER_DAY) {
+          return 'Limite de agendamentos atingido hoje (max ' + MAX_BOOKINGS_PER_DAY + '). Tente novamente amanha.';
+        }
+        return null;
+      }
+
+      function registerSubmit() {
+        const d = getSpamData();
+        d.lastSubmit = Date.now();
+        d.bookings.push(Date.now());
+        saveSpamData(d);
+      }
+
+      // Duplicate phone+date check
+      function isDuplicate(phone, dateStr, period) {
+        const bookings = JSON.parse(localStorage.getItem('vr_bookings') || '[]');
+        const cleanPhone = phone.replace(/\D/g, '');
+        return bookings.some(b =>
+          b.phone && b.phone.replace(/\D/g, '') === cleanPhone &&
+          b.date === dateStr &&
+          b.period === period &&
+          b.status !== 'cancelado'
+        );
+      }
+
       // Submit -> WhatsApp redirect
       bookingSubmit.addEventListener('click', () => {
         if (!validateAndShowErrors()) return;
+
+        // Anti-spam check
+        const spamMsg = checkSpam();
+        if (spamMsg) {
+          alert(spamMsg);
+          return;
+        }
 
         // Collect booking data
         const dateStr = selectedDate.toLocaleDateString('pt-BR');
@@ -3458,13 +3738,42 @@
         const hours = hoursMap[selectedPackage] || document.getElementById('bookingHours').value;
         const name = nameInput.value.trim();
         const phone = phoneInput.value.trim();
+        const extraHeadset = document.getElementById('extraHeadset').checked;
+
+        // Duplicate check
+        if (isDuplicate(phone, dateStr, periodLabel)) {
+          alert('Voce ja tem um agendamento para esta data e horario. Caso precise alterar, entre em contato pelo WhatsApp.');
+          return;
+        }
+
+        // Register submit for anti-spam
+        registerSubmit();
+
+        // Save booking to admin panel
+        if (window.vrSaveBooking) {
+          window.vrSaveBooking({
+            name: name,
+            phone: phone,
+            date: dateStr,
+            period: periodLabel,
+            package: packageLabel,
+            hours: hours,
+            extraHeadset: extraHeadset
+          });
+        }
 
         // Build WhatsApp message
-        const message = `Olá! Gostaria de agendar uma experiência VR:\n\n📅 Data: ${dateStr}\n🕐 Período: ${periodLabel}\n🎮 Pacote: ${packageLabel}\n⏰ Duração: ${hours}h\n👤 Nome: ${name}\n📱 Telefone: ${phone}\n\nAguardo confirmação!`;
+        const extraLine = extraHeadset ? '\n🥽 2° Óculos VR: Sim (+R$40)' : '';
+        const message = `Olá! Gostaria de agendar uma experiência VR:\n\n📅 Data: ${dateStr}\n🕐 Período: ${periodLabel}\n🎮 Pacote: ${packageLabel}\n⏰ Duração: ${hours}h${extraLine}\n👤 Nome: ${name}\n📱 Telefone: ${phone}\n\nAguardo confirmação!`;
 
         // Open WhatsApp in new tab
         const waUrl = 'https://wa.me/5571996305734?text=' + encodeURIComponent(message);
         window.open(waUrl, '_blank');
+
+        // Disable button permanently for this session
+        bookingSubmit.disabled = true;
+        bookingSubmit.textContent = 'Agendamento Enviado';
+        bookingSubmit.style.opacity = '0.5';
 
         // Show success message
         document.getElementById('calendarWrapper').style.display = 'none';
@@ -3538,6 +3847,177 @@
         btn.setAttribute('aria-expanded', !isOpen);
       });
     });
+  </script>
+
+  <!-- ADMIN PANEL -->
+  <div class="admin-overlay" id="adminOverlay">
+    <div id="adminContent"></div>
+  </div>
+
+  <script>
+  (() => {
+    const ADMIN_PASS = 'vr2025';
+    const STORAGE_KEY = 'vr_bookings';
+    const overlay = document.getElementById('adminOverlay');
+    const content = document.getElementById('adminContent');
+
+    function getBookings() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    }
+    function saveBookings(b) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(b));
+    }
+
+    // Save booking when user submits form
+    window.vrSaveBooking = function(data) {
+      const bookings = getBookings();
+      bookings.push({
+        id: Date.now(),
+        ...data,
+        status: 'pendente',
+        createdAt: new Date().toISOString()
+      });
+      saveBookings(bookings);
+    };
+
+    // Open admin: click gear icon in footer
+    const adminTrigger = document.getElementById('adminTrigger');
+    if (adminTrigger) {
+      adminTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openAdmin();
+      });
+    }
+
+    function openAdmin() {
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+      if (sessionStorage.getItem('vr_admin_auth')) {
+        renderDashboard();
+      } else {
+        renderLogin();
+      }
+    }
+
+    function closeAdmin() {
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    function renderLogin() {
+      content.innerHTML = `
+        <div class="admin-login">
+          <h2>PAINEL ADMIN</h2>
+          <input type="password" id="adminPass" placeholder="Senha de acesso" autocomplete="off">
+          <button id="adminLoginBtn">Entrar</button>
+          <p class="error" id="adminError">Senha incorreta</p>
+        </div>`;
+      const inp = document.getElementById('adminPass');
+      const btn = document.getElementById('adminLoginBtn');
+      const err = document.getElementById('adminError');
+      function tryLogin() {
+        if (inp.value === ADMIN_PASS) {
+          sessionStorage.setItem('vr_admin_auth', '1');
+          renderDashboard();
+        } else {
+          err.style.display = 'block';
+          inp.value = '';
+          inp.focus();
+        }
+      }
+      btn.addEventListener('click', tryLogin);
+      inp.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+      setTimeout(() => inp.focus(), 100);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeAdmin(); }, { once: true });
+    }
+
+    function renderDashboard(filter) {
+      filter = filter || 'todos';
+      const bookings = getBookings();
+      const pending = bookings.filter(b => b.status === 'pendente').length;
+      const confirmed = bookings.filter(b => b.status === 'confirmado').length;
+      const cancelled = bookings.filter(b => b.status === 'cancelado').length;
+
+      let filtered = bookings;
+      if (filter !== 'todos') filtered = bookings.filter(b => b.status === filter);
+      filtered.sort((a, b) => b.id - a.id);
+
+      let bookingsHTML = '';
+      if (filtered.length === 0) {
+        bookingsHTML = '<div class="admin-empty">Nenhum agendamento encontrado</div>';
+      } else {
+        filtered.forEach(b => {
+          const statusClass = 'status-' + b.status;
+          const statusLabel = b.status.charAt(0).toUpperCase() + b.status.slice(1);
+          const actions = [];
+          if (b.status === 'pendente') {
+            actions.push(`<button class="admin-btn admin-btn-confirm" onclick="window.vrAdminAction(${b.id},'confirmado')">Confirmar</button>`);
+            actions.push(`<button class="admin-btn admin-btn-cancel" onclick="window.vrAdminAction(${b.id},'cancelado')">Cancelar</button>`);
+          }
+          if (b.status === 'confirmado') {
+            actions.push(`<button class="admin-btn admin-btn-cancel" onclick="window.vrAdminAction(${b.id},'cancelado')">Cancelar</button>`);
+          }
+          if (b.phone) {
+            const waMsg = encodeURIComponent('Ola ' + b.name + '! Sobre seu agendamento VR Experience do dia ' + b.date + ' (' + b.period + ') - ' + (b.status === 'confirmado' ? 'sua reserva esta CONFIRMADA! Segue a chave PIX para o sinal de R$30...' : 'Entraremos em contato em breve para confirmar.'));
+            actions.push(`<a class="admin-btn admin-btn-whatsapp" href="https://wa.me/55${b.phone.replace(/\\D/g,'')}?text=${waMsg}" target="_blank" style="text-decoration:none;text-align:center;">WhatsApp</a>`);
+          }
+          actions.push(`<button class="admin-btn admin-btn-delete" onclick="window.vrAdminDelete(${b.id})">Excluir</button>`);
+
+          bookingsHTML += `
+            <div class="admin-booking ${statusClass}">
+              <div class="admin-booking-info">
+                <h4>${b.name || 'Sem nome'} <span style="font-size:0.7rem;color:rgba(255,255,255,0.3);font-weight:400;margin-left:8px;">${statusLabel}</span></h4>
+                <p>
+                  <span class="booking-date">${b.date || '—'}</span> &bull; ${b.period || '—'}<br>
+                  ${b.package || '—'} &bull; ${b.hours || '—'}h ${b.extraHeadset ? '&bull; <span style="color:#00e676;font-weight:600;">+2° óculos</span>' : ''}<br>
+                  Tel: ${b.phone || '—'}
+                </p>
+              </div>
+              <div class="admin-booking-actions">${actions.join('')}</div>
+            </div>`;
+        });
+      }
+
+      content.innerHTML = `
+        <div class="admin-panel">
+          <div class="admin-header">
+            <h2>AGENDAMENTOS</h2>
+            <button class="admin-close" id="adminCloseBtn">&times;</button>
+          </div>
+          <div class="admin-stats">
+            <div class="admin-stat stat-total"><div class="num">${bookings.length}</div><div class="lbl">Total</div></div>
+            <div class="admin-stat stat-pending"><div class="num">${pending}</div><div class="lbl">Pendentes</div></div>
+            <div class="admin-stat stat-confirmed"><div class="num">${confirmed}</div><div class="lbl">Confirmados</div></div>
+            <div class="admin-stat stat-cancelled"><div class="num">${cancelled}</div><div class="lbl">Cancelados</div></div>
+          </div>
+          <div class="admin-filters">
+            <button class="admin-filter-btn ${filter==='todos'?'active':''}" data-filter="todos">Todos</button>
+            <button class="admin-filter-btn ${filter==='pendente'?'active':''}" data-filter="pendente">Pendentes</button>
+            <button class="admin-filter-btn ${filter==='confirmado'?'active':''}" data-filter="confirmado">Confirmados</button>
+            <button class="admin-filter-btn ${filter==='cancelado'?'active':''}" data-filter="cancelado">Cancelados</button>
+          </div>
+          <div id="adminBookingsList">${bookingsHTML}</div>
+        </div>`;
+
+      document.getElementById('adminCloseBtn').addEventListener('click', closeAdmin);
+      document.querySelectorAll('.admin-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => renderDashboard(btn.dataset.filter));
+      });
+    }
+
+    window.vrAdminAction = function(id, newStatus) {
+      const bookings = getBookings();
+      const b = bookings.find(x => x.id === id);
+      if (b) { b.status = newStatus; saveBookings(bookings); renderDashboard(); }
+    };
+
+    window.vrAdminDelete = function(id) {
+      if (!confirm('Excluir este agendamento?')) return;
+      const bookings = getBookings().filter(x => x.id !== id);
+      saveBookings(bookings);
+      renderDashboard();
+    };
+  })();
   </script>
 </body>
 </html>

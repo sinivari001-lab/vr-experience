@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>VR Experience - Pitch Investidor</title>
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #050510; color: #fff; }
+  .slide {
+    width: 1920px; height: 1080px;
+    padding: 100px 120px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    page-break-after: always;
+    background: #050510;
+  }
+  .slide::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,229,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(255,0,255,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .slide-number { position: absolute; bottom: 40px; right: 60px; font-size: 14px; color: rgba(255,255,255,0.3); font-weight: 600; letter-spacing: 2px; }
+  .logo-top { position: absolute; top: 36px; right: 60px; font-size: 13px; font-weight: 800; letter-spacing: 3px; background: linear-gradient(135deg, #00e5ff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.5; }
+  h1 { font-size: 72px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; position: relative; z-index: 1; }
+  h1 .accent { color: #00e5ff; }
+  h1 .accent-mag { color: #ff00ff; }
+  h2 { font-size: 48px; font-weight: 700; margin-bottom: 40px; position: relative; z-index: 1; }
+  h2 .accent { color: #00e5ff; }
+  h3 { font-size: 32px; font-weight: 600; margin-bottom: 16px; color: #00e5ff; }
+  p { font-size: 28px; line-height: 1.6; color: rgba(255,255,255,0.8); position: relative; z-index: 1; }
+  .subtitle { font-size: 32px; color: rgba(255,255,255,0.6); margin-top: 16px; }
+  .tagline { font-size: 24px; color: #00e5ff; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 1; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; position: relative; z-index: 1; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; position: relative; z-index: 1; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,255,0.2); border-radius: 16px; padding: 40px; }
+  .card.highlight { border-color: #ff00ff; background: rgba(255,0,255,0.06); }
+  .card.green { border-color: #22c55e; background: rgba(34,197,94,0.06); }
+  .stat { font-size: 64px; font-weight: 800; color: #00e5ff; line-height: 1; }
+  .stat-label { font-size: 20px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  .stat-sm { font-size: 48px; }
+  .stat-mag { color: #ff00ff; }
+  .stat-green { color: #22c55e; }
+  ul { list-style: none; position: relative; z-index: 1; }
+  ul li { font-size: 26px; line-height: 1.8; color: rgba(255,255,255,0.85); padding-left: 32px; position: relative; }
+  ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 12px; height: 12px; border-radius: 50%; background: #00e5ff; }
+  .cover-center { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .cover-logo { font-size: 96px; font-weight: 800; letter-spacing: 8px; background: linear-gradient(135deg, #00e5ff, #8b5cf6, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+  .divider { width: 80px; height: 4px; background: linear-gradient(90deg, #00e5ff, #ff00ff); border-radius: 2px; margin: 24px 0; }
+  .cta-box { background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(255,0,255,0.15)); border: 2px solid #00e5ff; border-radius: 20px; padding: 48px; text-align: center; position: relative; z-index: 1; }
+  table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
+  th { text-align: left; font-size: 18px; color: #00e5ff; text-transform: uppercase; letter-spacing: 2px; padding: 16px 20px; border-bottom: 2px solid rgba(0,229,255,0.3); }
+  td { font-size: 24px; padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+  td.val { color: #00e5ff; font-weight: 700; }
+  td.val-green { color: #22c55e; font-weight: 700; }
+  .bar-container { background: rgba(255,255,255,0.06); border-radius: 8px; height: 24px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 8px; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Cover -->
+<div class="slide cover-center">
+  <div class="cover-logo">VR EXPERIENCE</div>
+  <h1>Investimento em <span class="accent">Entretenimento VR</span></h1>
+  <p class="subtitle">Oportunidade no mercado de realidade virtual a domicílio — Salvador, BA</p>
+  <div class="divider" style="margin:24px auto"></div>
+  <p style="font-size:22px; color:rgba(255,255,255,0.4);">Deck para Investidores · 2026</p>
+  <div class="slide-number">01 / 13</div>
+</div>
+
+<!-- Slide 2: Oportunidade de Mercado -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Oportunidade</div>
+  <h2>O mercado de <span class="accent">VR está explodindo</span></h2>
+  <div class="divider"></div>
+  <div class="grid-3" style="margin-top:40px">
+    <div class="card">
+      <div class="stat">US$67B</div>
+      <div class="stat-label">Mercado global de VR em 2026</div>
+      <div style="margin-top:24px;">
+        <div class="stat stat-sm stat-green">+30%</div>
+        <div class="stat-label">crescimento anual (CAGR)</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="stat">15M</div>
+      <div class="stat-label">Meta Quest vendidos mundialmente</div>
+      <div style="margin-top:24px;">
+        <div class="stat stat-sm stat-mag">0</div>
+        <div class="stat-label">concorrentes diretos em Salvador</div>
+      </div>
+    </div>
+    <div class="card highlight">
+      <div class="stat">3.9M</div>
+      <div class="stat-label">habitantes na Grande Salvador</div>
+      <div style="margin-top:24px;">
+        <div class="stat stat-sm">R$210B</div>
+        <div class="stat-label">PIB da região metropolitana</div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:40px; font-size:22px; color:rgba(255,255,255,0.4);">Fontes: Statista 2025, IBGE 2024, Meta Platforms Inc.</p>
+  <div class="slide-number">02 / 13</div>
+</div>
+
+<!-- Slide 3: Modelo de Negócio + Estratégia de Preço -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Estratégia de preço</div>
+  <h2>Duas fases: <span class="accent">Lançamento</span> → <span class="accent" style="color:#ff00ff;">Mercado</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:24px">
+    <div>
+      <table>
+        <thead><tr><th>Pacote</th><th>Lançamento</th><th>Futuro</th><th>Concorrência</th></tr></thead>
+        <tbody>
+          <tr><td>1h — Express</td><td class="val">R$70</td><td class="val" style="color:#ff00ff;">R$150</td><td style="color:rgba(255,255,255,0.4);">~R$200</td></tr>
+          <tr><td>2h — Combo</td><td class="val">R$120</td><td class="val" style="color:#ff00ff;">R$280</td><td style="color:rgba(255,255,255,0.4);">~R$400</td></tr>
+          <tr><td>3h — Aniversário</td><td class="val">R$160</td><td class="val" style="color:#ff00ff;">R$450</td><td style="color:rgba(255,255,255,0.4);">R$590</td></tr>
+          <tr><td>Hora Adicional</td><td class="val">R$40</td><td class="val" style="color:#ff00ff;">R$100</td><td style="color:rgba(255,255,255,0.4);">~R$150</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:20px; color:rgba(255,255,255,0.4); margin-top:16px;">Preços futuros ~25% abaixo da concorrência — vantagem competitiva mantida</p>
+    </div>
+    <div>
+      <div class="card green" style="margin-bottom:20px;">
+        <h3 style="color:#22c55e;">Margem bruta (com Uber)</h3>
+        <table style="margin-top:8px;">
+          <tr><td>Custo variável/sessão</td><td class="val" style="color:#ff6b6b;">~R$58</td></tr>
+          <tr><td>Margem (lançamento)</td><td class="val-green">~52%</td></tr>
+          <tr><td style="font-weight:700;">Margem (preço futuro)</td><td class="val-green" style="font-size:28px;">~83%</td></tr>
+        </table>
+      </div>
+      <div class="card highlight" style="text-align:center;">
+        <p style="font-size:18px; color:rgba(255,255,255,0.5);">Aumento de ticket médio</p>
+        <div class="stat stat-mag" style="font-size:56px;">+180%</div>
+        <div class="stat-label">de R$120 → R$340 (ticket médio)</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">03 / 13</div>
+</div>
+
+<!-- Slide 4: Projeção de Receita -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Projeção financeira</div>
+  <h2>Receita <span class="accent">projetada</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:24px">
+    <div>
+      <div class="card" style="margin-bottom:20px;">
+        <h3>Ano 1 — Preço de lançamento</h3>
+        <table style="margin-top:12px;">
+          <thead><tr><th>Item</th><th>Mensal</th></tr></thead>
+          <tbody>
+            <tr><td>Receita (20 sessões × R$120)</td><td class="val">R$2.400</td></tr>
+            <tr><td>Custo variável (20 × R$58)</td><td class="val" style="color:#ff6b6b;">-R$1.160</td></tr>
+            <tr><td>Custos fixos</td><td class="val" style="color:#ff6b6b;">-R$644</td></tr>
+            <tr style="border-top:2px solid rgba(0,229,255,0.3);">
+              <td style="font-weight:700;">Lucro líquido/mês</td>
+              <td class="val-green" style="font-size:24px;">R$596</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top:12px; text-align:center;">
+          <div class="stat" style="font-size:40px;">R$7.152</div>
+          <div class="stat-label">lucro líquido anual (cenário realista)</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card highlight" style="margin-bottom:20px;">
+        <h3 style="color:#ff00ff;">Ano 2 — Preço de mercado + funcionário</h3>
+        <table style="margin-top:12px;">
+          <thead><tr><th>Item</th><th>Mensal</th></tr></thead>
+          <tbody>
+            <tr><td>Receita (30 sessões × R$340)</td><td class="val" style="color:#ff00ff;">R$10.200</td></tr>
+            <tr><td>Custo variável (30 × R$58)</td><td class="val" style="color:#ff6b6b;">-R$1.740</td></tr>
+            <tr><td>Custos fixos (imposto ~6% = R$612)</td><td class="val" style="color:#ff6b6b;">-R$1.112</td></tr>
+            <tr><td>Funcionário (salário+encargos+VT/VR)</td><td class="val" style="color:#ff6b6b;">-R$2.350</td></tr>
+            <tr style="border-top:2px solid rgba(255,0,255,0.3);">
+              <td style="font-weight:700;">Lucro líquido/mês</td>
+              <td class="val-green" style="font-size:24px;">R$4.998</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top:12px; text-align:center;">
+          <div class="stat stat-green" style="font-size:40px;">R$59.976</div>
+          <div class="stat-label">lucro líquido anual (cenário realista)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; gap:32px; margin-top:12px; position:relative; z-index:1;">
+    <div class="card" style="flex:1; text-align:center; padding:20px;">
+      <p style="font-size:18px; color:rgba(255,255,255,0.4);">Crescimento Ano 1 → Ano 2</p>
+      <div class="stat stat-green" style="font-size:48px;">+739%</div>
+    </div>
+    <div class="card" style="flex:1; text-align:center; padding:20px;">
+      <p style="font-size:18px; color:rgba(255,255,255,0.4);">Escala Ano 2</p>
+      <ul style="font-size:18px; text-align:left; margin-top:8px;">
+        <li style="font-size:18px;">4 kits Quest + operador contratado</li>
+        <li style="font-size:18px;">Parcerias fixas com buffets e escolas</li>
+        <li style="font-size:18px;">Expansão: Feira de Santana, Camaçari</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">04 / 13</div>
+</div>
+
+<!-- Slide 5: Custos Operacionais Reais -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Custos reais</div>
+  <h2>Custos <span class="accent">operacionais</span> detalhados</h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:24px">
+    <div>
+      <div class="card" style="margin-bottom:20px;">
+        <h3>Custo variável por sessão</h3>
+        <table style="margin-top:12px;">
+          <tr><td>Uber ida + volta (média Salvador)</td><td class="val" style="color:#ff6b6b;">~R$50</td></tr>
+          <tr><td>Desgaste equipamento</td><td class="val" style="color:#ff6b6b;">~R$5</td></tr>
+          <tr><td>Higienização</td><td class="val" style="color:#ff6b6b;">~R$3</td></tr>
+          <tr style="border-top:2px solid rgba(255,107,107,0.3);">
+            <td style="font-weight:700;">Total variável/sessão</td>
+            <td class="val" style="color:#ff6b6b; font-size:28px;">~R$58</td>
+          </tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Margem por sessão (lançamento)</h3>
+        <table style="margin-top:12px;">
+          <tr><td>Ticket médio</td><td class="val">R$120</td></tr>
+          <tr><td>Custo variável</td><td class="val" style="color:#ff6b6b;">-R$58</td></tr>
+          <tr style="border-top:2px solid rgba(0,229,255,0.3);">
+            <td style="font-weight:700;">Lucro bruto/sessão</td>
+            <td class="val-green" style="font-size:28px;">R$62</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:20px;">
+        <h3 style="color:#ff00ff;">Custos fixos mensais</h3>
+        <table style="margin-top:12px;">
+          <tr><td>Contabilidade (MEI/ME)</td><td class="val" style="color:#ff6b6b;">R$200</td></tr>
+          <tr><td>Imposto Simples Nacional (~6%)</td><td class="val" style="color:#ff6b6b;">~R$144</td></tr>
+          <tr><td>Internet + celular (WhatsApp)</td><td class="val" style="color:#ff6b6b;">R$100</td></tr>
+          <tr><td>Marketing (anúncios Instagram)</td><td class="val" style="color:#ff6b6b;">R$200</td></tr>
+          <tr style="border-top:2px solid rgba(255,0,255,0.3);">
+            <td style="font-weight:700;">Total fixo/mês</td>
+            <td class="val" style="color:#ff6b6b; font-size:28px;">~R$644</td>
+          </tr>
+        </table>
+      </div>
+      <div class="card highlight" style="margin-bottom:20px;">
+        <h3 style="color:#ff00ff;">Ano 2: + Funcionário</h3>
+        <table style="margin-top:12px;">
+          <tr><td>Salário (monitor/operador)</td><td class="val" style="color:#ff6b6b;">R$1.500</td></tr>
+          <tr><td>Encargos (~30% MEI/CLT)</td><td class="val" style="color:#ff6b6b;">R$450</td></tr>
+          <tr><td>VT + VR</td><td class="val" style="color:#ff6b6b;">R$400</td></tr>
+          <tr style="border-top:2px solid rgba(255,0,255,0.3);">
+            <td style="font-weight:700;">Total funcionário/mês</td>
+            <td class="val" style="color:#ff6b6b; font-size:28px;">R$2.350</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">05 / 13</div>
+</div>
+
+<!-- Slide 6: Investimento Inicial -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Investimento</div>
+  <h2>Investimento <span class="accent">baixo</span>, retorno <span class="accent">rápido</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:32px">
+    <div>
+      <div class="card">
+        <h3>Investimento Inicial</h3>
+        <table style="margin-top:16px;">
+          <tr><td>2x Meta Quest 2 (128GB)</td><td class="val">R$2.500</td></tr>
+          <tr><td>Acessórios (straps, cases, proteções)</td><td class="val">R$600</td></tr>
+          <tr><td>Jogos e licenças</td><td class="val">R$400</td></tr>
+          <tr><td>Marketing inicial (Instagram, site)</td><td class="val">R$300</td></tr>
+          <tr><td>Capital de giro (3 meses)</td><td class="val">R$700</td></tr>
+          <tr style="border-top:2px solid rgba(0,229,255,0.3);">
+            <td style="font-weight:700; font-size:28px;">TOTAL</td>
+            <td class="val" style="font-size:36px;">R$4.500</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="card highlight" style="text-align:center; margin-bottom:24px;">
+        <p style="font-size:22px; color:rgba(255,255,255,0.5);">Payback (cenário realista)</p>
+        <div class="stat stat-mag" style="font-size:80px;">2-3</div>
+        <div class="stat-label" style="font-size:24px;">meses para recuperar investimento</div>
+      </div>
+      <div class="card green" style="text-align:center;">
+        <p style="font-size:22px; color:rgba(255,255,255,0.5);">ROI Ano 1</p>
+        <div class="stat stat-green" style="font-size:80px;">1.233%</div>
+        <div class="stat-label" style="font-size:24px;">ROI Ano 2 (lucro líquido real)</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">06 / 13</div>
+</div>
+
+<!-- Slide 6: Vantagem Competitiva -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Vantagem competitiva</div>
+  <h2><span class="accent">Primeiro</span> no mercado de Salvador</h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:40px">
+    <div>
+      <div class="card" style="margin-bottom:24px;">
+        <h3>First-mover advantage</h3>
+        <ul style="margin-top:16px;">
+          <li>Zero concorrentes diretos em Salvador</li>
+          <li>Marca registrada + presença digital</li>
+          <li>Base de clientes construída desde o início</li>
+          <li>Relacionamento com buffets e escolas</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:24px;">
+        <h3>Barreiras de entrada</h3>
+        <ul style="margin-top:16px;">
+          <li>Conhecimento técnico em VR</li>
+          <li>Curadoria de jogos por faixa etária</li>
+          <li>Processo operacional testado</li>
+          <li>Reputação e reviews acumulados</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">07 / 13</div>
+</div>
+
+<!-- Slide 7: Roadmap -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Roadmap</div>
+  <h2>Plano de <span class="accent">crescimento</span></h2>
+  <div class="divider"></div>
+  <div class="grid-4" style="margin-top:40px">
+    <div class="card" style="border-top:4px solid #00e5ff;">
+      <h3 style="font-size:20px;">Q2 2026</h3>
+      <p style="font-size:18px; color:#00e5ff; font-weight:600; margin-bottom:12px;">LANÇAMENTO</p>
+      <ul style="font-size:18px;">
+        <li style="font-size:18px;">2 headsets disponíveis (2° = +R$40)</li>
+        <li style="font-size:18px;">Site + Instagram ativos</li>
+        <li style="font-size:18px;">10-15 sessões/mês</li>
+        <li style="font-size:18px;">Salvador + Lauro</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid #8b5cf6;">
+      <h3 style="font-size:20px;">Q4 2026</h3>
+      <p style="font-size:18px; color:#8b5cf6; font-weight:600; margin-bottom:12px;">TRAÇÃO</p>
+      <ul style="font-size:18px;">
+        <li style="font-size:18px;">4 headsets</li>
+        <li style="font-size:18px;">Parcerias com buffets</li>
+        <li style="font-size:18px;">20-25 sessões/mês</li>
+        <li style="font-size:18px;">1 operador contratado</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid #ff00ff;">
+      <h3 style="font-size:20px;">2027</h3>
+      <p style="font-size:18px; color:#ff00ff; font-weight:600; margin-bottom:12px;">ESCALA</p>
+      <ul style="font-size:18px;">
+        <li style="font-size:18px;">6+ headsets (Quest 3)</li>
+        <li style="font-size:18px;">Expansão regional</li>
+        <li style="font-size:18px;">40+ sessões/mês</li>
+        <li style="font-size:18px;">Modelo franquia</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid #22c55e;">
+      <h3 style="font-size:20px;">2028</h3>
+      <p style="font-size:18px; color:#22c55e; font-weight:600; margin-bottom:12px;">DOMÍNIO</p>
+      <ul style="font-size:18px;">
+        <li style="font-size:18px;">Multi-cidade (NE)</li>
+        <li style="font-size:18px;">Espaço fixo próprio</li>
+        <li style="font-size:18px;">Eventos corporativos</li>
+        <li style="font-size:18px;">Receita R$300K+/ano</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">08 / 13</div>
+</div>
+
+<!-- Slide 8: Equipe -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Quem somos</div>
+  <h2>A <span class="accent">equipe</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:40px">
+    <div class="card highlight" style="text-align:center;">
+      <div style="width:120px; height:120px; border-radius:50%; background:linear-gradient(135deg, #00e5ff, #ff00ff); margin:0 auto 24px; display:flex; align-items:center; justify-content:center; font-size:48px; font-weight:800;">CS</div>
+      <h3>Caio Sales</h3>
+      <p style="font-size:22px; color:#ff00ff; font-weight:600;">Fundador & Operador</p>
+      <p style="font-size:20px; margin-top:16px;">Empreendedor digital com experiência em e-commerce e vendas online. Conhecimento profundo em tecnologia e experiência do cliente.</p>
+      <p style="font-size:18px; color:rgba(255,255,255,0.4); margin-top:12px;">@caiosales_ecom</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:24px;">
+        <h3>Competências-chave</h3>
+        <ul style="margin-top:16px;">
+          <li>E-commerce e vendas digitais</li>
+          <li>Marketing digital e redes sociais</li>
+          <li>Operação e logística</li>
+          <li>Tecnologia e inovação</li>
+          <li>Atendimento ao cliente</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Próximas contratações</h3>
+        <ul style="margin-top:16px;">
+          <li>Operador/Monitor VR (Q4 2026)</li>
+          <li>Social Media (Q1 2027)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">09 / 13</div>
+</div>
+
+<!-- Slide 9: Modelo de Escala -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Escalabilidade</div>
+  <h2>Como o negócio <span class="accent">escala</span></h2>
+  <div class="divider"></div>
+  <div class="grid-3" style="margin-top:40px">
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">📦</div>
+      <h3>Mais equipamentos</h3>
+      <p style="font-size:20px">Cada kit novo (R$1.500) adiciona +R$10.200/mês em receita com preço de mercado.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">🤝</div>
+      <h3>Parcerias fixas</h3>
+      <p style="font-size:20px">Buffets, escolas, empresas com contratos mensais = receita recorrente previsível.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">🗺️</div>
+      <h3>Expansão geográfica</h3>
+      <p style="font-size:20px">Modelo replicável: mesmo playbook para Feira de Santana, Camaçari, Recife.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">🏪</div>
+      <h3>Espaço fixo</h3>
+      <p style="font-size:20px">Arena VR própria em shopping/centro comercial. Receita walk-in + eventos.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">📋</div>
+      <h3>Franquia</h3>
+      <p style="font-size:20px">Licenciar o modelo operacional para outros empreendedores. Fee + royalty.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px; margin-bottom:16px;">🎓</div>
+      <h3>VR Educacional</h3>
+      <p style="font-size:20px">Pacotes para escolas: aulas imersivas de história, ciência, geografia.</p>
+    </div>
+  </div>
+  <div class="slide-number">10 / 13</div>
+</div>
+
+<!-- Slide 10: Riscos e Mitigação -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">Gestão de riscos</div>
+  <h2>Riscos e <span class="accent">mitigação</span></h2>
+  <div class="divider"></div>
+  <table style="margin-top:40px;">
+    <thead><tr><th>Risco</th><th>Probabilidade</th><th>Mitigação</th></tr></thead>
+    <tbody>
+      <tr><td>Dano ao equipamento</td><td>Média</td><td class="val-green">Termo de responsabilidade + seguro + tabela de reposição</td></tr>
+      <tr><td>Sazonalidade (baixa demanda)</td><td>Média</td><td class="val-green">Parcerias fixas + eventos corporativos + escolas</td></tr>
+      <tr><td>Concorrência</td><td>Baixa (curto prazo)</td><td class="val-green">First-mover + marca forte + base de clientes</td></tr>
+      <tr><td>Obsolescência do equipamento</td><td>Baixa</td><td class="val-green">Quest 2 ainda suportado até 2028+ | upgrade planejado</td></tr>
+      <tr><td>Regulatório</td><td>Muito baixa</td><td class="val-green">Termos em conformidade com CDC + LGPD + Código Civil</td></tr>
+    </tbody>
+  </table>
+  <div class="slide-number">11 / 13</div>
+</div>
+
+<!-- Slide 11: O que buscamos -->
+<div class="slide">
+  <div class="logo-top">VR EXPERIENCE</div>
+  <div class="tagline">O ask</div>
+  <h2>O que <span class="accent">buscamos</span></h2>
+  <div class="divider"></div>
+  <div class="grid-2" style="margin-top:40px">
+    <div class="card highlight" style="text-align:center;">
+      <p style="font-size:22px; color:rgba(255,255,255,0.5); margin-bottom:8px;">Investimento buscado</p>
+      <div class="stat stat-mag" style="font-size:80px;">R$10K</div>
+      <div class="stat-label" style="font-size:22px;">para acelerar escala no primeiro ano</div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Uso do investimento</h3>
+        <table style="margin-top:16px;">
+          <tr><td>+2 kits Quest (4 total)</td><td class="val">R$3.000</td></tr>
+          <tr><td>Marketing digital (6 meses)</td><td class="val">R$3.000</td></tr>
+          <tr><td>Operador (3 meses)</td><td class="val">R$2.500</td></tr>
+          <tr><td>Capital de giro</td><td class="val">R$1.500</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:40px; font-size:24px; color:rgba(255,255,255,0.5);">Também abertos a: parceria estratégica, mentoria, indicação de clientes corporativos</p>
+  <div class="slide-number">12 / 13</div>
+</div>
+
+<!-- Slide 12: CTA -->
+<div class="slide cover-center">
+  <div class="cta-box" style="max-width:900px;">
+    <div class="cover-logo" style="font-size:56px; margin-bottom:16px;">VR EXPERIENCE</div>
+    <h2 style="font-size:44px;">Vamos construir o futuro do<br><span class="accent">entretenimento VR</span> em Salvador?</h2>
+    <div class="divider" style="margin:24px auto"></div>
+    <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
+      <div>
+        <p style="font-size:18px; color:rgba(255,255,255,0.4);">WhatsApp</p>
+        <p style="font-size:28px; font-weight:700; color:#00e5ff;">(71) 99630-5734</p>
+      </div>
+      <div>
+        <p style="font-size:18px; color:rgba(255,255,255,0.4);">Instagram</p>
+        <p style="font-size:28px; font-weight:700; color:#ff00ff;">@vrexperience.ssa</p>
+      </div>
+      <div>
+        <p style="font-size:18px; color:rgba(255,255,255,0.4);">Fundador</p>
+        <p style="font-size:28px; font-weight:700; color:#8b5cf6;">@caiosales_ecom</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">13 / 13</div>
+</div>
+
+</body>
+</html>

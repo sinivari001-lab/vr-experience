@@ -1,0 +1,328 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;display=swap');
+      .pixel-font { font-family: 'Press Start 2P', monospace; }
+      .title-font { font-family: 'Orbitron', sans-serif; font-weight: 700; }
+    </style>
+    <filter id="retroGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="500" fill="#0a0a1a" rx="8"/>
+
+  <!-- Grid background (retro style) -->
+  <g opacity="0.08">
+    <!-- Vertical grid lines -->
+    <line x1="40" y1="0" x2="40" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="80" y1="0" x2="80" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="120" y1="0" x2="120" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="160" y1="0" x2="160" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="240" y1="0" x2="240" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="280" y1="0" x2="280" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="320" y1="0" x2="320" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <line x1="360" y1="0" x2="360" y2="500" stroke="#ff4081" stroke-width="0.5"/>
+    <!-- Horizontal grid lines -->
+    <line x1="0" y1="40" x2="400" y2="40" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="400" y2="120" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="160" x2="400" y2="160" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="240" x2="400" y2="240" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="280" x2="400" y2="280" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="320" x2="400" y2="320" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="360" x2="400" y2="360" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="400" y2="400" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="440" x2="400" y2="440" stroke="#00b8d4" stroke-width="0.5"/>
+    <line x1="0" y1="480" x2="400" y2="480" stroke="#00b8d4" stroke-width="0.5"/>
+  </g>
+
+  <!-- Pixel Art VR Headset (built from 8x8 pixel blocks) -->
+  <g transform="translate(104, 80)">
+    <!-- Each "pixel" is an 8x8 square -->
+    <!-- Row 1 - top of headset (pixels 4-19 of a 24-wide grid) -->
+    <rect x="32" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="40" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="56" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="64" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="72" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="80" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="88" y="0" width="8" height="8" fill="#00b8d4"/>
+    <rect x="96" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="104" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="120" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="128" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="136" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="144" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="152" y="0" width="8" height="8" fill="#ff4081"/>
+
+    <!-- Row 2 -->
+    <rect x="24" y="8" width="8" height="8" fill="#00b8d4"/>
+    <rect x="32" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="40" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="48" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="56" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="64" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="72" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="80" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="104" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="112" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="120" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="128" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="136" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="144" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="8" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="160" y="8" width="8" height="8" fill="#ff4081"/>
+
+    <!-- Row 3 - strap left + body + strap right -->
+    <rect x="0" y="16" width="8" height="8" fill="#00b8d4" opacity="0.6"/>
+    <rect x="8" y="16" width="8" height="8" fill="#00b8d4" opacity="0.6"/>
+    <rect x="16" y="16" width="8" height="8" fill="#00b8d4"/>
+    <rect x="24" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="32" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <!-- Left lens -->
+    <rect x="40" y="16" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="16" width="8" height="8" fill="#00b8d4"/>
+    <rect x="56" y="16" width="8" height="8" fill="#00b8d4"/>
+    <rect x="64" y="16" width="8" height="8" fill="#00b8d4"/>
+    <rect x="72" y="16" width="8" height="8" fill="#00b8d4"/>
+    <!-- Bridge -->
+    <rect x="80" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <!-- Right lens -->
+    <rect x="104" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="120" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="128" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="136" y="16" width="8" height="8" fill="#ff4081"/>
+    <!-- Body -->
+    <rect x="144" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="16" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="160" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="168" y="16" width="8" height="8" fill="#ff4081" opacity="0.6"/>
+    <rect x="176" y="16" width="8" height="8" fill="#ff4081" opacity="0.6"/>
+
+    <!-- Row 4 - same pattern for lens middle -->
+    <rect x="0" y="24" width="8" height="8" fill="#00b8d4" opacity="0.6"/>
+    <rect x="8" y="24" width="8" height="8" fill="#00b8d4" opacity="0.6"/>
+    <rect x="16" y="24" width="8" height="8" fill="#00b8d4"/>
+    <rect x="24" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="32" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="40" y="24" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="24" width="8" height="8" fill="#00e5ff"/>
+    <rect x="56" y="24" width="8" height="8" fill="#00e5ff"/>
+    <rect x="64" y="24" width="8" height="8" fill="#00e5ff"/>
+    <rect x="72" y="24" width="8" height="8" fill="#00b8d4"/>
+    <rect x="80" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="104" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="24" width="8" height="8" fill="#ff80ab"/>
+    <rect x="120" y="24" width="8" height="8" fill="#ff80ab"/>
+    <rect x="128" y="24" width="8" height="8" fill="#ff80ab"/>
+    <rect x="136" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="144" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="24" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="160" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="168" y="24" width="8" height="8" fill="#ff4081" opacity="0.6"/>
+    <rect x="176" y="24" width="8" height="8" fill="#ff4081" opacity="0.6"/>
+
+    <!-- Row 5 - lens middle continued -->
+    <rect x="16" y="32" width="8" height="8" fill="#00b8d4"/>
+    <rect x="24" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="32" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="40" y="32" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="32" width="8" height="8" fill="#00e5ff"/>
+    <rect x="56" y="32" width="8" height="8" fill="#ffffff" opacity="0.4"/>
+    <rect x="64" y="32" width="8" height="8" fill="#00e5ff"/>
+    <rect x="72" y="32" width="8" height="8" fill="#00b8d4"/>
+    <rect x="80" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="104" y="32" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="32" width="8" height="8" fill="#ff80ab"/>
+    <rect x="120" y="32" width="8" height="8" fill="#ffffff" opacity="0.4"/>
+    <rect x="128" y="32" width="8" height="8" fill="#ff80ab"/>
+    <rect x="136" y="32" width="8" height="8" fill="#ff4081"/>
+    <rect x="144" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="32" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="160" y="32" width="8" height="8" fill="#ff4081"/>
+
+    <!-- Row 6 - bottom lenses -->
+    <rect x="24" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="32" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="40" y="40" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="40" width="8" height="8" fill="#00b8d4"/>
+    <rect x="56" y="40" width="8" height="8" fill="#00b8d4"/>
+    <rect x="64" y="40" width="8" height="8" fill="#00b8d4"/>
+    <rect x="72" y="40" width="8" height="8" fill="#00b8d4"/>
+    <rect x="80" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="104" y="40" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="40" width="8" height="8" fill="#ff4081"/>
+    <rect x="120" y="40" width="8" height="8" fill="#ff4081"/>
+    <rect x="128" y="40" width="8" height="8" fill="#ff4081"/>
+    <rect x="136" y="40" width="8" height="8" fill="#ff4081"/>
+    <rect x="144" y="40" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="40" width="8" height="8" fill="#0d1b2a"/>
+
+    <!-- Row 7 - bottom body -->
+    <rect x="24" y="48" width="8" height="8" fill="#00b8d4"/>
+    <rect x="32" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="40" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="48" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="56" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="64" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="72" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="80" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="88" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="96" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="104" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="112" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="120" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="128" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="136" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="144" y="48" width="8" height="8" fill="#0d1b2a"/>
+    <rect x="152" y="48" width="8" height="8" fill="#ff4081"/>
+
+    <!-- Row 8 - very bottom -->
+    <rect x="32" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="40" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="48" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="56" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="64" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="72" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="80" y="56" width="8" height="8" fill="#00b8d4"/>
+    <rect x="88" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="96" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="104" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="112" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="120" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="128" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="136" y="56" width="8" height="8" fill="#ff4081"/>
+    <rect x="144" y="56" width="8" height="8" fill="#ff4081"/>
+  </g>
+
+  <!-- Pixel art game elements -->
+  <!-- Star (left) -->
+  <g transform="translate(45, 200)">
+    <rect x="8" y="0" width="8" height="8" fill="#FFD700"/>
+    <rect x="0" y="8" width="8" height="8" fill="#FFD700"/>
+    <rect x="8" y="8" width="8" height="8" fill="#FFF176"/>
+    <rect x="16" y="8" width="8" height="8" fill="#FFD700"/>
+    <rect x="8" y="16" width="8" height="8" fill="#FFD700"/>
+  </g>
+
+  <!-- Heart (right) -->
+  <g transform="translate(325, 195)">
+    <rect x="0" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="8" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="16" y="0" width="8" height="8" fill="#0a0a1a"/>
+    <rect x="24" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="32" y="0" width="8" height="8" fill="#ff4081"/>
+    <rect x="0" y="8" width="8" height="8" fill="#ff4081"/>
+    <rect x="8" y="8" width="8" height="8" fill="#ff80ab"/>
+    <rect x="16" y="8" width="8" height="8" fill="#ff4081"/>
+    <rect x="24" y="8" width="8" height="8" fill="#ff80ab"/>
+    <rect x="32" y="8" width="8" height="8" fill="#ff4081"/>
+    <rect x="0" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="8" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="16" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="24" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="32" y="16" width="8" height="8" fill="#ff4081"/>
+    <rect x="8" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="16" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="24" y="24" width="8" height="8" fill="#ff4081"/>
+    <rect x="16" y="32" width="8" height="8" fill="#ff4081"/>
+  </g>
+
+  <!-- Pixel coin (bottom left) -->
+  <g transform="translate(50, 280)">
+    <rect x="8" y="0" width="8" height="8" fill="#FFD700"/>
+    <rect x="16" y="0" width="8" height="8" fill="#FFD700"/>
+    <rect x="0" y="8" width="8" height="8" fill="#FFD700"/>
+    <rect x="8" y="8" width="8" height="8" fill="#FFF176"/>
+    <rect x="16" y="8" width="8" height="8" fill="#FFD700"/>
+    <rect x="24" y="8" width="8" height="8" fill="#FFD700"/>
+    <rect x="0" y="16" width="8" height="8" fill="#FFD700"/>
+    <rect x="8" y="16" width="8" height="8" fill="#FFD700"/>
+    <rect x="16" y="16" width="8" height="8" fill="#FFF176"/>
+    <rect x="24" y="16" width="8" height="8" fill="#FFD700"/>
+    <rect x="8" y="24" width="8" height="8" fill="#FFD700"/>
+    <rect x="16" y="24" width="8" height="8" fill="#FFD700"/>
+  </g>
+
+  <!-- Pixel lightning bolt (right) -->
+  <g transform="translate(320, 275)">
+    <rect x="16" y="0" width="8" height="8" fill="#00e676"/>
+    <rect x="24" y="0" width="8" height="8" fill="#00e676"/>
+    <rect x="8" y="8" width="8" height="8" fill="#00e676"/>
+    <rect x="16" y="8" width="8" height="8" fill="#69f0ae"/>
+    <rect x="0" y="16" width="8" height="8" fill="#00e676"/>
+    <rect x="8" y="16" width="8" height="8" fill="#00e676"/>
+    <rect x="16" y="16" width="8" height="8" fill="#00e676"/>
+    <rect x="8" y="24" width="8" height="8" fill="#69f0ae"/>
+    <rect x="16" y="24" width="8" height="8" fill="#00e676"/>
+    <rect x="0" y="32" width="8" height="8" fill="#00e676"/>
+    <rect x="8" y="32" width="8" height="8" fill="#00e676"/>
+  </g>
+
+  <!-- Score display -->
+  <text x="200" y="210" text-anchor="middle" class="pixel-font" font-size="10" fill="#FFD700" filter="url(#retroGlow)">HI-SCORE: 999999</text>
+
+  <!-- "INSERT COIN" blinking text effect -->
+  <text x="200" y="240" text-anchor="middle" class="pixel-font" font-size="8" fill="#00e676" opacity="0.8">INSERT COIN</text>
+
+  <!-- Title -->
+  <g filter="url(#retroGlow)">
+    <text x="200" y="360" text-anchor="middle" class="pixel-font" font-size="20" fill="#00b8d4" letter-spacing="2">VR</text>
+  </g>
+
+  <g filter="url(#retroGlow)">
+    <text x="200" y="395" text-anchor="middle" class="pixel-font" font-size="12" fill="#ff4081" letter-spacing="1">EXPERIENCE</text>
+  </g>
+
+  <!-- Decorative pixel line -->
+  <g transform="translate(80, 415)">
+    <rect x="0" y="0" width="6" height="6" fill="#00b8d4"/>
+    <rect x="12" y="0" width="6" height="6" fill="#ff4081"/>
+    <rect x="24" y="0" width="6" height="6" fill="#00e676"/>
+    <rect x="36" y="0" width="6" height="6" fill="#FFD700"/>
+    <rect x="48" y="0" width="6" height="6" fill="#00b8d4"/>
+    <rect x="60" y="0" width="6" height="6" fill="#ff4081"/>
+    <rect x="72" y="0" width="6" height="6" fill="#00e676"/>
+    <rect x="84" y="0" width="6" height="6" fill="#FFD700"/>
+    <rect x="96" y="0" width="6" height="6" fill="#00b8d4"/>
+    <rect x="108" y="0" width="6" height="6" fill="#ff4081"/>
+    <rect x="120" y="0" width="6" height="6" fill="#00e676"/>
+    <rect x="132" y="0" width="6" height="6" fill="#FFD700"/>
+    <rect x="144" y="0" width="6" height="6" fill="#00b8d4"/>
+    <rect x="156" y="0" width="6" height="6" fill="#ff4081"/>
+    <rect x="168" y="0" width="6" height="6" fill="#00e676"/>
+    <rect x="180" y="0" width="6" height="6" fill="#FFD700"/>
+    <rect x="192" y="0" width="6" height="6" fill="#00b8d4"/>
+    <rect x="204" y="0" width="6" height="6" fill="#ff4081"/>
+    <rect x="216" y="0" width="6" height="6" fill="#00e676"/>
+    <rect x="228" y="0" width="6" height="6" fill="#FFD700"/>
+  </g>
+
+  <!-- RETRO ARCADE subtitle -->
+  <text x="200" y="445" text-anchor="middle" class="pixel-font" font-size="7" fill="#FFD700" letter-spacing="2" opacity="0.6">RETRO ARCADE EDITION</text>
+
+  <!-- Player text -->
+  <text x="200" y="475" text-anchor="middle" class="pixel-font" font-size="6" fill="#00b8d4" opacity="0.4">PLAYER 1 READY</text>
+</svg>
