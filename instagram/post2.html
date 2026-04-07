@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+  @font-face { font-family: 'Orbitron'; font-weight: 700; src: url('../fonts/orbitron-700.ttf') format('truetype'); }
+  @font-face { font-family: 'Orbitron'; font-weight: 900; src: url('../fonts/orbitron-900.ttf') format('truetype'); }
+  @font-face { font-family: 'Jost'; font-weight: 400; src: url('../fonts/jost-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Jost'; font-weight: 600; src: url('../fonts/jost-600.ttf') format('truetype'); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    background: #050510;
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .bg-grid {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,0,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,0,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow1 {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 500px;
+    background: radial-gradient(ellipse, rgba(255,0,255,0.15) 0%, transparent 70%);
+  }
+  .glow2 {
+    position: absolute; bottom: -100px; left: -100px;
+    width: 500px; height: 400px;
+    background: radial-gradient(ellipse, rgba(0,229,255,0.12) 0%, transparent 70%);
+  }
+  .content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; padding: 70px; }
+  .top-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: #ff00ff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 50px;
+  }
+  .main-title .cyan { color: #00e5ff; }
+  .packages { display: flex; flex-direction: column; gap: 24px; flex: 1; }
+  .pkg {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(13,13,37,0.8);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px 36px;
+  }
+  .pkg.featured { border-color: rgba(255,0,255,0.4); box-shadow: 0 0 20px rgba(255,0,255,0.1); }
+  .pkg-icon { font-size: 40px; }
+  .pkg-info { flex: 1; }
+  .pkg-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .pkg-detail { color: #b0b8d0; font-size: 18px; }
+  .pkg-price {
+    text-align: right;
+  }
+  .pkg-old {
+    font-size: 18px;
+    color: #6b7394;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+  .pkg-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+  }
+  .pkg:nth-child(1) .pkg-value { color: #00e5ff; }
+  .pkg:nth-child(2) .pkg-value { color: #ff00ff; }
+  .pkg:nth-child(3) .pkg-value { color: #8b5cf6; }
+  .pkg-value small { font-size: 18px; font-weight: 400; opacity: 0.7; }
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .incluso {
+    display: flex;
+    gap: 20px;
+  }
+  .incluso-tag {
+    padding: 8px 18px;
+    border: 1px solid rgba(57,255,20,0.3);
+    border-radius: 50px;
+    font-size: 14px;
+    color: #39ff14;
+    font-weight: 600;
+  }
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #00e5ff;
+    opacity: 0.5;
+  }
+</style></head><body>
+  <div class="bg-grid"></div>
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+  <div class="content">
+    <div class="top-label">Preços de Lançamento</div>
+    <h1 class="main-title">PACOTES <span class="cyan">VR</span><br>A DOMICÍLIO</h1>
+    <div class="packages">
+      <div class="pkg">
+        <div class="pkg-icon">🎮</div>
+        <div class="pkg-info">
+          <div class="pkg-name">SESSÃO EXPRESS</div>
+          <div class="pkg-detail">1 hora de diversão VR</div>
+        </div>
+        <div class="pkg-price">
+          <div class="pkg-old">R$120</div>
+          <div class="pkg-value">R$70<small>/h</small></div>
+        </div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-icon">🎉</div>
+        <div class="pkg-info">
+          <div class="pkg-name">COMBO DIVERSÃO</div>
+          <div class="pkg-detail">2 horas • Mais popular</div>
+        </div>
+        <div class="pkg-price">
+          <div class="pkg-old">R$200</div>
+          <div class="pkg-value">R$120<small>/2h</small></div>
+        </div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-icon">🎂</div>
+        <div class="pkg-info">
+          <div class="pkg-name">PACOTE ANIVERSÁRIO</div>
+          <div class="pkg-detail">3 horas + monitor dedicado</div>
+        </div>
+        <div class="pkg-price">
+          <div class="pkg-old">R$300</div>
+          <div class="pkg-value">R$160<small>/3h</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <div class="incluso">
+        <div class="incluso-tag">✓ Deslocamento incluso</div>
+        <div class="incluso-tag">✓ Montagem inclusa</div>
+        <div class="incluso-tag">✓ Monitor incluso</div>
+      </div>
+      <div class="logo">@VREXPERIENCE.SSA</div>
+    </div>
+  </div>
+</body></html>

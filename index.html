@@ -1,0 +1,3454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VR Experience | Realidade Virtual a Domic&#237;lio Salvador BA</title>
+  <meta name="description" content="Aluguel de &#243;culos de realidade virtual a domic&#237;lio em Salvador e Lauro de Freitas. A partir de R$70/h! Sess&#227;o Express, Combo Divers&#227;o e Pacote Anivers&#225;rio com Oculus Quest. Tudo incluso: deslocamento, montagem e monitor. Agende agora!">
+  <meta name="keywords" content="realidade virtual salvador, aluguel VR domic&#237;lio, oculus quest aluguel, festa VR salvador, anivers&#225;rio VR, jogos VR festa, VR Experience salvador, realidade virtual lauro de freitas, aluguel &#243;culos VR bahia, festa infantil VR">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="VR Experience">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <link rel="canonical" href="https://vrexperience.com.br/">
+  <meta name="theme-color" content="#050510">
+  <link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+  <link rel="preload" href="fonts/orbitron-700.ttf" as="font" type="font/truetype" crossorigin>
+  <link rel="preload" href="fonts/jost-400.ttf" as="font" type="font/truetype" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VR Experience | Realidade Virtual a Domic&#237;lio em Salvador e Lauro de Freitas">
+  <meta property="og:description" content="Levamos a experi&#234;ncia de realidade virtual at&#233; sua casa em Salvador e Lauro de Freitas. Festas de anivers&#225;rio VR e sess&#245;es avulsas com Oculus Quest. Agende agora!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vrexperience.com.br/">
+  <meta property="og:image" content="https://vrexperience.com.br/img/fruit-ninja.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="VR Experience">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VR Experience | Realidade Virtual a Domic&#237;lio Salvador BA">
+  <meta name="twitter:description" content="Aluguel de &#243;culos VR a domic&#237;lio em Salvador e Lauro de Freitas. Festas, anivers&#225;rios e sess&#245;es avulsas com Oculus Quest. Agende!">
+  <meta name="twitter:image" content="https://vrexperience.com.br/img/fruit-ninja.jpg">
+
+  <style>
+    /* ===== LOCAL FONTS (offline) ===== */
+    @font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/jost-400.ttf') format('truetype'); }
+    @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/jost-500.ttf') format('truetype'); }
+    @font-face { font-family: 'Jost'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/jost-600.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/orbitron-400.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/orbitron-500.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/orbitron-600.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/orbitron-700.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/orbitron-800.ttf') format('truetype'); }
+    @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 900; font-display: swap; src: url('fonts/orbitron-900.ttf') format('truetype'); }
+  </style>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #050510;
+      --bg-secondary: #0a0a1f;
+      --bg-card: #0d0d25;
+      --bg-card-hover: #14143a;
+      --neon-cyan: #00e5ff;
+      --neon-magenta: #ff00ff;
+      --neon-purple: #8b5cf6;
+      --neon-green: #39ff14;
+      --neon-pink: #ff2d95;
+      --neon-orange: #ff6b00;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b8d0;
+      --text-muted: #8b93b0;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --border-neon: rgba(0, 229, 255, 0.3);
+      --font-display: 'Orbitron', sans-serif;
+      --font-body: 'Jost', sans-serif;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --glow-cyan: 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.15);
+      --glow-magenta: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.15);
+      --glow-purple: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 3px; }
+
+    /* ===== SECTION COMMON ===== */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 12px 0;
+      background: rgba(5, 5, 16, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-neon);
+      box-shadow: 0 2px 20px rgba(0, 229, 255, 0.1);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg {
+      height: 40px;
+      width: auto;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled .nav-logo svg {
+      height: 34px;
+    }
+
+    .nav-logo:hover svg {
+      filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 16px rgba(255, 0, 255, 0.3));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 8px var(--neon-cyan);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--neon-cyan);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--neon-cyan);
+      border-radius: var(--radius-sm);
+      color: var(--neon-cyan) !important;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: var(--transition);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .nav-cta:hover {
+      background: var(--neon-cyan);
+      color: var(--bg-primary) !important;
+      box-shadow: var(--glow-cyan);
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 2px;
+      background: var(--neon-cyan);
+      border-radius: 2px;
+      transition: var(--transition);
+      box-shadow: 0 0 6px var(--neon-cyan);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, var(--bg-primary) 70%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid var(--neon-magenta);
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--neon-magenta);
+      margin-bottom: 24px;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+      animation: pulse-border 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.2); }
+      50% { box-shadow: 0 0 25px rgba(255, 0, 255, 0.4); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      text-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.15);
+    }
+
+    .hero-title .neon-text {
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.4));
+    }
+
+    .hero-slogan {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      font-weight: 400;
+      color: var(--neon-magenta);
+      text-shadow: 0 0 8px rgba(255, 0, 255, 0.4), 0 0 16px rgba(255, 0, 255, 0.2);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--bg-primary);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
+      text-decoration: none;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.6), 0 0 60px rgba(139, 92, 246, 0.3);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .hero-scroll-hint svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--neon-cyan);
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* ===== COMO FUNCIONA ===== */
+    .como-funciona { background: var(--bg-secondary); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .step-card:hover::before { opacity: 1; }
+
+    .step-card:hover {
+      border-color: var(--border-neon);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .step-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+    }
+
+    .step-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ===== EXPERIENCIAS ===== */
+    .experiencias {
+      background: var(--bg-primary);
+      position: relative;
+    }
+
+    .experiencias::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-magenta), transparent);
+    }
+
+    .games-carousel-wrapper {
+      position: relative;
+      padding: 0 50px;
+    }
+
+    .games-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border-neon);
+      background: rgba(5, 5, 16, 0.85);
+      color: var(--neon-cyan);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      backdrop-filter: blur(8px);
+    }
+
+    .games-carousel-btn:hover {
+      background: rgba(0, 229, 255, 0.15);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    }
+
+    .games-carousel-btn.prev { left: 0; }
+    .games-carousel-btn.next { right: 0; }
+
+    .games-carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    .games-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+
+    .games-grid::-webkit-scrollbar { display: none; }
+
+    .games-counter {
+      text-align: center;
+      margin-top: 16px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+    }
+
+    .game-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+      min-width: 260px;
+      max-width: 260px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
+    .game-card:hover {
+      border-color: var(--border-neon);
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+    }
+
+    .game-card-img {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .game-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .game-card:hover .game-card-img img {
+      transform: scale(1.05);
+    }
+
+    .game-card-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 4px 12px;
+      background: rgba(5, 5, 16, 0.85);
+      border: 1px solid var(--neon-magenta);
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--neon-magenta);
+    }
+
+    .game-card-body {
+      padding: 16px;
+    }
+
+    .game-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .game-card-body .game-age {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .game-card-body .game-age span {
+      color: var(--neon-green);
+      font-weight: 600;
+    }
+
+    .game-card-body .game-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ===== PACOTES ===== */
+    .pacotes { background: var(--bg-secondary); }
+
+    .pacotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pacote-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pacote-card.featured {
+      border-color: var(--neon-magenta);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+    }
+
+    .pacote-card.featured::before {
+      content: 'MAIS POPULAR';
+      position: absolute;
+      top: 16px;
+      right: -32px;
+      background: linear-gradient(135deg, var(--neon-magenta), var(--neon-purple));
+      color: white;
+      padding: 4px 40px;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      transform: rotate(45deg);
+    }
+
+    .pacote-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--neon-green), #00c853);
+      color: #050510;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+      animation: pulseBadge 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { box-shadow: 0 0 8px rgba(57, 255, 20, 0.4); }
+      50% { box-shadow: 0 0 20px rgba(57, 255, 20, 0.7); }
+    }
+
+    .pacote-old-price {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-bottom: 2px;
+      opacity: 0.6;
+    }
+
+    .pacote-economia {
+      display: inline-block;
+      background: rgba(57, 255, 20, 0.12);
+      color: var(--neon-green);
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 6px;
+    }
+
+    .pacote-card:last-child .pacote-price {
+      color: var(--neon-purple);
+      text-shadow: 0 0 10px var(--neon-purple);
+    }
+
+    .pacote-card:last-child .pacote-features li::before {
+      background: var(--neon-purple);
+      box-shadow: 0 0 6px var(--neon-purple);
+    }
+
+    .pacotes-incluso {
+      max-width: 800px;
+      margin: 2.5rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .incluso-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .incluso-item .icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .incluso-nota {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .incluso-nota a {
+      color: var(--neon-cyan);
+      text-decoration: underline;
+    }
+
+    .pacote-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+    }
+
+    .pacote-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .pacote-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .pacote-price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .pacote-card:first-child .pacote-price {
+      color: var(--neon-cyan);
+      text-shadow: 0 0 10px var(--neon-cyan);
+    }
+
+    .pacote-card.featured .pacote-price {
+      color: var(--neon-magenta);
+      text-shadow: 0 0 10px var(--neon-magenta);
+    }
+
+    .pacote-price-detail {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .pacote-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pacote-features li {
+      padding: 8px 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pacote-features li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .pacote-card:first-child .pacote-features li::before {
+      background: var(--neon-cyan);
+      box-shadow: 0 0 6px var(--neon-cyan);
+    }
+
+    .pacote-card.featured .pacote-features li::before {
+      background: var(--neon-magenta);
+      box-shadow: 0 0 6px var(--neon-magenta);
+    }
+
+    .pacote-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .pacote-card:first-child .pacote-btn {
+      background: transparent;
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+    }
+
+    .pacote-card:first-child .pacote-btn:hover {
+      background: var(--neon-cyan);
+      color: var(--bg-primary);
+      box-shadow: var(--glow-cyan);
+    }
+
+    .pacote-card.featured .pacote-btn {
+      background: linear-gradient(135deg, var(--neon-magenta), var(--neon-purple));
+      color: white;
+      border: none;
+    }
+
+    .pacote-card.featured .pacote-btn:hover {
+      box-shadow: var(--glow-magenta);
+    }
+
+    /* ===== AGENDAMENTO ===== */
+    .agendamento { background: var(--bg-primary); }
+
+    .booking-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.08);
+    }
+
+    .booking-steps {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .booking-step-indicator {
+      width: 40px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .booking-step-indicator.active {
+      background: var(--neon-cyan);
+      box-shadow: 0 0 8px var(--neon-cyan);
+    }
+
+    .booking-step-indicator.completed {
+      background: var(--neon-green);
+      box-shadow: 0 0 8px var(--neon-green);
+    }
+
+    /* Calendar */
+    .calendar-wrapper {
+      margin-bottom: 32px;
+    }
+
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .calendar-header h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .calendar-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .calendar-nav button {
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 1px solid var(--border-neon);
+      border-radius: var(--radius-sm);
+      color: var(--neon-cyan);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar-nav button:hover {
+      background: rgba(0, 229, 255, 0.1);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .calendar-day-name {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      padding: 8px 0;
+      letter-spacing: 1px;
+    }
+
+    .calendar-day {
+      text-align: center;
+      padding: 10px 4px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+    }
+
+    .calendar-day:hover:not(.disabled):not(.empty) {
+      background: rgba(0, 229, 255, 0.1);
+      border-color: var(--border-neon);
+      color: var(--neon-cyan);
+    }
+
+    .calendar-day.selected {
+      background: var(--neon-cyan);
+      color: var(--bg-primary);
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+    }
+
+    .calendar-day.disabled {
+      color: var(--text-muted);
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    .calendar-day.today {
+      border-color: var(--neon-magenta);
+      color: var(--neon-magenta);
+    }
+
+    .calendar-day.empty {
+      cursor: default;
+    }
+
+    /* Time slots */
+    .time-slots-section {
+      margin-bottom: 28px;
+      display: none;
+    }
+
+    .time-slots-section.visible { display: block; }
+
+    .time-slots-section h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .time-slots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .time-slot {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .time-slot:hover {
+      border-color: var(--border-neon);
+      background: rgba(0, 229, 255, 0.05);
+    }
+
+    .time-slot.selected {
+      border-color: var(--neon-cyan);
+      background: rgba(0, 229, 255, 0.1);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .time-slot .time-period {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--neon-cyan);
+      margin-bottom: 4px;
+    }
+
+    .time-slot .time-range {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Package selection */
+    .package-select {
+      margin-bottom: 28px;
+      display: none;
+    }
+
+    .package-select.visible { display: block; }
+
+    .package-select h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .package-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .package-option {
+      padding: 16px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .package-option:hover {
+      border-color: var(--border-neon);
+    }
+
+    .package-option.selected {
+      border-color: var(--neon-magenta);
+      background: rgba(255, 0, 255, 0.05);
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+    }
+
+    .package-option h5 {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+
+    .package-option p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Hours + Contact */
+    .booking-details {
+      display: none;
+    }
+
+    .booking-details.visible { display: block; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2300e5ff'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .form-group select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+
+    .booking-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--bg-primary);
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      display: none;
+    }
+
+    .booking-submit.visible {
+      display: block;
+    }
+
+    .booking-submit:hover {
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .booking-submit:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Inline error messages */
+    .error-msg {
+      color: #ff4d6a;
+      font-size: 0.8rem;
+      margin-top: 4px;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    /* Success message */
+    .booking-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .booking-success.visible { display: block; }
+
+    .booking-success .success-icon {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
+
+    .booking-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green);
+      margin-bottom: 12px;
+    }
+
+    .booking-success p {
+      color: var(--text-secondary);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos { background: var(--bg-secondary); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--border-neon);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-stars {
+      color: var(--neon-orange);
+      font-size: 1rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card blockquote {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--bg-primary);
+      flex-shrink: 0;
+    }
+
+    .testimonial-author-info strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .testimonial-author-info span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== FAQ ===== */
+    .faq { background: var(--bg-primary); }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-neon);
+    }
+
+    .faq-item.active {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 18px 24px;
+      background: var(--bg-card);
+      border: none;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .faq-question .faq-icon {
+      font-size: 1.2rem;
+      color: var(--neon-cyan);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 18px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== CONTATO ===== */
+    .contato { background: var(--bg-secondary); }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contato-card {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .contato-card:hover {
+      border-color: var(--border-neon);
+      transform: translateY(-4px);
+    }
+
+    .contato-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contato-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .contato-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .contato-card .coming-soon {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 14px;
+      border: 1px solid var(--neon-purple);
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      color: var(--neon-purple);
+      letter-spacing: 2px;
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 70px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-neon);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      white-space: nowrap;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 50px 0 30px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+
+    .footer-region {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-region svg {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+      width: 14px;
+      height: 14px;
+      fill: var(--neon-cyan);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== FOCUS VISIBLE ===== */
+    .nav-links a:focus-visible,
+    .hero-cta:focus-visible,
+    .pacote-btn:focus-visible,
+    .booking-submit:focus-visible,
+    .faq-question:focus-visible {
+      outline: 2px solid var(--neon-cyan);
+      outline-offset: 3px;
+    }
+
+    /* ===== GALERIA EXPERIENCIAS REAIS ===== */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .galeria-grid .galeria-item:first-child {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+
+    .galeria-item {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .galeria-item:first-child { aspect-ratio: auto; }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .galeria-item .galeria-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px 16px 12px;
+      background: linear-gradient(transparent, rgba(5, 5, 16, 0.85));
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .galeria-item:hover .galeria-caption { opacity: 1; }
+
+    .galeria-item .galeria-caption strong {
+      display: block;
+      color: var(--neon-cyan);
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .galeria-grid .galeria-item:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        aspect-ratio: 16/9;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== TERMOS SECTION ===== */
+    .termos-section { background: var(--bg-secondary); }
+    .termos-section .section-title { margin-bottom: 1rem; }
+    .termos-intro { text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
+    .termos-accordion { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .termo-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); overflow: hidden; transition: var(--transition); }
+    .termo-item:hover { border-color: var(--border-neon); }
+    .termo-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; cursor: pointer; font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--neon-cyan); background: none; border: none; width: 100%; text-align: left; transition: var(--transition); }
+    .termo-header:hover { background: rgba(0, 229, 255, 0.05); }
+    .termo-header .arrow { font-size: 1.2rem; transition: transform 0.3s; color: var(--text-muted); }
+    .termo-item.open .termo-header .arrow { transform: rotate(180deg); color: var(--neon-cyan); }
+    .termo-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .termo-item.open .termo-body { max-height: 2000px; }
+    .termo-content { padding: 0 24px 20px; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; }
+    .termo-content ol { padding-left: 1.5rem; }
+    .termo-content ol li { margin-bottom: 10px; }
+    .termo-content ul { padding-left: 1.5rem; margin: 8px 0; list-style: disc; }
+    .termo-content strong { color: var(--text-primary); }
+    .termo-content .values-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .termo-content .values-table th, .termo-content .values-table td { padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--border-subtle); }
+    .termo-content .values-table th { font-family: var(--font-display); font-size: 0.75rem; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 1px; }
+    .termo-content .values-table .value { color: var(--neon-magenta); font-weight: 600; font-family: var(--font-display); }
+    .termo-content .warning-box { background: rgba(255, 0, 255, 0.08); border-left: 3px solid var(--neon-magenta); padding: 14px 18px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 16px 0; }
+    .termo-content .highlight-box { background: rgba(0, 229, 255, 0.08); border: 1px solid var(--border-neon); border-radius: var(--radius-sm); padding: 16px 20px; margin: 16px 0; }
+    .termos-footer { text-align: center; margin-top: 2.5rem; color: var(--text-muted); font-size: 0.85rem; }
+    .termos-footer a { color: var(--neon-cyan); text-decoration: underline; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .game-card { min-width: 240px; max-width: 240px; }
+      .games-carousel-wrapper { padding: 0 44px; }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-logo svg {
+        height: 32px;
+      }
+
+      .navbar.scrolled .nav-logo svg {
+        height: 28px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(5, 5, 16, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 80px 32px 32px;
+        gap: 24px;
+        transition: var(--transition);
+        border-left: 1px solid var(--border-neon);
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-links.open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      .nav-links a::after { display: none; }
+
+      .container { padding: 0 16px; }
+
+      .section { padding: 60px 0; }
+      .section-subtitle { font-size: 0.95rem; margin-bottom: 40px; }
+
+      .hero-desc { font-size: 1rem; }
+      .hero-cta { padding: 14px 32px; font-size: 0.8rem; }
+      .hero-badge { font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; }
+      .hero-scroll-hint { bottom: 20px; }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .step-card { padding: 28px 16px; }
+      .step-number { font-size: 2rem; }
+      .step-icon { font-size: 1.8rem; }
+      .step-card h3 { font-size: 0.85rem; }
+      .step-card p { font-size: 0.85rem; }
+
+      .game-card { min-width: 200px; max-width: 200px; }
+      .games-carousel-wrapper { padding: 0 40px; }
+      .games-carousel-btn { width: 38px; height: 38px; font-size: 1.2rem; }
+      .game-card-body h3 { font-size: 0.9rem; }
+      .game-card-body .game-desc { font-size: 0.8rem; }
+
+      .pacotes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .time-slots-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .package-options {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .booking-container { padding: 20px 16px; }
+
+      .termos-accordion { gap: 8px; }
+      .termo-header { padding: 14px 16px; font-size: 0.75rem; }
+      .termo-content { padding: 0 16px 16px; font-size: 0.88rem; }
+      .termos-intro { font-size: 0.95rem; margin-bottom: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 12px; }
+
+      .section { padding: 50px 0; }
+      .section-title { margin-bottom: 12px; }
+      .section-subtitle { font-size: 0.88rem; margin-bottom: 32px; }
+
+      .hero { min-height: 100svh; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-slogan { font-size: 0.9rem; letter-spacing: 1px; }
+      .hero-tagline { font-size: 0.8rem; }
+      .hero-desc { font-size: 0.9rem; margin-bottom: 28px; }
+      .hero-cta { padding: 12px 28px; font-size: 0.75rem; letter-spacing: 1px; }
+      .hero-badge { margin-bottom: 16px; }
+
+      .steps-grid { grid-template-columns: 1fr; gap: 12px; }
+      .step-card { padding: 24px 16px; }
+
+      .game-card { min-width: 170px; max-width: 170px; }
+      .games-carousel-wrapper { padding: 0 32px; }
+      .games-carousel-btn { width: 28px; height: 28px; font-size: 0.85rem; }
+      .game-card-tag { font-size: 0.55rem; padding: 3px 8px; }
+      .game-card-body { padding: 12px; }
+      .game-card-body h3 { font-size: 0.8rem; }
+      .game-card-body .game-age { font-size: 0.7rem; }
+      .game-card-body .game-desc { font-size: 0.75rem; -webkit-line-clamp: 2; }
+      .games-counter { font-size: 0.75rem; }
+
+      .pacote-card { padding: 28px 20px; }
+
+      .time-slots-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .galeria-grid { gap: 8px; }
+
+      .booking-container { padding: 16px 12px; }
+      .booking-container h2 { font-size: 1.2rem; }
+      .booking-container h3 { font-size: 0.95rem; }
+
+      .termo-header { padding: 12px 14px; font-size: 0.7rem; }
+      .termo-content { padding: 0 14px 14px; font-size: 0.82rem; line-height: 1.7; }
+      .termo-content .values-table th,
+      .termo-content .values-table td { padding: 8px 10px; font-size: 0.8rem; }
+
+      .footer-bottom { flex-direction: column; gap: 8px; font-size: 0.8rem; }
+    }
+
+    @media (max-width: 360px) {
+      .container { padding: 0 10px; }
+      .hero-title { font-size: 1.9rem; }
+      .hero-slogan { font-size: 0.8rem; }
+      .hero-cta { padding: 11px 24px; font-size: 0.7rem; }
+      .game-card { min-width: 150px; max-width: 150px; }
+      .game-card-img { height: 100px; }
+      .games-carousel-wrapper { padding: 0 28px; }
+      .games-carousel-btn { width: 24px; height: 24px; font-size: 0.75rem; }
+      .nav-logo svg { height: 28px; }
+      .section-title { font-size: 1.4rem; }
+      .pacote-card h3 { font-size: 1.1rem; }
+      .pacote-price { font-size: 1.6rem; }
+      .pacote-features li { font-size: 0.85rem; }
+      .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+    }
+
+    /* Touch devices: prevent sticky hover */
+    @media (hover: none) {
+      .game-card:hover { transform: none; box-shadow: none; border-color: var(--border-subtle); }
+      .game-card:active { border-color: var(--border-neon); box-shadow: 0 0 15px rgba(0, 229, 255, 0.15); }
+      .pacote-card:hover { transform: none; }
+      .step-card:hover { transform: none; }
+      .whatsapp-tooltip { display: none; }
+    }
+    /* ===== SEO CONTENT (visually hidden, accessible to crawlers) ===== */
+    .seo-content {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "VR Experience",
+    "description": "Aluguel de oculos de realidade virtual a domicilio em Salvador e Lauro de Freitas. Festas, aniversarios e sessoes avulsas com Oculus Quest.",
+    "url": "https://vrexperience.com.br",
+    "telephone": "+5571996305734",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Salvador",
+        "containedInPlace": { "@type": "State", "name": "Bahia" }
+      },
+      {
+        "@type": "City",
+        "name": "Lauro de Freitas",
+        "containedInPlace": { "@type": "State", "name": "Bahia" }
+      }
+    ],
+    "priceRange": "R$70-R$160",
+    "openingHours": "Mo-Su 09:00-22:00",
+    "paymentAccepted": "PIX, Cartao de Credito, Dinheiro",
+    "image": "https://vrexperience.com.br/img/fruit-ninja.jpg",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Precisa ter TV em casa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nao e obrigatorio! O Oculus Quest funciona de forma independente. Porem, recomendamos uma TV disponivel para que os outros convidados possam assistir em tempo real o que a pessoa esta jogando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a idade minima para jogar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A partir de 7 anos. Temos jogos adequados para todas as idades, desde experiencias bem tranquilas ate jogos mais intensos para adolescentes e adultos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto espaco preciso em casa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recomendamos uma area livre de pelo menos 2x2 metros para cada jogador. Uma sala ou quarto grande ja e suficiente! Nos ajudamos a organizar o espaco quando chegamos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais regioes voces atendem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Atendemos toda a regiao de Salvador e Lauro de Freitas. Se voce mora em outra cidade da regiao metropolitana, entre em contato para verificarmos disponibilidade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o pagamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aceitamos PIX, cartao de credito/debito e dinheiro. O pagamento e realizado no dia do atendimento, apos a montagem dos equipamentos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso cancelar o agendamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! Cancelamentos feitos ate 24 horas antes do horario agendado sao realizados sem nenhum custo. Cancelamentos com menos de 24h podem ter taxa de deslocamento."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Service (Sessao Express) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sessao Express de Realidade Virtual",
+    "description": "Sessao de 1 hora de realidade virtual a domicilio em Salvador e Lauro de Freitas. Ate 2 Oculus Quest com acompanhamento profissional.",
+    "provider": { "@type": "EntertainmentBusiness", "name": "VR Experience" },
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "City", "name": "Lauro de Freitas" }
+    ],
+    "offers": { "@type": "Offer", "price": "70.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock" }
+  }
+  </script>
+
+  <!-- Structured Data: Service (Combo Diversao) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Combo Diversao - Realidade Virtual 2 Horas",
+    "description": "Combo de 2 horas de realidade virtual a domicilio em Salvador e Lauro de Freitas. Ate 2 Oculus Quest, rotacao de jogos variados.",
+    "provider": { "@type": "EntertainmentBusiness", "name": "VR Experience" },
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "City", "name": "Lauro de Freitas" }
+    ],
+    "offers": { "@type": "Offer", "price": "120.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock" }
+  }
+  </script>
+
+  <!-- Structured Data: Service (Pacote Aniversario) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Pacote Aniversario com Realidade Virtual",
+    "description": "Pacote de festa de aniversario com realidade virtual a domicilio em Salvador e Lauro de Freitas. 3 horas com ate 2 Oculus Quest, monitor dedicado e rotacao de jogos.",
+    "provider": { "@type": "EntertainmentBusiness", "name": "VR Experience" },
+    "areaServed": [
+      { "@type": "City", "name": "Salvador" },
+      { "@type": "City", "name": "Lauro de Freitas" }
+    ],
+    "offers": { "@type": "Offer", "price": "160.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock" }
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://vrexperience.com.br/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Como Funciona",
+        "item": "https://vrexperience.com.br/#como-funciona"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Jogos VR",
+        "item": "https://vrexperience.com.br/#experiencias"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Pacotes e Precos",
+        "item": "https://vrexperience.com.br/#pacotes"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Agendar",
+        "item": "https://vrexperience.com.br/#agendamento"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "FAQ",
+        "item": "https://vrexperience.com.br/#faq"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Contato",
+        "item": "https://vrexperience.com.br/#contato"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: ItemList (Game Catalog) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Catalogo de Jogos VR",
+    "description": "Jogos de realidade virtual disponiveis para aluguel com a VR Experience em Salvador e Lauro de Freitas",
+    "numberOfItems": 16,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Beat Saber", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 2, "name": "Superhot VR", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 3, "name": "Job Simulator", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 4, "name": "Fruit Ninja VR", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 5, "name": "Acron: Attack of the Squirrels", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 6, "name": "Rec Room", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 7, "name": "Keep Talking and Nobody Explodes", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 8, "name": "Richie's Plank Experience", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 9, "name": "Pistol Whip", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 10, "name": "Gorilla Tag", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 11, "name": "Walkabout Mini Golf", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 12, "name": "Eleven Table Tennis", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 13, "name": "Moss", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 14, "name": "I Expect You To Die", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 15, "name": "Ragnarock", "url": "https://vrexperience.com.br/#experiencias" },
+      { "@type": "ListItem", "position": 16, "name": "Creed: Rise to Glory", "url": "https://vrexperience.com.br/#experiencias" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container">
+      <a href="#" class="nav-logo" title="VR Experience - Realidade Virtual a Domicílio em Salvador" aria-label="VR Experience - Página inicial">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 50" fill="none" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="navNg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00e5ff"/>
+              <stop offset="50%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#ff00ff"/>
+            </linearGradient>
+            <linearGradient id="navIg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00e5ff"/>
+              <stop offset="100%" stop-color="#ff00ff"/>
+            </linearGradient>
+            <filter id="navGlw">
+              <feGaussianBlur stdDeviation="1" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g transform="translate(2,5)" filter="url(#navGlw)">
+            <rect x="2" y="8" width="36" height="24" rx="8" ry="8" stroke="url(#navIg)" stroke-width="2" fill="none"/>
+            <circle cx="15" cy="20" r="7" stroke="#00e5ff" stroke-width="1.8" fill="none"/>
+            <circle cx="25" cy="20" r="7" stroke="#ff00ff" stroke-width="1.8" fill="none"/>
+            <path d="M19.5,20 C19.8,17.5 20.2,17.5 20.5,20" stroke="#8b5cf6" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <line x1="2" y1="15" x2="-1" y2="13" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+            <line x1="2" y1="25" x2="-1" y2="27" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+            <line x1="38" y1="15" x2="41" y2="13" stroke="#ff00ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+            <line x1="38" y1="25" x2="41" y2="27" stroke="#ff00ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+          </g>
+          <text x="52" y="30" font-family="'Orbitron',sans-serif" font-weight="800" font-size="26" fill="url(#navNg)" letter-spacing="3" filter="url(#navGlw)">VR</text>
+          <text x="106" y="30" font-family="'Orbitron',sans-serif" font-weight="400" font-size="14" fill="#ffffff" letter-spacing="5" opacity="0.9">EXPERIENCE</text>
+        </svg>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#como-funciona" aria-label="Como funciona o aluguel de VR a domicílio" title="Como funciona o serviço de realidade virtual a domicílio">Como Funciona</a>
+        <a href="#experiencias" aria-label="Jogos de realidade virtual disponíveis no Oculus Quest" title="Jogos VR disponíveis">Jogos</a>
+        <a href="#pacotes" aria-label="Pacotes e preços de aluguel de VR em Salvador" title="Pacotes e preços de VR">Pacotes</a>
+        <a href="#agendamento" aria-label="Agendar sessão de realidade virtual a domicílio" title="Agendar VR a domicílio">Agendar</a>
+        <a href="#faq" aria-label="FAQ - Perguntas frequentes sobre VR a domicílio" title="Perguntas frequentes">FAQ</a>
+        <a href="#contato" aria-label="Entre em contato com a VR Experience Salvador" title="Contato VR Experience">Contato</a>
+        <a href="#termos" aria-label="Termos de uso e responsabilidade" title="Termos de Uso">Termos</a>
+        <a href="#agendamento" class="nav-cta" aria-label="Agendar agora sua experiência de realidade virtual" title="Agendar realidade virtual agora">Agendar Agora</a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main role="main">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Salvador & Lauro de Freitas</div>
+      <h1 class="hero-title">
+        <span class="neon-text">VR</span> EXPERIENCE
+      </h1>
+      <p class="hero-slogan">A REALIDADE VIRTUAL VAI ATÉ VOCÊ</p>
+      <p class="hero-tagline">Sua festa. Outro universo.</p>
+      <p class="hero-desc">Aluguel de óculos de realidade virtual a domicílio em Salvador e Lauro de Freitas. Com equipamentos profissionais Oculus Quest, levamos a diversão até sua casa para festas, aniversários e sessões avulsas.</p>
+      <a href="#agendamento" class="hero-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Agendar Agora
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section como-funciona" id="como-funciona">
+    <div class="container">
+      <h2 class="section-title reveal">Como Funciona o Aluguel de VR a Domicílio</h2>
+      <p class="section-subtitle reveal">Simples, rápido e sem complicação. Levamos a realidade virtual até você em Salvador e Lauro de Freitas!</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon">&#128197;</div>
+          <h3>Agende o Aluguel de VR</h3>
+          <p>Escolha a data, horário e pacote de realidade virtual que preferir. Resposta rápida pelo WhatsApp.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon">&#128663;</div>
+          <h3>VR a Domicílio</h3>
+          <p>Nossa equipe leva os equipamentos Oculus Quest até sua casa em Salvador ou Lauro de Freitas.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon">&#127918;</div>
+          <h3>Montagem do Equipamento VR</h3>
+          <p>Configuramos os óculos de realidade virtual Oculus Quest no espaço disponível da sua casa.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">04</div>
+          <div class="step-icon">&#127881;</div>
+          <h3>Diversão em Realidade Virtual!</h3>
+          <p>Acompanhamos toda a sessão de jogos VR, auxiliamos com as experiências e garantimos entretenimento virtual para todos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA - EXPERIENCIAS REAIS -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <h2 class="section-title reveal">Experiências <span class="gradient-text">Reais</span></h2>
+      <p class="section-subtitle reveal">Veja como nossos clientes se divertem com realidade virtual em casa!</p>
+      <div class="galeria-grid">
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-reaction.jpg" alt="Duas pessoas usando óculos de realidade virtual juntas em evento VR em Salvador" loading="eager" fetchpriority="high" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>DIVERSÃO EM DUPLA</strong>Até 2 headsets simultâneos — a diversão multiplica!</div>
+        </div>
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-party.jpg" alt="Pessoa imersa em jogo de realidade virtual fazendo gestos durante evento" loading="lazy" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>IMERSÃO TOTAL</strong>Reações que só a realidade virtual proporciona</div>
+        </div>
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-adult.jpg" alt="Jovem usando óculos VR com mãos estendidas interagindo com jogo virtual" loading="lazy" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>PARA TODOS</strong>De 7 a 70 anos, todo mundo se diverte!</div>
+        </div>
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-kid.jpg" alt="Jovem utilizando headset de realidade virtual em experiência imersiva" loading="lazy" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>EXPERIÊNCIA ÚNICA</strong>Cada sessão é uma aventura diferente</div>
+        </div>
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-family.jpg" alt="Pessoa explorando realidade virtual com gestos expressivos durante sessão a domicílio" loading="lazy" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>NA SUA CASA</strong>Levamos a VR até você em Salvador</div>
+        </div>
+        <div class="galeria-item reveal">
+          <img src="img/people-vr-group.jpg" alt="Pessoa de perfil usando headset VR em ambiente com iluminação neon" loading="lazy" decoding="async" width="640" height="427">
+          <div class="galeria-caption"><strong>TECNOLOGIA</strong>Equipamento profissional Oculus Quest</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIAS -->
+  <section class="section experiencias" id="experiencias">
+    <div class="container">
+      <h2 class="section-title reveal">Jogos VR Disponíveis no Oculus Quest</h2>
+      <p class="section-subtitle reveal">Dezenas de jogos de realidade virtual para festas, aniversários e sessões em família. Confira os mais populares!</p>
+      <div class="games-carousel-wrapper">
+        <button class="games-carousel-btn prev" id="gamesCarouselPrev" aria-label="Jogos anteriores">&#10094;</button>
+        <button class="games-carousel-btn next" id="gamesCarouselNext" aria-label="Próximos jogos">&#10095;</button>
+        <div class="games-grid" id="gamesCarousel">
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/beat-saber.jpg" alt="Beat Saber VR - jogo de ritmo com sabres de luz no Oculus Quest para festas em Salvador" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Música / Ritmo</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Beat Saber</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">O jogo de ritmo mais popular do VR. Corte blocos com sabres de luz no ritmo da música. Sucesso garantido em festas de aniversário!</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/superhot.jpg" alt="Superhot VR - jogo de ação em realidade virtual no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Ação</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Superhot VR</h3>
+            <p class="game-age">Idade: <span>12+</span></p>
+            <p class="game-desc">Jogo de ação em realidade virtual onde o tempo só anda quando você se move. Experiência imersiva e única no Oculus Quest.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/job-simulator.jpg" alt="Job Simulator VR - jogo de comédia para toda a família no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Comédia / Família</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Job Simulator</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Simulador de profissões hilário em VR. Ideal para jogos de realidade virtual para festas infantis e diversão em família.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/fruit-ninja.jpg" alt="Fruit Ninja VR - jogo casual de realidade virtual ideal para festas infantis" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Casual</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Fruit Ninja VR</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Corte frutas no ar com suas mãos em realidade virtual. Jogo casual e divertido para todas as idades.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/acron.jpg" alt="Acron Attack of the Squirrels - jogo multiplayer VR perfeito para festas de aniversário" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Festa/Multiplayer</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Acron: Attack of the Squirrels</h3>
+            <p class="game-age">Idade: <span>7+</span></p>
+            <p class="game-desc">1 jogador no VR e até 8 amigos jogam pelo celular ao mesmo tempo! O jogo perfeito pra festas.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/rec-room.jpg" alt="Rec Room VR - jogo multiplayer online de realidade virtual no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Multiplayer</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Rec Room</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Mundo virtual multiplayer com diversos mini-jogos. Perfeito para entretenimento virtual em festas e reuniões.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/keep-talking.jpg" alt="Keep Talking and Nobody Explodes - jogo cooperativo VR para grupos e festas em Salvador" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Cooperativo</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Keep Talking and Nobody Explodes</h3>
+            <p class="game-age">Idade: <span>12+</span></p>
+            <p class="game-desc">Uma pessoa desarma a bomba no VR enquanto os amigos leem o manual e dão instruções. Caos e risadas garantidos!</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/plank.jpg" alt="Richies Plank Experience - experiência intensa de realidade virtual com altura no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Experiência Intensa</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Richie's Plank Experience</h3>
+            <p class="game-age">Idade: <span>10+</span></p>
+            <p class="game-desc">Ande numa prancha a 160 metros de altura em realidade virtual. Experiência intensa que gera muitas risadas nas festas!</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/pistol-whip.jpg" alt="Pistol Whip VR - jogo de ação rítmica estilo John Wick no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Ação / Ritmo</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Pistol Whip</h3>
+            <p class="game-age">Idade: <span>12+</span></p>
+            <p class="game-desc">Ação no estilo John Wick com ritmo musical. Atire, desvie e dance ao som das batidas. Adrenalina pura!</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/gorilla-tag.jpg" alt="Gorilla Tag VR - jogo multiplayer de corrida como gorila no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Multiplayer / Corrida</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Gorilla Tag</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Corra, pule e escale como um gorila! Multiplayer frenético e gratuito. Um dos jogos mais populares do Quest.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/walkabout-golf.jpg" alt="Walkabout Mini Golf VR - jogo de mini golfe relaxante no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Esporte / Casual</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Walkabout Mini Golf</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Mini golfe em cenários incríveis. Multiplayer relaxante perfeito para família e amigos de todas as idades.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/eleven-table-tennis.jpg" alt="Eleven Table Tennis VR - tênis de mesa ultra realista no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Esporte</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Eleven Table Tennis</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Tênis de mesa ultra-realista em VR. A física é tão real que jogadores profissionais usam para treinar!</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/moss.jpg" alt="Moss VR - aventura com ratinho em mundo de fantasia no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Aventura / Puzzle</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Moss</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Guie o ratinho Quill em uma aventura encantadora. Puzzles criativos em um mundo de fantasia lindo em VR.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/i-expect-you-to-die.jpg" alt="I Expect You To Die VR - jogo de espião e puzzles no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Puzzle / Espião</span>
+          </div>
+          <div class="game-card-body">
+            <h3>I Expect You To Die</h3>
+            <p class="game-age">Idade: <span>12+</span></p>
+            <p class="game-desc">Seja um espião e resolva puzzles mortais! Escape rooms em VR com humor e desafios criativos.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/ragnarock.jpg" alt="Ragnarock VR - jogo de ritmo Viking com tambores no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Ritmo / Viking</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Ragnarock</h3>
+            <p class="game-age">Idade: <span>Todas</span></p>
+            <p class="game-desc">Toque tambores Viking no ritmo da música e conduza seu navio! Alternativa épica ao Beat Saber com tema nórdico.</p>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="game-card-img">
+            <img src="img/creed-boxing.jpg" alt="Creed Rise to Glory VR - jogo de boxe baseado no filme Rocky no Oculus Quest" loading="lazy" decoding="async" width="460" height="215">
+            <span class="game-card-tag">Esporte / Luta</span>
+          </div>
+          <div class="game-card-body">
+            <h3>Creed: Rise to Glory</h3>
+            <p class="game-age">Idade: <span>12+</span></p>
+            <p class="game-desc">Boxe intenso baseado no filme Rocky/Creed. Soco, defesa e esquiva reais. Prepare-se para suar!</p>
+          </div>
+        </div>
+        </div>
+        <div class="games-counter" id="gamesCounter"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACOTES -->
+  <section class="section pacotes" id="pacotes">
+    <div class="container">
+      <h2 class="section-title reveal">Pacotes e Preços de Aluguel VR</h2>
+      <p class="section-subtitle reveal">Quanto custa alugar VR para festa? Confira nossos pacotes com preços acessíveis para Salvador e Lauro de Freitas!</p>
+      <div class="pacotes-grid">
+        <!-- 1h Express -->
+        <div class="pacote-card reveal">
+          <span class="pacote-badge">LANÇAMENTO</span>
+          <div class="pacote-icon">&#127918;</div>
+          <h3>Sessão Express</h3>
+          <div class="pacote-old-price">De R$120</div>
+          <div class="pacote-price">R$70<small>/1h</small></div>
+          <div class="pacote-price-detail">Ideal para conhecer a experiência VR pela primeira vez</div>
+          <ul class="pacote-features">
+            <li>1 hora de imersão total</li>
+            <li>Até 2 Oculus Quest</li>
+            <li>Jogos escolhidos para seu perfil</li>
+            <li>Monitor profissional presente</li>
+            <li>Montagem e desmontagem inclusa</li>
+            <li>Deslocamento incluso</li>
+          </ul>
+          <a href="#agendamento" class="pacote-btn">Agendar 1h</a>
+        </div>
+        <!-- 2h Combo -->
+        <div class="pacote-card featured reveal">
+          <span class="pacote-badge">LANÇAMENTO</span>
+          <div class="pacote-icon">&#11088;</div>
+          <h3>Combo Diversão</h3>
+          <div class="pacote-old-price">De R$180</div>
+          <div class="pacote-price">R$120<small>/2h</small></div>
+          <div class="pacote-economia">ECONOMIA DE R$60</div>
+          <div class="pacote-price-detail">O tempo ideal para curtir com amigos e família!</div>
+          <ul class="pacote-features">
+            <li>2 horas de diversão garantida</li>
+            <li>Até 2 Oculus Quest</li>
+            <li>Rotação de jogos variados</li>
+            <li>Monitor profissional presente</li>
+            <li>Montagem e desmontagem inclusa</li>
+            <li>Deslocamento incluso</li>
+          </ul>
+          <a href="#agendamento" class="pacote-btn">Agendar 2h</a>
+        </div>
+        <!-- 3h Aniversário -->
+        <div class="pacote-card reveal">
+          <span class="pacote-badge">LANÇAMENTO</span>
+          <div class="pacote-icon">&#127874;</div>
+          <h3>Pacote Aniversário</h3>
+          <div class="pacote-old-price">De R$250</div>
+          <div class="pacote-price">R$160<small>/3h</small></div>
+          <div class="pacote-economia">ECONOMIA DE R$90</div>
+          <div class="pacote-price-detail">A atração principal da festa! VR para todos os convidados.</div>
+          <ul class="pacote-features">
+            <li>3 horas de festa VR completa</li>
+            <li>Até 2 headsets Oculus Quest</li>
+            <li>Monitor dedicado na festa</li>
+            <li>Coordenação com sua programação</li>
+            <li>Rotação de jogos para todos</li>
+            <li>Deslocamento incluso</li>
+          </ul>
+          <a href="#agendamento" class="pacote-btn">Agendar Festa</a>
+        </div>
+      </div>
+
+      <!-- Tudo Incluso -->
+      <div class="pacotes-incluso reveal">
+        <div class="incluso-item"><span class="icon">&#128663;</span> Deslocamento incluso para Salvador e Lauro de Freitas</div>
+        <div class="incluso-item"><span class="icon">&#128736;</span> Montagem, configuração e desmontagem inclusa</div>
+        <div class="incluso-item"><span class="icon">&#129351;</span> Monitor profissional durante toda a sessão</div>
+        <div class="incluso-item"><span class="icon">&#128166;</span> Higienização completa entre cada usuário</div>
+        <div class="incluso-item"><span class="icon">&#127918;</span> +8 jogos para todos os públicos e idades</div>
+        <div class="incluso-item"><span class="icon">&#9201;</span> Hora adicional: apenas R$40 em qualquer pacote</div>
+      </div>
+      <p class="incluso-nota reveal">Preços de lançamento por tempo limitado. Sem taxa de deslocamento, sem custo escondido. O único custo não incluso é em caso de dano ao equipamento por mau uso (<a href="#termos">ver termos</a>).</p>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="section agendamento" id="agendamento">
+    <div class="container">
+      <h2 class="section-title reveal">Agende Sua Experiência de Realidade Virtual</h2>
+      <p class="section-subtitle reveal">Agende o aluguel de VR a domicílio em Salvador e Lauro de Freitas. Escolha data, horário e pacote!</p>
+      <div class="booking-container reveal" id="bookingContainer">
+        <!-- Step indicators -->
+        <div class="booking-steps">
+          <div class="booking-step-indicator active" data-step="1"></div>
+          <div class="booking-step-indicator" data-step="2"></div>
+          <div class="booking-step-indicator" data-step="3"></div>
+          <div class="booking-step-indicator" data-step="4"></div>
+        </div>
+
+        <!-- Calendar -->
+        <div class="calendar-wrapper" id="calendarWrapper">
+          <div class="calendar-header">
+            <h3 id="calendarMonth" style="font-size:1rem;margin:0"></h3>
+            <div class="calendar-nav">
+              <button id="calPrev" aria-label="Mês anterior">&#8249;</button>
+              <button id="calNext" aria-label="Próximo mês">&#8250;</button>
+            </div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+          <div class="error-msg" id="errorDate">Selecione uma data</div>
+        </div>
+
+        <!-- Time slots -->
+        <div class="time-slots-section" id="timeSlotsSection">
+          <h3 style="font-size:1rem;margin:0 0 12px">Escolha o Horário</h3>
+          <div class="time-slots-grid">
+            <div class="time-slot" data-period="manha">
+              <div class="time-period">MANHÃ</div>
+              <div class="time-range">9:00 - 12:00</div>
+            </div>
+            <div class="time-slot" data-period="tarde">
+              <div class="time-period">TARDE</div>
+              <div class="time-range">14:00 - 18:00</div>
+            </div>
+            <div class="time-slot" data-period="noite">
+              <div class="time-period">NOITE</div>
+              <div class="time-range">19:00 - 22:00</div>
+            </div>
+          </div>
+          <div class="error-msg" id="errorTime">Escolha um horário</div>
+        </div>
+
+        <!-- Package -->
+        <div class="package-select" id="packageSelect">
+          <h3 style="font-size:1rem;margin:0 0 12px">Escolha o Pacote</h3>
+          <div class="package-options">
+            <div class="package-option" data-package="express">
+              <h4 style="font-size:0.9rem;margin:0">Sessão Express</h4>
+              <p>R$70 - 1 hora</p>
+            </div>
+            <div class="package-option" data-package="combo">
+              <h4 style="font-size:0.9rem;margin:0">Combo Diversão</h4>
+              <p>R$120 - 2 horas</p>
+            </div>
+            <div class="package-option" data-package="aniversario">
+              <h4 style="font-size:0.9rem;margin:0">Pacote Aniversário</h4>
+              <p>R$160 - 3 horas</p>
+            </div>
+          </div>
+          <div class="error-msg" id="errorPackage">Escolha um pacote</div>
+        </div>
+
+        <!-- Contact details -->
+        <div class="booking-details" id="bookingDetails">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bookingName">Seu Nome</label>
+              <input type="text" id="bookingName" placeholder="Nome completo">
+              <div class="error-msg" id="errorName">Digite seu nome completo</div>
+            </div>
+            <div class="form-group">
+              <label for="bookingPhone">WhatsApp</label>
+              <input type="tel" id="bookingPhone" placeholder="(71) 99999-9999">
+              <div class="error-msg" id="errorPhone">Digite um telefone válido</div>
+            </div>
+          </div>
+          <div class="form-group" id="hoursGroup" style="display:none;">
+            <label for="bookingHours">Quantidade de Horas</label>
+            <select id="bookingHours">
+              <option value="1">1 hora</option>
+              <option value="2">2 horas</option>
+              <option value="3">3 horas</option>
+              <option value="4">4 horas</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="booking-submit" id="bookingSubmit" disabled>Confirmar Agendamento via WhatsApp</button>
+
+        <!-- Success -->
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon">&#127881;</div>
+          <h3>Agendamento Enviado!</h3>
+          <p>Redirecionamos você para o WhatsApp! Confirme os detalhes da reserva por lá.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section depoimentos" id="depoimentos">
+    <div class="container">
+      <h2 class="section-title reveal">Depoimentos de Clientes VR Experience</h2>
+      <p class="section-subtitle reveal">Experiências reais de quem já viveu a realidade virtual em casa em Salvador e Lauro de Freitas.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Contratamos para o aniversário do meu filho de 10 anos e foi incrível! As crianças não queriam parar. O rapaz que veio foi super atencioso e paciente com todo mundo."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RM</div>
+            <div class="testimonial-author-info">
+              <strong>Renata M.</strong>
+              <span>Festa infantil - Pituba</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Nunca tinha usado VR antes e fiquei impressionado. Jogar Beat Saber na minha sala foi uma experiência única. Já agendei de novo para chamar os amigos!"</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LS</div>
+            <div class="testimonial-author-info">
+              <strong>Lucas S.</strong>
+              <span>Sessão avulsa - Lauro de Freitas</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Minha mãe de 60 anos jogou e adorou! Foi muito divertido ver ela tentando o Fruit Ninja. Serviço pontual e profissional, super recomendo."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CA</div>
+            <div class="testimonial-author-info">
+              <strong>Camila A.</strong>
+              <span>Sessão em família - Barra</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Perguntas Frequentes sobre VR a Domicílio</h2>
+      <p class="section-subtitle reveal">Tire suas dúvidas sobre o aluguel de realidade virtual a domicílio em Salvador e Lauro de Freitas.</p>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Precisa ter TV em casa?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Não é obrigatório! O Oculus Quest funciona de forma independente. Porém, recomendamos uma TV disponível para que os outros convidados possam assistir em tempo real o que a pessoa está jogando.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Qual a idade mínima para jogar?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">A partir de 7 anos. Temos jogos adequados para todas as idades, desde experiências bem tranquilas até jogos mais intensos para adolescentes e adultos.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Quanto espaço preciso em casa?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Recomendamos uma área livre de pelo menos 2x2 metros para cada jogador. Uma sala ou quarto grande já é suficiente! Nós ajudamos a organizar o espaço quando chegamos.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Quais regiões vocês atendem?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Atendemos toda a região de Salvador e Lauro de Freitas. Se você mora em outra cidade da região metropolitana, entre em contato para verificarmos disponibilidade.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Como funciona o pagamento?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Aceitamos PIX, cartão de crédito/débito e dinheiro. O pagamento é realizado no dia do atendimento, após a montagem dos equipamentos.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Posso cancelar o agendamento?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim! Cancelamentos feitos até 24 horas antes do horário agendado são realizados sem nenhum custo. Cancelamentos com menos de 24h podem ter taxa de deslocamento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section contato" id="contato">
+    <div class="container">
+      <h2 class="section-title reveal">Entre em Contato com a VR Experience</h2>
+      <p class="section-subtitle reveal">Fale conosco para agendar sua experiência de realidade virtual a domicílio em Salvador e Lauro de Freitas.</p>
+      <div class="contato-grid">
+        <a href="https://wa.me/5571996305734?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20VR%20Experience." target="_blank" rel="noopener noreferrer" class="contato-card reveal" style="text-decoration:none;color:inherit;">
+          <div class="contato-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin:0">WhatsApp</h3>
+          <p>Atendimento r&#225;pido</p>
+        </a>
+        <div class="contato-card reveal">
+          <div class="contato-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--neon-magenta)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin:0">Instagram</h3>
+          <p>Siga para novidades</p>
+          <span class="coming-soon">EM BREVE</span>
+        </div>
+        <div class="contato-card reveal">
+          <div class="contato-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--neon-cyan)" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin:0">Região</h3>
+          <p>Salvador e Lauro de Freitas, BA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO CONTENT (visually hidden, accessible to search engines) -->
+  <section class="seo-content">
+    <h2>Aluguel de Realidade Virtual a Domicílio em Salvador e Lauro de Freitas - VR Experience</h2>
+    <p>
+      A VR Experience é a principal empresa de aluguel de óculos de realidade virtual a domicílio em Salvador e Lauro de Freitas, Bahia. Oferecemos serviços de entretenimento virtual para festas de aniversário, eventos corporativos, confraternizações e sessões avulsas em família. Nosso serviço de VR a domicílio utiliza equipamentos profissionais Oculus Quest, permitindo que até 2 pessoas joguem simultaneamente com total imersão. Atendemos toda a região metropolitana de Salvador, incluindo bairros como Pituba, Barra, Ondina, Itapuã, Stella Maris, Caminho das Árvores, Paralela e Lauro de Freitas. Nossos pacotes de lançamento incluem a Sessão Express de realidade virtual por apenas R$70 (1 hora), o Combo Diversão por R$120 (2 horas) e o Pacote Aniversário VR por R$160, com 3 horas completas de diversão, monitor dedicado e rotação de jogos para todos os convidados. Hora adicional por apenas R$40. Todos os pacotes incluem deslocamento, montagem, configuração, higienização e monitor profissional — sem custos escondidos. Entre os jogos mais populares estão Beat Saber, Superhot VR, Job Simulator, Fruit Ninja VR, Acron Attack of the Squirrels e Richies Plank Experience. A experiência de realidade virtual em casa é ideal para festas infantis, aniversários de crianças e adolescentes, reuniões em família e eventos de team building. Agende agora pelo WhatsApp e leve a diversão de outro universo para dentro da sua casa. VR Experience - a realidade virtual vai até você em Salvador, Bahia.
+    </p>
+  </section>
+
+  <!-- TERMOS -->
+  <section class="section termos-section" id="termos">
+    <div class="container">
+      <h2 class="section-title">Termo de Uso e <span class="gradient-text">Responsabilidade</span></h2>
+      <p class="termos-intro">Leia atentamente antes de utilizar os serviços da VR Experience. Última atualização: Abril de 2026.</p>
+
+      <div class="termos-accordion" id="termosAccordion">
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>1. Objeto do Serviço</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>O presente Termo de Uso e Responsabilidade (&ldquo;Termo&rdquo;) rege a relação entre <strong>VR Experience</strong>, pessoa jurídica com sede em Salvador/BA (&ldquo;Prestadora&rdquo;), e a pessoa física ou jurídica que contrata o serviço (&ldquo;Contratante&rdquo;).</li>
+              <li>O serviço consiste na <strong>locação temporária de equipamento de realidade virtual</strong> (Oculus Quest 2), incluindo:
+                <ul>
+                  <li>Deslocamento até o local indicado pelo Contratante em Salvador ou Lauro de Freitas/BA;</li>
+                  <li>Instalação e configuração do equipamento no local;</li>
+                  <li>Acompanhamento e monitoria durante toda a sessão por profissional da VR Experience;</li>
+                  <li>Higienização dos equipamentos entre usuários;</li>
+                  <li>Desmontagem e retirada do equipamento ao término.</li>
+                </ul>
+              </li>
+              <li>As modalidades de serviço disponíveis são (preços de lançamento):
+                <ul>
+                  <li><strong>Sessão Express:</strong> R$ 70,00 por 1 hora, com até 2 óculos de realidade virtual;</li>
+                  <li><strong>Combo Diversão:</strong> R$ 120,00 por 2 horas, com até 2 óculos de realidade virtual;</li>
+                  <li><strong>Pacote Aniversário:</strong> R$ 160,00 por 3 horas, com até 2 óculos de realidade virtual;</li>
+                  <li><strong>Hora adicional:</strong> R$ 40,00 em qualquer pacote.</li>
+                </ul>
+              </li>
+              <li>Todos os pacotes incluem: deslocamento até o local, montagem e configuração, monitor profissional, higienização e desmontagem. Sem custos adicionais, exceto em caso de dano ao equipamento por mau uso (Cláusula 3).</li>
+              <li>O equipamento permanece sob propriedade exclusiva da VR Experience durante toda a prestação do serviço.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>2. Regras de Utilização</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li><strong>Idade mínima:</strong> Uso recomendado a partir de 10 anos (Meta). VR Experience aceita a partir de <strong>7 anos</strong>, com autorização do responsável legal (Cláusula 5).</li>
+              <li><strong>Supervisão:</strong> Todas as sessões são acompanhadas por monitor da VR Experience.</li>
+              <li><strong>Espaço mínimo:</strong> Área livre de <strong>2m x 2m</strong> por equipamento. Caso o espaço não atenda, a sessão poderá não ser iniciada.</li>
+              <li><strong>Proibições:</strong>
+                <ul>
+                  <li>Uso sob efeito de álcool, drogas ou substâncias que alterem a percepção;</li>
+                  <li>Movimentos bruscos, pular ou correr fora da área demarcada;</li>
+                  <li>Consumir alimentos ou bebidas durante o uso;</li>
+                  <li>Manusear com mãos molhadas, sujas ou com produtos químicos;</li>
+                  <li>Arremessar ou abandonar os controles;</li>
+                  <li>Tentar abrir, desmontar ou modificar qualquer componente.</li>
+                </ul>
+              </li>
+              <li><strong>Tempo recomendado:</strong> Máximo <strong>30 minutos contínuos</strong> por pessoa, com intervalo de 10 minutos.</li>
+              <li><strong>Higienização:</strong> Realizada entre cada usuário com produtos adequados.</li>
+              <li>Descumprimento autoriza interrupção imediata, sem direito a reembolso.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>3. Responsabilidade por Danos ao Equipamento</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>Os equipamentos possuem os seguintes valores de reposição:</li>
+            </ol>
+            <table class="values-table">
+              <thead><tr><th>Item</th><th>Valor de Reposição</th></tr></thead>
+              <tbody>
+                <tr><td>Oculus Quest 2 (unidade completa)</td><td class="value">R$ 2.500,00</td></tr>
+                <tr><td>Controle (Touch Controller)</td><td class="value">R$ 400,00</td></tr>
+                <tr><td>Protetor facial (Face Cover)</td><td class="value">R$ 80,00</td></tr>
+                <tr><td>Alça de fixação (Head Strap)</td><td class="value">R$ 150,00</td></tr>
+              </tbody>
+            </table>
+            <ol start="2">
+              <li><strong>Desgaste natural</strong> (borrachas, elásticos, espumas) <strong>não será cobrado</strong>.</li>
+              <li><strong>Danos por mau uso ou negligência:</strong> Contratante é responsável por queda, impacto, contato com líquidos, arremesso de controles, uso fora das orientações, manipulação por não autorizados, vandalismo.</li>
+              <li><strong>Danos por menores</strong> são responsabilidade integral do responsável legal (art. 932, I, Código Civil).</li>
+              <li><strong>Procedimento:</strong> Comunicação imediata, registro fotográfico, acordo de pagamento em até 7 dias.</li>
+            </ol>
+            <div class="warning-box"><strong>Atenção:</strong> Recusa injustificada ao pagamento autoriza medidas judiciais.</div>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>4. Saúde e Segurança</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>VR pode causar <strong>enjoo, tontura, náusea, desorientação, dores de cabeça e fadiga ocular</strong>.</li>
+              <li><strong>Contraindicações:</strong> epilepsia, problemas cardíacos, gravidez, labirintite, ansiedade severa, claustrofobia, cirurgias recentes.</li>
+              <li>Contratante <strong>deve informar previamente</strong> condições de saúde. Omissão isenta a VR Experience.</li>
+              <li>Monitor pode <strong>interromper a sessão imediatamente</strong> se perceber sinais de mal-estar.</li>
+              <li>Ao aceitar, Contratante declara ciência dos riscos e <strong>isenta a VR Experience</strong> de reações decorrentes do uso normal.</li>
+            </ol>
+            <div class="warning-box"><strong>Importante:</strong> Em caso de desconforto, comunique imediatamente ao monitor e interrompa o uso.</div>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>5. Menores de Idade</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>Menores de <strong>18 anos</strong>: presença e autorização do responsável legal durante toda a sessão.</li>
+              <li>Responsável legal deve se identificar com nome completo e CPF.</li>
+              <li><strong>7 a 9 anos:</strong> Sessões de máximo <strong>15 minutos contínuos</strong>, com intervalo de 15 minutos, jogos adequados à faixa etária, presença contínua do responsável.</li>
+              <li><strong>10 a 17 anos:</strong> Regras gerais (Cláusula 2), máximo <strong>20 minutos contínuos</strong>, conteúdo adequado à classificação.</li>
+              <li><strong>Menores de 7 anos não podem utilizar</strong> os equipamentos em nenhuma circunstância.</li>
+              <li>Danos causados por menores são responsabilidade do responsável legal (Cláusula 3.4).</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>6. Agendamento e Cancelamento</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>Agendamento via WhatsApp, Instagram ou telefone.</li>
+              <li><strong>Cancelamento sem custo:</strong> Até <strong>24 horas antes</strong> do horário marcado.</li>
+              <li><strong>Cancelamento tardio (&lt;24h):</strong> Taxa de deslocamento de <strong>R$ 50,00</strong>.</li>
+              <li><strong>No-show:</strong> Cobrado <strong>valor integral</strong> do serviço contratado.</li>
+              <li><strong>Reagendamento:</strong> 1 gratuito por contratação (mínimo 24h de antecedência). Adicionais tratados como cancelamento tardio.</li>
+              <li><strong>Tolerância de atraso:</strong> 15 minutos. Após, considerado no-show.</li>
+              <li><strong>Cancelamento pela VR Experience:</strong> Reagendamento ou reembolso integral.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>7. Pagamento e Reembolso</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li><strong>Formas aceitas:</strong> PIX, cartão de débito/crédito, dinheiro.</li>
+              <li><strong>Pagamento antes do início</strong> da sessão, salvo acordo prévio.</li>
+              <li><strong>Reembolso:</strong>
+                <ul>
+                  <li>Cancelamento no prazo: reembolso integral;</li>
+                  <li>Cancelamento pela VR Experience: reembolso integral;</li>
+                  <li>Interrupção por saúde (&lt;50% do tempo): reembolso de 50%;</li>
+                  <li>Descumprimento de regras: sem reembolso;</li>
+                  <li>No-show: sem reembolso.</li>
+                </ul>
+              </li>
+              <li>Reembolsos processados em até <strong>7 dias úteis</strong>.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>8. Propriedade Intelectual e Direito de Imagem</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li>Jogos e experiências são <strong>licenciados pelos desenvolvedores e pela Meta Platforms, Inc.</strong></li>
+              <li>VR Experience pode registrar fotos/vídeos para divulgação, <strong>exclusivamente com consentimento prévio</strong>.</li>
+              <li>Consentimento é <strong>opcional</strong> e não condiciona o serviço.</li>
+              <li>Uso de imagem para fins promocionais, revogável a qualquer tempo por escrito.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>9. Proteção de Dados Pessoais (LGPD)</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li><strong>Dados coletados:</strong> Nome, telefone, CPF, endereço do atendimento, data/horário.</li>
+              <li><strong>Finalidade:</strong> Agendamento, comunicação, identificação no Termo, ofertas (com consentimento).</li>
+              <li><strong>Não compartilhamento:</strong> VR Experience <strong>não compartilha, vende ou transfere</strong> dados a terceiros.</li>
+              <li><strong>Armazenamento:</strong> Até <strong>2 anos</strong> após último atendimento.</li>
+              <li><strong>Direitos do titular:</strong> Acesso, correção, exclusão e revogação de consentimento a qualquer tempo.</li>
+              <li>Solicitações atendidas em até <strong>15 dias úteis</strong>.</li>
+            </ol>
+          </div></div>
+        </div>
+
+        <div class="termo-item">
+          <button class="termo-header" aria-expanded="false"><span>10. Disposições Gerais</span><span class="arrow">▼</span></button>
+          <div class="termo-body"><div class="termo-content">
+            <ol>
+              <li><strong>Foro:</strong> Comarca de <strong>Salvador, Bahia</strong>.</li>
+              <li><strong>Alterações:</strong> VR Experience pode alterar este Termo a qualquer tempo. Alterações não afetam serviços já contratados.</li>
+              <li><strong>Vigência:</strong> Da assinatura até cumprimento integral das obrigações.</li>
+              <li><strong>Integralidade:</strong> Acordo integral entre as partes.</li>
+              <li><strong>Nulidade parcial:</strong> Invalidade de uma cláusula não afeta as demais.</li>
+              <li><strong>Legislação:</strong> Código Civil (Lei 10.406/2002), CDC (Lei 8.078/1990) e LGPD (Lei 13.709/2018).</li>
+            </ol>
+          </div></div>
+        </div>
+
+      </div>
+
+      <div class="termos-footer">
+        <p>Ao utilizar os serviços da VR Experience, você declara que leu, compreendeu e concorda com todos os termos acima.</p>
+        <p style="margin-top: 0.5rem;"><a href="termos.html">Versão completa para impressão e assinatura →</a></p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">VR EXPERIENCE</div>
+        <div class="footer-region">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Aluguel de realidade virtual a domicílio em Salvador e Lauro de Freitas, Bahia
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 VR Experience. Todos os direitos reservados.</span>
+        <a href="termos.html" style="color: var(--neon-cyan); opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">Termos de Uso e Responsabilidade</a>
+        <span style="opacity:0.5;">Desenvolvido por <a href="https://instagram.com/caiosales_ecom" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan); opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Caio Sales</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5571996305734?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20VR%20Experience." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp para agendar VR a domicílio" title="WhatsApp VR Experience Salvador">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="whatsapp-tooltip">Fale conosco!</div>
+  </a>
+
+  <script>
+    /* ===== NAVBAR SCROLL ===== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    /* ===== GAMES CAROUSEL ===== */
+    {
+      const carousel = document.getElementById('gamesCarousel');
+      const prevBtn = document.getElementById('gamesCarouselPrev');
+      const nextBtn = document.getElementById('gamesCarouselNext');
+      const counter = document.getElementById('gamesCounter');
+      const cards = carousel.querySelectorAll('.game-card');
+      const totalGames = cards.length;
+
+      function getScrollAmount() {
+        const card = carousel.querySelector('.game-card');
+        return card ? card.offsetWidth + 20 : 280;
+      }
+
+      function getVisibleCount() {
+        return Math.round(carousel.offsetWidth / getScrollAmount());
+      }
+
+      function updateCounter() {
+        const scrollLeft = carousel.scrollLeft;
+        const scrollAmount = getScrollAmount();
+        const first = Math.round(scrollLeft / scrollAmount) + 1;
+        const visible = getVisibleCount();
+        const last = Math.min(first + visible - 1, totalGames);
+        counter.textContent = first + '–' + last + ' de ' + totalGames + ' jogos';
+        prevBtn.disabled = scrollLeft <= 5;
+        nextBtn.disabled = scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 5;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -getScrollAmount() * 2, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: getScrollAmount() * 2, behavior: 'smooth' });
+      });
+
+      carousel.addEventListener('scroll', updateCounter);
+      window.addEventListener('resize', updateCounter);
+      updateCounter();
+    }
+
+    /* ===== HAMBURGER ===== */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on overlay click (clicking the ::before pseudo-element area)
+    navLinks.addEventListener('click', (e) => {
+      if (e.target === navLinks) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    /* ===== HERO PARTICLES ===== */
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const COLORS = ['#00e5ff', '#ff00ff', '#8b5cf6', '#39ff14', '#ff2d95', '#ff6b00'];
+      const PARTICLE_COUNT = window.innerWidth < 768 ? 40 : 80;
+      let animating = true;
+      let heroVisible = true;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      function createParticle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2.5 + 0.5,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.8,
+          alpha: Math.random() * 0.7 + 0.3,
+          pulse: Math.random() * Math.PI * 2,
+        };
+      }
+
+      function init() {
+        resize();
+        particles = [];
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          particles.push(createParticle());
+        }
+      }
+
+      function drawLine(p1, p2, dist) {
+        const maxDist = 150;
+        if (dist > maxDist) return;
+        const alpha = (1 - dist / maxDist) * 0.15;
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+
+      function animate() {
+        if (!animating) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.pulse += 0.02;
+
+          // Wrap around
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+
+          const pulseAlpha = p.alpha * (0.7 + 0.3 * Math.sin(p.pulse));
+
+          // Glow
+          const r = parseInt(p.color.slice(1,3), 16);
+          const g = parseInt(p.color.slice(3,5), 16);
+          const b = parseInt(p.color.slice(5,7), 16);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius * 3, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${pulseAlpha * 0.15})`;
+          ctx.fill();
+
+          // Core
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${pulseAlpha})`;
+          ctx.fill();
+
+          // Lines
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            drawLine(p, p2, dist);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      // Pause animation when hero is off-screen
+      const heroEl = document.querySelector('.hero');
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        heroVisible = entry.isIntersecting;
+        if (heroVisible && !document.hidden) {
+          animating = true;
+          animate();
+        } else {
+          animating = false;
+        }
+      }, { threshold: 0 });
+      heroObserver.observe(heroEl);
+
+      // Pause animation when tab is not visible
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          animating = false;
+        } else if (heroVisible) {
+          animating = true;
+          animate();
+        }
+      });
+
+      window.addEventListener('resize', resize);
+      init();
+      animate();
+    })();
+
+    /* ===== CALENDAR ===== */
+    (function() {
+      const MONTHS_PT = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+      const DAYS_PT = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+
+      let currentDate = new Date();
+      let selectedDate = null;
+      let selectedPeriod = null;
+      let selectedPackage = null;
+
+      const calGrid = document.getElementById('calendarGrid');
+      const calMonth = document.getElementById('calendarMonth');
+      const calPrev = document.getElementById('calPrev');
+      const calNext = document.getElementById('calNext');
+      const timeSlotsSection = document.getElementById('timeSlotsSection');
+      const packageSelect = document.getElementById('packageSelect');
+      const bookingDetails = document.getElementById('bookingDetails');
+      const bookingSubmit = document.getElementById('bookingSubmit');
+      const bookingSuccess = document.getElementById('bookingSuccess');
+      const hoursGroup = document.getElementById('hoursGroup');
+      const indicators = document.querySelectorAll('.booking-step-indicator');
+
+      function updateStepIndicators(step) {
+        indicators.forEach((ind, i) => {
+          ind.classList.remove('active', 'completed');
+          if (i + 1 < step) ind.classList.add('completed');
+          if (i + 1 === step) ind.classList.add('active');
+        });
+      }
+
+      function renderCalendar() {
+        calGrid.innerHTML = '';
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        calMonth.textContent = `${MONTHS_PT[month]} ${year}`;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Day names
+        DAYS_PT.forEach(d => {
+          const el = document.createElement('div');
+          el.className = 'calendar-day-name';
+          el.textContent = d;
+          calGrid.appendChild(el);
+        });
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Empty cells
+        for (let i = 0; i < firstDay; i++) {
+          const el = document.createElement('div');
+          el.className = 'calendar-day empty';
+          calGrid.appendChild(el);
+        }
+
+        // Days
+        for (let d = 1; d <= daysInMonth; d++) {
+          const el = document.createElement('div');
+          el.className = 'calendar-day';
+          el.textContent = d;
+          const thisDate = new Date(year, month, d);
+          thisDate.setHours(0, 0, 0, 0);
+
+          if (thisDate < today) {
+            el.classList.add('disabled');
+          } else {
+            if (thisDate.getTime() === today.getTime()) {
+              el.classList.add('today');
+            }
+            if (selectedDate && thisDate.getTime() === selectedDate.getTime()) {
+              el.classList.add('selected');
+            }
+            el.addEventListener('click', () => {
+              selectedDate = thisDate;
+              renderCalendar();
+              timeSlotsSection.classList.add('visible');
+              updateStepIndicators(2);
+            });
+          }
+
+          calGrid.appendChild(el);
+        }
+      }
+
+      calPrev.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+      });
+
+      calNext.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+      });
+
+      // Time slots
+      document.querySelectorAll('.time-slot').forEach(slot => {
+        slot.addEventListener('click', () => {
+          document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+          slot.classList.add('selected');
+          selectedPeriod = slot.dataset.period;
+          packageSelect.classList.add('visible');
+          updateStepIndicators(3);
+        });
+      });
+
+      // Package options
+      document.querySelectorAll('.package-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          document.querySelectorAll('.package-option').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          selectedPackage = opt.dataset.package;
+          bookingDetails.classList.add('visible');
+          bookingSubmit.classList.add('visible');
+          updateStepIndicators(4);
+
+          // Show hours only for avulso
+          hoursGroup.style.display = 'none';
+          checkForm();
+        });
+      });
+
+      // Form validation
+      const nameInput = document.getElementById('bookingName');
+      const phoneInput = document.getElementById('bookingPhone');
+      const errorDate = document.getElementById('errorDate');
+      const errorTime = document.getElementById('errorTime');
+      const errorPackage = document.getElementById('errorPackage');
+      const errorName = document.getElementById('errorName');
+      const errorPhone = document.getElementById('errorPhone');
+
+      function isPhoneValid(phone) {
+        const digits = phone.replace(/\D/g, '');
+        return digits.length >= 10 && digits.length <= 11;
+      }
+
+      function checkForm() {
+        const valid = selectedDate && selectedPeriod && selectedPackage
+          && nameInput.value.trim().length >= 3 && isPhoneValid(phoneInput.value);
+        bookingSubmit.disabled = !valid;
+      }
+
+      function clearErrors() {
+        [errorDate, errorTime, errorPackage, errorName, errorPhone].forEach(function(el) {
+          if (el) el.classList.remove('visible');
+        });
+      }
+
+      function validateAndShowErrors() {
+        clearErrors();
+        let valid = true;
+        if (!selectedDate) { errorDate.classList.add('visible'); valid = false; }
+        if (!selectedPeriod) { errorTime.classList.add('visible'); valid = false; }
+        if (!selectedPackage) { errorPackage.classList.add('visible'); valid = false; }
+        if (nameInput.value.trim().length < 3) { errorName.classList.add('visible'); valid = false; }
+        if (!isPhoneValid(phoneInput.value)) { errorPhone.classList.add('visible'); valid = false; }
+        return valid;
+      }
+
+      nameInput.addEventListener('input', function() { errorName.classList.remove('visible'); checkForm(); });
+      phoneInput.addEventListener('input', function() { errorPhone.classList.remove('visible'); checkForm(); });
+
+      // Submit -> WhatsApp redirect
+      bookingSubmit.addEventListener('click', () => {
+        if (!validateAndShowErrors()) return;
+
+        // Collect booking data
+        const dateStr = selectedDate.toLocaleDateString('pt-BR');
+        const periodMap = { manha: 'Manhã (9:00-12:00)', tarde: 'Tarde (14:00-18:00)', noite: 'Noite (19:00-22:00)' };
+        const periodLabel = periodMap[selectedPeriod] || selectedPeriod;
+        const packageMap = { express: 'Sessão Express (R$70/1h)', combo: 'Combo Diversão (R$120/2h)', aniversario: 'Pacote Aniversário (R$160/3h)' };
+        const packageLabel = packageMap[selectedPackage] || selectedPackage;
+        const hoursMap = { express: '1', combo: '2', aniversario: '3' };
+        const hours = hoursMap[selectedPackage] || document.getElementById('bookingHours').value;
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        // Build WhatsApp message
+        const message = `Olá! Gostaria de agendar uma experiência VR:\n\n📅 Data: ${dateStr}\n🕐 Período: ${periodLabel}\n🎮 Pacote: ${packageLabel}\n⏰ Duração: ${hours}h\n👤 Nome: ${name}\n📱 Telefone: ${phone}\n\nAguardo confirmação!`;
+
+        // Open WhatsApp in new tab
+        const waUrl = 'https://wa.me/5571996305734?text=' + encodeURIComponent(message);
+        window.open(waUrl, '_blank');
+
+        // Show success message
+        document.getElementById('calendarWrapper').style.display = 'none';
+        timeSlotsSection.style.display = 'none';
+        packageSelect.style.display = 'none';
+        bookingDetails.style.display = 'none';
+        bookingSubmit.style.display = 'none';
+        document.querySelector('.booking-steps').style.display = 'none';
+        bookingSuccess.classList.add('visible');
+      });
+
+      renderCalendar();
+    })();
+
+    /* ===== FAQ ACCORDION ===== */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('active');
+          faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          faq.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* ===== SCROLL REVEAL ===== */
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* ===== SMOOTH SCROLL FIX FOR NAV ===== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Termos Accordion -->
+  <script>
+    document.querySelectorAll('.termo-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  </script>
+</body>
+</html>

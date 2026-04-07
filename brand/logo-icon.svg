@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowSoft">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- VR Headset Icon -->
+  <g transform="translate(10,12)" filter="url(#glow)">
+    <!-- Headset body -->
+    <rect x="5" y="10" width="70" height="44" rx="14" ry="14"
+          stroke="url(#iconGrad)" stroke-width="3" fill="none"/>
+    <!-- Left lens -->
+    <circle cx="28" cy="32" r="13" stroke="#00e5ff" stroke-width="2.5" fill="none"/>
+    <!-- Right lens -->
+    <circle cx="52" cy="32" r="13" stroke="#ff00ff" stroke-width="2.5" fill="none"/>
+    <!-- Bridge -->
+    <path d="M37,32 C38.5,26 41.5,26 43,32" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Strap left -->
+    <path d="M5,24 L-2,20" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M5,40 L-2,44" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <!-- Strap right -->
+    <path d="M75,24 L82,20" stroke="#ff00ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M75,40 L82,44" stroke="#ff00ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <!-- Lens reflections -->
+    <circle cx="22" cy="26" r="2.5" fill="#00e5ff" opacity="0.45"/>
+    <circle cx="46" cy="26" r="2.5" fill="#ff00ff" opacity="0.45"/>
+  </g>
+
+  <!-- "VR" label -->
+  <text x="50" y="90" font-family="'Orbitron',sans-serif" font-weight="800" font-size="16"
+        fill="url(#iconGrad)" text-anchor="middle" letter-spacing="3" filter="url(#glowSoft)">VR</text>
+</svg>

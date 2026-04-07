@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+  @font-face { font-family: 'Orbitron'; font-weight: 700; src: url('../fonts/orbitron-700.ttf') format('truetype'); }
+  @font-face { font-family: 'Orbitron'; font-weight: 900; src: url('../fonts/orbitron-900.ttf') format('truetype'); }
+  @font-face { font-family: 'Jost'; font-weight: 400; src: url('../fonts/jost-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Jost'; font-weight: 600; src: url('../fonts/jost-600.ttf') format('truetype'); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    background: #050510;
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .bg-grid {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow-top {
+    position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(ellipse, rgba(0,229,255,0.15) 0%, transparent 70%);
+  }
+  .glow-bottom {
+    position: absolute; bottom: -200px; right: -100px;
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(255,0,255,0.12) 0%, transparent 70%);
+  }
+  .content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; }
+  .badge {
+    display: inline-block;
+    border: 1px solid #ff00ff;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ff00ff;
+    margin-bottom: 40px;
+  }
+  .title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .title .gradient {
+    background: linear-gradient(135deg, #00e5ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    font-size: 28px;
+    color: #b0b8d0;
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+  .games-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+  .game-thumb {
+    width: 180px; height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(0,229,255,0.3);
+  }
+  .game-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .cta {
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #00e5ff, #8b5cf6);
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #050510;
+    text-transform: uppercase;
+  }
+  .logo {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    opacity: 0.5;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #00e5ff;
+  }
+</style></head><body>
+  <div class="bg-grid"></div>
+  <div class="glow-top"></div>
+  <div class="glow-bottom"></div>
+  <div class="content">
+    <div class="badge">Novo em Salvador</div>
+    <h1 class="title">REALIDADE<br><span class="gradient">VIRTUAL</span><br>A DOMICÍLIO</h1>
+    <p class="subtitle">Levamos a diversão do futuro até a sua casa em Salvador e Lauro de Freitas</p>
+    <div class="games-row">
+      <div class="game-thumb"><img src="../img/beat-saber.jpg"></div>
+      <div class="game-thumb"><img src="../img/superhot.jpg"></div>
+      <div class="game-thumb"><img src="../img/fruit-ninja.jpg"></div>
+      <div class="game-thumb"><img src="../img/pistol-whip.jpg"></div>
+    </div>
+    <div class="cta">AGENDE AGORA</div>
+  </div>
+  <div class="logo">@VREXPERIENCE.SSA</div>
+</body></html>
