@@ -2204,6 +2204,20 @@
     }
 
     @media (max-width: 768px) {
+      /* Hide heavy sections on mobile for cleaner experience */
+      #oque-vr,
+      #galeria,
+      #termos { display: none; }
+
+      /* Hide nav links to hidden sections */
+      .nav-links a[href="#oque-vr"] { display: none; }
+
+      /* Reduce testimonials to 2 */
+      .testimonial-card:nth-child(n+3) { display: none; }
+
+      /* Reduce FAQ to 4 items */
+      .faq-item:nth-child(n+5) { display: none; }
+
       .hamburger { display: flex; }
 
       .nav-logo svg {
