@@ -628,9 +628,17 @@
       margin-top: 4px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .vr-tabs { flex-direction: column; align-items: center; }
       .vr-tab { width: 80%; text-align: center; }
+      .vr-intro { font-size: 0.95rem; margin-bottom: 24px; }
+      .vr-cards { grid-template-columns: 1fr; gap: 14px; }
+      .vr-card { padding: 20px 18px; }
+      .vr-card:nth-child(n+4) { display: none; }
+      .vr-card p { font-size: 0.85rem; }
+      .vr-highlight { margin-top: 24px; padding: 18px 20px; }
+      .vr-highlight p { font-size: 0.9rem !important; }
+      .vr-specs { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }
 
     /* ===== EQUIPAMENTO VR ===== */
@@ -681,9 +689,13 @@
     @media (max-width: 768px) {
       .equip-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
+        margin-top: 24px;
       }
+      .equip-card:nth-child(n+2) { display: none; }
       .equip-card img { height: 200px; }
+      .equip-info { padding: 14px; }
+      .equip-info p { font-size: 0.83rem; }
     }
 
     /* ===== EXPERIENCIAS ===== */
