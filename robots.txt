@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /instagram/
+Disallow: /camisa/
+Disallow: /presentations/
+
+Sitemap: https://vrexperiencessa.com.br/sitemap.xml
